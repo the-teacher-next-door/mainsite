@@ -62,7 +62,7 @@ const Admin = props => {
         <AdminNav />
         <div className="container">
           <div className="columns">
-            <div className="col-xl-12">
+            <div className="column is-12">
               <div className="blogs">
                 <div className="blogs-header-bar">
                   <h2>Blogs</h2>
@@ -90,23 +90,29 @@ const Admin = props => {
                   <p>Categories</p>
                 </div>
               </div>
-              {blogs.map((blog, index) => {
-                return (
-                  <div className="row-contained">
-                    <div className="blogDisplay">
-                      <div className="col-xl-3">
-                        <Link href={`/admin-blog/${blog.title}`}>
-                          <a>{blog.title}</a>
-                        </Link>
+              <div className="columns is-multiline">
+
+                {blogs.map((blog, index) => {
+                  return (
+                    <div className="column is-12">
+                      <div className="columns">
+
+                        <div className="blogDisplay">
+                          <div className="column is-1">
+                            <Link href={`/admin-blog/${blog.title}`}>
+                              <a>{blog.title}</a>
+                            </Link>
+                          </div>
+                          <div className="column is-1">{blog.date}</div>
+                          <div className="column is-1">{blog.views}</div>
+                          <div className="column is-1">{blog.live.toString()}</div>
+                          <div className="column is-1">{blog.category}</div>
+                        </div>
                       </div>
-                      <div className="col-xl-1">{blog.date}</div>
-                      <div className="col-xl-1">{blog.views}</div>
-                      <div className="col-xl-1">{blog.live.toString()}</div>
-                      <div className="col-xl-2">{blog.category}</div>
                     </div>
-                  </div>
-                );
-              })}
+                  );
+                })}
+              </div>
             </div>
           </div>
         </div>
