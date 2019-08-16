@@ -1,9 +1,9 @@
 import React from "react";
 import BookIcon from "../images/BookIcon.png";
-import Calc from "../images/calc.png";
-import Light from "../images/light.png";
-import Mug from "../images/mug.png";
-import Pencil from "../images/pencil.png";
+import Calc from "../images/Calc.png";
+import Light from "../images/Light.png";
+import Mug from "../images/Mug.png";
+import Pencil from "../images/Pencil.png";
 import Link from "next/link";
 const MobileIcons = () => {
   return (
