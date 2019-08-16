@@ -8,7 +8,7 @@ import Link from "next/link";
 import api from "../utils/api";
 import Footer from "../Components/Footer";
 import Socials from "../Components/Socials";
-import SBtn from "../Components/Sbtn";
+import SBtn from "../Components/SBtn";
 import Jenn from "../images/jennphoto.png";
 function Meet(props) {
   const info = [
