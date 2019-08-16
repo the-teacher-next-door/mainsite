@@ -21,10 +21,10 @@ import BlogSlider from "../Components/BlogSlider";
 import api from "../utils/api";
 import IconImages from "../Components/IconImages";
 import Book from "../images/BookIcon.png";
-import Calculator from "../images/calc.png";
-import Pencil from "../images/pencil.png";
-import Light from "../images/light.png";
-import Mug from "../images/mug.png";
+import Calculator from "../images/Calc.png";
+import Pencil from "../images/Pencil.png";
+import Light from "../images/Light.png";
+import Mug from "../images/Mug.png";
 const BlogPage = props => {
   const categories = props.blogs.category.split(",");
   const [blogs, setBlogs] = useState([]);
@@ -132,7 +132,7 @@ const BlogPage = props => {
   );
 };
 
-BlogPage.getInitialProps = async function({ req, query }) {
+BlogPage.getInitialProps = async function ({ req, query }) {
   console.log(query);
   const baseUrl = req ? `${req.protocol}://${req.get("Host")}` : "";
   const response = await fetch(baseUrl + "/api/blog/load/" + query.q);
