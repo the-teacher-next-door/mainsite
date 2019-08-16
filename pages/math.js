@@ -12,7 +12,7 @@ import R1 from "../images/math1.jpg";
 import R2 from "../images/math2.jpg";
 import R3 from "../images/math3.jpg";
 import IconImages from "../Components/IconImages";
-import Calculator from "../images/calc.png";
+import Calculator from "../images/Calc.png";
 import Paper from "../images/V.png";
 import PBtn from "../Components/PBtn";
 const Blogs = props => {
@@ -116,7 +116,7 @@ const Blogs = props => {
     </Layout>
   );
 };
-Blogs.getInitialProps = async function({ req, query }) {
+Blogs.getInitialProps = async function ({ req, query }) {
   const baseUrl = req ? `${req.protocol}://${req.get("Host")}` : "";
   const response = await fetch(baseUrl + "/api/blog/search/" + query.q);
 
