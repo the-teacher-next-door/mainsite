@@ -1,0 +1,33 @@
+.categoryPages {
+
+  .titlebox {
+    padding-bottom: 70px !important;
+    padding-top: 70px;
+  }
+
+  .featured {
+    padding: 50px 0;
+  }
+
+  .secondary-title {
+    padding: 20px;
+  }
+
+  .blog-container {
+    padding: 50px;
+  }
+
+  .padding-50 {
+    padding-bottom: 50px;
+  }
+
+  .button-column {
+
+    padding-bottom: 40px;
+  }
+}
+
+
+@include for-tablet-landscape-up {
+  padding: 20px;
+}

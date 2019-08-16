@@ -1,0 +1,159 @@
+@mixin for-phone-only {
+  @media (max-width: 768px) {
+    @content;
+  }
+}
+
+@mixin for-768-and-up {
+  @media (min-width: 768px) {
+    @content;
+  }
+}
+
+@mixin for-tablet-portrait-up {
+  @media (min-width: 900px) {
+    @content;
+  }
+}
+
+@mixin for-tablet-landscape-up {
+  @media (min-width: 1200px) {
+    @content;
+  }
+}
+
+@mixin for-desktop-up {
+  @media (min-width: 1410px) {
+    @content;
+  }
+}
+
+@mixin for-big-desktop-up {
+  @media (min-width: 1800px) {
+    @content;
+  }
+}
+
+@include for-phone-only {
+  .icon-nav {
+    display: none !important;
+  }
+}
+
+@include for-768-and-up {
+  .icon-nav {
+    display: none !important;
+  }
+}
+
+
+@include for-tablet-landscape-up {
+  .icon-nav {
+    max-height: 180px;
+    height: 100%;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.226);
+    background-color: #fff !important;
+    display: block !important;
+
+    .logo {
+      max-width: 400px;
+      width: 100%;
+      height: auto;
+    }
+
+    .navbar-end {
+      display: flex;
+      justify-content: flex-end;
+      align-content: center;
+      align-items: center;
+    }
+
+    a {
+      font-family: 'Lato', sans-serif;
+      font-size: 10px;
+      color: $darkPurple;
+      text-transform: uppercase;
+      max-width: 82px;
+
+    }
+
+    .icons {
+      width: 52px;
+    }
+
+    .icon-link-tags {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    ul li {
+      float: left;
+      padding: 0px 10px;
+      height: 100%;
+      display: flex;
+      align-items: center;
+    }
+
+    ul {
+      margin: 0;
+    }
+  }
+}
+
+
+@include for-desktop-up {
+
+  .icon-nav {
+    max-height: 180px;
+    height: 100%;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.226);
+    background-color: #fff !important;
+
+    .logo {
+      max-width: 600px;
+      width: 100%;
+      height: auto;
+    }
+
+    .navbar-end {
+      display: flex;
+      justify-content: flex-end;
+      align-content: center;
+      align-items: center;
+    }
+
+    a {
+      font-family: 'Lato', sans-serif;
+      font-size: 15px;
+      color: $darkPurple;
+      text-transform: uppercase;
+      max-width: 82px;
+
+    }
+
+    .icons {
+      width: 72px;
+    }
+
+    .icon-link-tags {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    ul li {
+      float: left;
+      padding: 0px 20px;
+      height: 100%;
+      display: flex;
+      align-items: center;
+    }
+
+    ul {
+      margin: 0;
+    }
+  }
+}

@@ -1,0 +1,258 @@
+@mixin for-phone-only {
+  @media (max-width: 768px) {
+    @content;
+  }
+}
+
+@mixin for-768-and-up {
+  @media (min-width: 768px) {
+    @content;
+  }
+}
+
+@mixin for-tablet-portrait-up {
+  @media (min-width: 900px) {
+    @content;
+  }
+}
+
+@mixin for-tablet-landscape-up {
+  @media (min-width: 1200px) {
+    @content;
+  }
+}
+
+@mixin for-desktop-up {
+  @media (min-width: 1410px) {
+    @content;
+  }
+}
+
+@mixin for-big-desktop-up {
+  @media (min-width: 1800px) {
+    @content;
+  }
+}
+
+@include for-phone-only {
+  nav {
+    display: none !important;
+  }
+}
+
+@include for-768-and-up {
+  nav {
+    display: none !important;
+  }
+}
+
+
+@include for-tablet-landscape-up {
+  nav {
+    background-color: $lightPurple !important;
+    display: block !important;
+
+    a {
+      font-size: 12px;
+    }
+
+    ul li {
+      float: left;
+      padding: 0px 10px;
+      height: 100%;
+      display: flex;
+      align-items: center;
+    }
+
+    ul {
+      margin: 0;
+    }
+
+    form {
+      display: flex;
+    }
+
+    .navbar-start {
+
+
+
+      span {
+        display: flex;
+        justify-content: center;
+        color: $white;
+        align-items: center;
+      }
+    }
+
+    .searchBar {
+      background-color: $white;
+      color: $white;
+      width: 100%;
+      color: $darkPurple;
+      left: 0;
+      position: relative;
+      padding: 6px;
+      border-radius: 8px 0 0 8px;
+      border: 1px solid $white;
+      font-family: 'Roboto', sans-serif;
+      text-transform: uppercase;
+    }
+
+    .searchBar::placeholder {
+      color: $lightPurple;
+    }
+
+    button {
+      background-color: $lightPurple !important;
+      color: $white;
+      padding: 0;
+      border: 1px solid $white !important;
+    }
+
+    .socials {
+      font-size: 20px;
+    }
+
+    a {
+      font-family: 'Roboto', sans-serif;
+      background: none;
+      color: $white;
+      padding: 0;
+    }
+
+    .admin-nav {
+      border-bottom: 1px solid #c6c6c6;
+    }
+
+    .title {
+      font-weight: 700;
+      color: $white;
+    }
+
+    #navbarNav {
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .primary-button {
+      margin: 0;
+      padding: 3px 10px 3px 10px;
+      border: 3px solid #45316d;
+      width: 40px;
+
+      transition: all 0.5s ease;
+    }
+
+    .primary-button:hover {
+      background-color: #001f3f;
+    }
+  }
+}
+
+@include for-desktop-up {
+
+
+  nav {
+    background-color: $lightPurple !important;
+
+    a {
+      font-size: 12px;
+    }
+
+    ul li {
+      float: left;
+      padding: 0px 10px;
+      height: 100%;
+      display: flex;
+      align-items: center;
+    }
+
+    ul {
+      margin: 0;
+    }
+
+    form {
+      display: flex;
+    }
+
+    .navbar-start {
+
+
+
+      span {
+        display: flex;
+        justify-content: center;
+        color: $white;
+        align-items: center;
+      }
+    }
+
+    .searchBar {
+      background-color: $white;
+      color: $white;
+      width: 100%;
+      color: $darkPurple;
+      left: 0;
+      position: relative;
+      padding: 6px;
+      border-radius: 8px 0 0 8px;
+      border: 1px solid $white;
+      font-family: 'Roboto', sans-serif;
+      text-transform: uppercase;
+    }
+
+    .searchBar::placeholder {
+      color: $lightPurple;
+    }
+
+    button {
+      background-color: $lightPurple !important;
+      color: $white;
+      padding: 0;
+      border: 1px solid $white !important;
+    }
+
+    .socials {
+      font-size: 20px;
+    }
+
+    a {
+      font-family: 'Roboto', sans-serif;
+      background: none;
+      color: $white;
+      padding: 0;
+    }
+
+    .admin-nav {
+      border-bottom: 1px solid #c6c6c6;
+    }
+
+    .title {
+      font-weight: 700;
+      color: $white;
+    }
+
+    #navbarNav {
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .primary-button {
+      margin: 0;
+      padding: 3px 10px 3px 10px;
+      border: 3px solid #45316d;
+      width: 40px;
+
+      transition: all 0.5s ease;
+    }
+
+    .primary-button:hover {
+      background-color: #001f3f;
+    }
+  }
+
+}

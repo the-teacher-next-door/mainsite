@@ -1,0 +1,64 @@
+@mixin for-tablet-portrait-up {}
+
+@mixin for-phone-only {}
+
+@mixin for-phone-only {
+  @media (max-width: 599px) {
+    @content;
+  }
+}
+
+@mixin for-tablet-portrait-up {
+  @media (min-width: 600px) {
+    @content;
+  }
+}
+
+@mixin for-tablet-landscape-up {
+  @media (min-width: 900px) {
+    @content;
+  }
+}
+
+@mixin for-desktop-up {
+  @media (min-width: 1200px) {
+    @content;
+  }
+}
+
+@mixin for-big-desktop-up {
+  @media (min-width: 1800px) {
+    @content;
+  }
+}
+
+
+.freebies {
+  ul {
+    list-style-type: disc;
+  }
+
+  .freebie-img {
+    max-width: 200px;
+    width: 100%;
+  }
+
+  .freebie-display {
+    background-color: #ffffff;
+    border-top: 1px solid rgba(0, 0, 0, 0.226);
+  }
+
+  .padding-30 {
+    padding: 30px;
+
+  }
+
+  .login-form {
+    width: 100%;
+  }
+
+  .top-section {
+    background-color: #f2f2f2;
+    padding: 20px;
+  }
+}

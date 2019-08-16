@@ -1,0 +1,30 @@
+@mixin for-phone-only {
+  @media (max-width: 768px) {
+    @content;
+  }
+}
+
+@mixin for-768-and-up {
+  @media (min-width: 768px) {
+    @content;
+  }
+}
+
+@mixin for-tablet-landscape-up {
+  @media (min-width: 1200px) {
+    @content;
+  }
+}
+
+@include for-phone-only {
+  .mobileNav {
+    display: block !important;
+    background-color: $lightPurple;
+  }
+}
+
+@include for-768-and-up {
+  .mobileNav {
+    display: none !important;
+  }
+}

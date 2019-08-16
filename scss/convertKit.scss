@@ -1,0 +1,110 @@
+@mixin for-tablet-portrait-up {}
+
+@mixin for-phone-only {}
+
+@mixin for-phone-only {
+  @media (max-width: 599px) {
+    @content;
+  }
+}
+
+@mixin for-tablet-portrait-up {
+  @media (min-width: 600px) {
+    @content;
+  }
+}
+
+@mixin for-tablet-landscape-up {
+  @media (min-width: 900px) {
+    @content;
+  }
+}
+
+@mixin for-desktop-up {
+  @media (min-width: 1200px) {
+    @content;
+  }
+}
+
+@mixin for-big-desktop-up {
+  @media (min-width: 1800px) {
+    @content;
+  }
+}
+
+
+.convertKit {
+  background-color: $lightBlue;
+  padding: 50px !important;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+
+  input {
+    border-radius: 4px;
+    border: 2px solid #231942;
+    padding: 20px 0 20px 50px;
+    width: 100%;
+  }
+
+  input::placeholder {
+    font-family: 'Lato',
+      sans-serif;
+    color: #A3A7BA;
+    text-transform: uppercase;
+  }
+
+  select {
+    border-radius: 4px;
+    border: 2px solid #231942;
+    padding: 18px 0 20px 50px;
+    width: 100%;
+  }
+
+  i {
+    position: absolute;
+    left: 12px;
+    top: 12px;
+    border: 2px solid #231942;
+    border-radius: 4px 0 0 4px;
+    background-color: #7C7093;
+    padding: 22px 9px 20px 9px;
+    color: #eeeeee;
+  }
+
+  h1 {
+    color: $darkPurple;
+    text-shadow: 0 3px 6px rgba(0, 0, 0, 0.308);
+  }
+
+  h2 {
+    color: $darkPurple;
+    padding: 10px;
+    text-shadow: 0 3px 6px rgba(0, 0, 0, 0.308);
+  }
+
+  p {
+    padding-bottom: 40px;
+    color: $darkPurple;
+    text-shadow: 0 3px 6px rgba(0, 0, 0, 0.308);
+  }
+
+  button {
+    margin: 10px;
+  }
+}
+
+@include for-tablet-landscape-up {
+  padding: 20px;
+}
+
+@mixin for-tablet-portrait-up {}
+
+@mixin for-phone-only {}
+
+@mixin for-phone-only {
+  @media (max-width: 599px) {
+    @content;
+  }
+}

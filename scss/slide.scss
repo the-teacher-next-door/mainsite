@@ -1,0 +1,84 @@
+@mixin for-tablet-portrait-up {}
+
+@mixin for-phone-only {}
+
+@mixin for-phone-only {
+  @media (max-width: 599px) {
+    @content;
+  }
+}
+
+@mixin for-tablet-portrait-up {
+  @media (min-width: 600px) {
+    @content;
+  }
+}
+
+@mixin for-tablet-landscape-up {
+  @media (min-width: 900px) {
+    @content;
+  }
+}
+
+@mixin for-desktop-up {
+  @media (min-width: 1200px) {
+    @content;
+  }
+}
+
+@mixin for-big-desktop-up {
+  @media (min-width: 1800px) {
+    @content;
+  }
+}
+
+
+.slide {
+  margin-bottom: 10px;
+  position: relative;
+  z-index: 1;
+  transition: all 0.5s ease;
+
+  .header {
+    background-color: #ffffff;
+  }
+
+  .category {
+    padding: 2px 5px 5px 2px;
+    color: #8D8D8D
+  }
+
+  p {
+    color: $darkPurple;
+    font-weight: 700;
+  }
+}
+
+.slide:hover {
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.24);
+  transform: scale(1.1);
+  position: relative;
+  z-index: 2;
+  border-radius: 0 0 8px 8px;
+
+  .header {
+    background-color: #ffffff;
+  }
+}
+
+.header {
+  padding: 20px;
+  text-align: left;
+  font-size: 14px;
+  border-radius: 0 0 8px 8px;
+}
+
+.slider-img {
+  width: 100%;
+  border-radius: 8px;
+}
+
+
+@include for-tablet-landscape-up {
+  padding: 20px;
+}

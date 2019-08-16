@@ -1,0 +1,70 @@
+@mixin for-tablet-portrait-up {}
+
+@mixin for-phone-only {}
+
+@mixin for-phone-only {
+  @media (max-width: 599px) {
+    @content;
+  }
+}
+
+@mixin for-tablet-portrait-up {
+  @media (min-width: 600px) {
+    @content;
+  }
+}
+
+@mixin for-tablet-landscape-up {
+  @media (min-width: 900px) {
+    @content;
+  }
+}
+
+@mixin for-desktop-up {
+  @media (min-width: 1200px) {
+    @content;
+  }
+}
+
+@mixin for-big-desktop-up {
+  @media (min-width: 1800px) {
+    @content;
+  }
+}
+
+.slick-track {
+  display: flex;
+
+
+  img {
+    max-width: 500px;
+    padding: 20px;
+  }
+
+  .grey {
+    background-color: rgb(231, 231, 231);
+  }
+
+}
+
+.collections {
+
+  a {
+    padding: 10px 40px 10px 40px;
+    border-radius: 4px;
+  }
+}
+
+@include for-tablet-landscape-up {
+  padding: 20px;
+}
+
+@mixin for-tablet-portrait-up {}
+
+@mixin for-phone-only {}
+
+@mixin for-phone-only {
+  @media (max-width: 599px) {
+    @content;
+  }
+}

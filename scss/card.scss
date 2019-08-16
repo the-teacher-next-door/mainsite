@@ -1,0 +1,27 @@
+.card {
+  h2 {
+    text-overflow: ellipsis;
+    /* color: black; */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding: 20px;
+  }
+
+  .card-footer-item {
+    transition: all .5s ease;
+
+    &:hover {
+      transform: translate(1.5px);
+      background-color: $lightBlue;
+    }
+  }
+
+  .secondary-button {
+    border: none;
+
+    &:hover {
+      border: none;
+    }
+  }
+}
