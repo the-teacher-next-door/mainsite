@@ -3,3 +3,66 @@ $lightPurple: #7C7093;
 $lightBlue: #BCE7FD;
 $darkBlue: #6CCFF6;
 $white: #ffffff;
+
+
+// * mixins
+
+//Paddings---------------------------------------------------|
+@mixin large-padding-top {
+  padding-top: 50px;
+}
+
+@mixin large-padding-bottom {
+  padding-bottom: 50px;
+}
+
+@mixin medium-padding-top {
+  padding-bottom: 30px;
+}
+
+@mixin medium-padding-bottom {
+  padding-bottom: 30px;
+}
+
+@mixin small-padding-top {
+  padding-bottom: 10px;
+}
+
+@mixin small-padding-bottom {
+  padding-bottom: 10px;
+}
+
+@mixin large-padding-right {
+  padding-top: 50px;
+}
+
+@mixin large-padding-left {
+  padding-bottom: 50px;
+}
+
+@mixin medium-padding-right {
+  padding-bottom: 30px;
+}
+
+@mixin medium-padding-left {
+  padding-bottom: 30px;
+}
+
+@mixin small-padding-right {
+  padding-bottom: 10px;
+}
+
+@mixin small-padding-left {
+  padding-bottom: 10px;
+}
+
+@mixin custom-padding($top, $left, $right, $bottom) {
+  padding: $top, $right, $bottom, $left;
+}
+
+
+//Borders---------------------------------------------------\
+
+@mixin border-bottom {
+  border-bottom: 1px solid #f2f2f2;
+}

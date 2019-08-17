@@ -109,5 +109,8 @@ export default {
   },
   saveBooks: data => {
     return axios.put(`/api/book/save`, data);
+  },
+  sendEmail: data => {
+    return axios.post(`/api/email/send`, data);
   }
 };

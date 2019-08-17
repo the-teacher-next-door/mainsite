@@ -14,6 +14,7 @@ const MongoDBStore = require("connect-mongodb-session")(session);
 const db = require("./Models");
 const LocalStrategy = require("passport-local").Strategy;
 const bcrypt = require("bcrypt");
+const nodemailer = require("nodemailer");
 //routes imports
 const User = require("./Routes/userRoutes");
 const Blogs = require("./Routes/blogRoutes");
@@ -280,6 +281,8 @@ nextApp
       return handle(req, res);
     });
 
+    // upload routes
+
     server.post("/api/upload", (req, res) => {
       console.log(req.file);
       upload(req, res, err => {
@@ -357,6 +360,42 @@ nextApp
       });
     });
 
+    server.post(`/api/email/send`, async (req, res) => {
+      const email_format = `
+        <ul>
+          <li>${req.body.name}</li> 
+          <li>${req.body.email}</li>
+        </ul>
+
+        <h3>Email</h3>
+        <p>${req.body.text}</p>
+
+        
+      `;
+
+      let transporter = nodemailer.createTransport({
+        host: "smtp.mail.yahoo.com",
+        port: 465,
+        service: "yahoo",
+        secure: false,
+        auth: {
+          user: "bobbyboyd.a@yahoo.com", // generated ethereal user
+          pass: "sac6kings" // generated ethereal password
+        }
+      });
+
+      // send mail with defined transport object
+      let info = await transporter.sendMail({
+        from: '"Teacher Next Door Contact Form" <bobbyboyd.a@yahoo.com>', // sender address
+        to: "bboyd2008@gmail.com", // list of receivers
+        subject: "The Teacher Next Door Contact Form", // Subject line
+        text: "Hello world?", // plain text body
+        html: email_format // html body
+      });
+      res.send("sent");
+
+      console.log("Message sent: %s", info.messageId);
+    });
     server.listen(port, err => {
       if (err) throw err;
       console.log("> Ready on http://localhost:3000");
