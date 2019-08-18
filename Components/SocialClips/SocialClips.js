@@ -46,11 +46,11 @@ class SocialClips extends Component {
               <div className="column is-4">
                 <h2>Instagram</h2>
                 <iframe
-                  src="//lightwidget.com/widgets/ea1e46164c8058c9bdca119a327a1ce4.html"
+                  src="//lightwidget.com/widgets/f1774a3b24a655c084ebfe1ac596c67d.html"
                   scrolling="no"
                   allowtransparency="true"
                   class="lightwidget-widget"
-                  style={{ width: "100%", border: "0", overflow: "hidden" }}
+                  style="width:100%;border:0;overflow:hidden;"
                 ></iframe>
               </div>
             </div>
