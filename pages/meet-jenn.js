@@ -10,6 +10,10 @@ import Footer from "../Components/Footer";
 import Socials from "../Components/Socials";
 import SBtn from "../Components/SBtn";
 import Jenn from "../images/jennphoto.png";
+import TitleComponent from "../Components/TitleComponent";
+import Book from "../images/B.png";
+import ContainerFluid from "../Components/FormatComponents/ContainerFluid";
+import Container from "../Components/FormatComponents/Container";
 function Meet(props) {
   const info = [
     {
@@ -187,26 +191,27 @@ function Meet(props) {
             </div>
           </div>
         </div>
-
-        <div className="columns is-centered is-multiline">
-          <div className="column is-6 has-text-centered">
-            <div className="books">
-              <h1>My Books</h1>
+        <Container>
+          <div className="books">
+            <TitleComponent img={Book} h1="My Books" />
+            <div className="columns is-centered is-multiline">
               {books.map(book => {
                 return (
-                  <Link href={book.link}>
-                    <a className="book">
-                      <div className="bookLink">
-                        <img src={book.img} alt="" />
-                        <p>{book.name}</p>
-                      </div>
-                    </a>
-                  </Link>
+                  <div className="column is-3 has-text-centered">
+                    <Link href={book.link}>
+                      <a className="book">
+                        <div className="bookLink">
+                          <img src={book.img} alt="" />
+                          <p>{book.name}</p>
+                        </div>
+                      </a>
+                    </Link>
+                  </div>
                 );
               })}
             </div>
           </div>
-        </div>
+        </Container>
         <Footer />
       </div>
     </Layout>
