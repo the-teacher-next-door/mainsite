@@ -3,14 +3,14 @@ import Jenn from "../images/jennphoto.png";
 import PBtn from "./PBtn";
 const AboutSection = props => {
   return (
-    <div className="container-fluid about padding-top-30">
+    <div className="container-fluid about">
       <div className="columns is-centered">
         <div className="column is-8">
           <img className="profile-img" src={Jenn} alt="" />
         </div>
       </div>
       <div className="columns is-centered">
-        <div className="column is-6 padding-30">
+        <div className="column is-6 ">
           <h2>
             Welcome, teacher friends! I’m Jenn Larson, a teacher, a mother, and
             a writer. My goal is to provide resources, tips, and strategies to

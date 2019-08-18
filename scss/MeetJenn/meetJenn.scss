@@ -1,9 +1,7 @@
 .meet {
   overflow: hidden;
 
-  .column {
-    padding: 50px;
-  }
+  .column {}
 
 
   .miniNav {}
@@ -11,7 +9,7 @@
   .aboutSection {
     background-color: #F2F2F2;
     min-height: 725px;
-
+    @include large-padding-top;
 
     ul {
 
@@ -35,6 +33,7 @@
       flex-direction: column;
       justify-content: flex-start;
       /* text-align: left; */
+      @include medium-padding-top;
       align-items: flex-start;
       min-height: 484px;
     }
