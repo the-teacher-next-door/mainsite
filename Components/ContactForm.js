@@ -87,7 +87,7 @@ const ContactForm = props => {
                 <option value="testimonial">Testimonial</option>
                 <option value="other">Other</option>
               </select>
-              <i class="fas fa-graduation-cap"></i>
+              <i className="fas fa-info"></i>
             </div>
           </div>
           <Container>
