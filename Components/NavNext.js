@@ -19,38 +19,38 @@ const NavNext = ({ user, history }) => {
               <ul>
                 <li>
                   <Link href="/">
-                    <a>HOME</a>
+                    <a>Home</a>
                   </Link>
                 </li>
                 <li>
                   <Link href="/my-blog">
-                    <a>BLOG</a>
+                    <a>Blog</a>
                   </Link>
                 </li>
                 <li>
                   <Link href="https://www.teacherspayteachers.com/Store/The-Teacher-Next-Door">
-                    <a>MY STORE</a>
+                    <a>My Store</a>
                   </Link>
                 </li>
                 <li>
                   {user ? (
                     <Link href="/teacher-freebies">
-                      <a>FREEBIES</a>
+                      <a>Freebies</a>
                     </Link>
                   ) : (
                     <Link href="/freebies-register">
-                      <a>FREEBIES</a>
+                      <a>Freebies</a>
                     </Link>
                   )}
                 </li>
                 <li>
                   <Link href="/meet-jenn">
-                    <a>MEET JENN</a>
+                    <a>Meet Jenn</a>
                   </Link>
                 </li>
                 <li>
                   <Link href="/contact">
-                    <a>CONTACT</a>
+                    <a>Contact</a>
                   </Link>
                 </li>
                 <li>

@@ -112,5 +112,10 @@ export default {
   },
   sendEmail: data => {
     return axios.post(`/api/email/send`, data);
+  },
+  getPins: () => {
+    return axios.get(
+      "https://api.pinterest.com/v1/me/pins/?access_token=AgmenqdC86FIzpmol42XLIUgwRuvFbvZhm6-MqlGFc3CdWDLDwWKwDAAADV4RhXQBhAAuCYAAAAA"
+    );
   }
 };

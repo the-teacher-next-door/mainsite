@@ -54,7 +54,7 @@
     @include border-bottom;
 
     a {
-      font-size: 12px;
+      font-size: 15px;
     }
 
     ul li {
@@ -94,7 +94,6 @@
       border-radius: 8px 0 0 8px;
       border: 1px solid $white;
       font-family: 'Roboto', sans-serif;
-      text-transform: uppercase;
     }
 
     .searchBar::placeholder {
@@ -157,7 +156,7 @@
     background-color: $lightPurple !important;
 
     a {
-      font-size: 12px;
+      font-size: 15px;
     }
 
     ul li {
@@ -199,7 +198,6 @@
       border-radius: 8px 0 0 8px;
       border: 1px solid $white;
       font-family: 'Roboto', sans-serif;
-      text-transform: uppercase;
     }
 
     .searchBar::placeholder {

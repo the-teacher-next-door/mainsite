@@ -6,19 +6,23 @@ import PBtn from "./PBtn";
 import IconImage from "./IconImages";
 import Paper from "../images/V.png";
 import Card from "./Card";
+import TitleComponent from "./TitleComponent";
+import ContainerFluid from "./FormatComponents/ContainerFluid";
+import Container from "./FormatComponents/Container";
+import Columns from "./FormatComponents/Columns";
+import Column from "./FormatComponents/Column";
 const BlogSlider = props => (
   <Layout>
-    <div className="container-fluid padding-30 light-purple blog-slider">
-      <div className="container white-bg padding-30">
-        <IconImage img={Paper} />
-        <h1 className="padding-bottom-30">Recent Blogs</h1>
-        <div className="columns is-multiline is-centered">
+    <ContainerFluid className="light-gray-background blog-slider">
+      <Container>
+        <TitleComponent img={Paper} h1="Recent Blogs" />
+        <Columns className="is-multiline is-centerd">
           {props.blogs.map((blog, index) => {
             if (blog.live && index < 8) {
               let cleanTitle = blog.title.replace(" ", "-");
               console.log(cleanTitle);
               return (
-                <div className="column is-3" key={index}>
+                <Column className="is-3" key={index}>
                   <Link
                     as={`/blog/${cleanTitle}`}
                     href={`/blog?q=${blog.title}`}
@@ -32,21 +36,20 @@ const BlogSlider = props => (
                       />
                     </a>
                   </Link>
-                </div>
+                </Column>
               );
             }
           })}
-        </div>
-        <div className="container-fluid">
-          <div className="columns is-centered">
-            <div className="column is-2">
+        </Columns>
+        <ContainerFluid>
+          <Columns className="is-centered">
+            <Column className="is-2">
               <PBtn className="margin-top-30">Read More</PBtn>
-            </div>
-          </div>
-        </div>
-      </div>
-      <style jsx>{``}</style>
-    </div>
+            </Column>
+          </Columns>
+        </ContainerFluid>
+      </Container>
+    </ContainerFluid>
   </Layout>
 );
 

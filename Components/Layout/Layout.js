@@ -14,7 +14,6 @@ const Layout = props => {
           rel="stylesheet"
         ></link>
         <script src="https://kit.fontawesome.com/33b13ebe41.js"></script>
-        <script async defer src="//assets.pinterest.com/js/pinit.js"></script>
       </Head>
       <MobileNav />
       <TabletNav />

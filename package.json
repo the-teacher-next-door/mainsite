@@ -70,6 +70,7 @@
     "react-helmet": "^5.2.1",
     "react-infinite-scroller": "^1.2.4",
     "react-multi-carousel": "^2.1.2",
+    "react-pinterest": "^1.2.0",
     "react-scripts": "3.0.0",
     "react-share": "^3.0.0",
     "react-slick": "^0.24.0",

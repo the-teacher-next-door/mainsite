@@ -10,7 +10,7 @@
 
   .aboutSection {
     background-color: #F2F2F2;
-
+    min-height: 725px;
 
 
     ul {
@@ -25,6 +25,8 @@
 
     .socials {
       margin-top: 20px;
+      position: absolute;
+      bottom: 0;
     }
 
     .info {
@@ -34,6 +36,7 @@
       justify-content: flex-start;
       /* text-align: left; */
       align-items: flex-start;
+      min-height: 484px;
     }
 
     h1 {
@@ -55,9 +58,9 @@
 
     .imgColumn {
 
-      justify-content: flex-end;
+      justify-content: center;
       align-content: flex-end;
-      align-items: flex-end;
+      align-items: center;
       display: flex;
 
       .aboutImg {

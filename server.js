@@ -228,6 +228,10 @@ nextApp
       return nextApp.render(req, res, "/my-blog", { q: req.params.slug });
     });
 
+    server.get("/contact", (req, res) => {
+      return nextApp.render(req, res, "/contact");
+    });
+
     server.get("/admin", (req, res) => {
       db.users.findById(req.user).then(user => {
         if (req.isAuthenticated() && user.username === "admin") {

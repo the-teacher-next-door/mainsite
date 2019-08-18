@@ -5,7 +5,7 @@
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-    padding: 20px;
+    @include medium-padding-bottom;
   }
 
   .card-footer-item {

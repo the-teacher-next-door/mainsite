@@ -66,28 +66,6 @@ const AboutSection = props => {
           </ul>
         </div>
       </div>
-      <style jsx global>
-        {`
-          .profile-img {
-            width: 270px;
-          }
-
-          .about ul {
-            list-style-type: none;
-            width: 100%;
-            text-align: center;
-            display: flex;
-            justify-content: center;
-          }
-
-          .about ul li a {
-            float: left;
-            margin: 10px;
-            font-size: 25px;
-            color: #695395;
-          }
-        `}
-      </style>
     </div>
   );
 };

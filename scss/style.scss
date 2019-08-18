@@ -1,23 +1,26 @@
 @import './_vars.scss';
-@import "./navbar.scss";
-@import "./adminnav.scss";
-@import "./admin.scss";
-@import "./adminlogin.scss";
-@import "./iconNav.scss";
-@import "./convertKit.scss";
-@import "./collectionSlider.scss";
-@import "./slide.scss";
-@import "./my-blog.scss";
-@import "./blog.scss";
-@import "./miniConvert.scss";
-@import "./draftjs.scss";
-@import "./reading.scss";
-@import "./commentCard.scss";
-@import "./freebies.scss";
-@import "./mobileNav.scss";
-@import "./tabletNav.scss";
-@import "./meetJenn.scss";
-@import "./card.scss";
+@import "./Navbar/navbar.scss";
+@import "./Admin/adminnav.scss";
+@import "./Admin/admin.scss";
+@import "./Admin/adminlogin.scss";
+@import "./Navbar/iconNav.scss";
+@import "./ConvertKit/convertKit.scss";
+@import "./Homepage/collectionSlider.scss";
+@import "./Homepage/AboutSection.scss";
+@import "./ConvertKit/slide.scss";
+@import "./Blog/my-blog.scss";
+@import "./Blog/blog.scss";
+@import "./MiniConvert/miniConvert.scss";
+@import "./Blog/draftjs.scss";
+@import "./Reading/reading.scss";
+@import "./CommentCard/commentCard.scss";
+@import "./Freebies/freebies.scss";
+@import "./Navbar/mobileNav.scss";
+@import "./Navbar/tabletNav.scss";
+@import "./MeetJenn/meetJenn.scss";
+@import "./Card/card.scss";
+@import "./Contact/contact_Page.scss";
+@import "./BlogSlider/blog-slider.scss";
 @import "../node_modules/bulma/bulma.sass";
 
 $primary: 'Cabin',
@@ -67,7 +70,8 @@ $light: 200;
 
 
 a {
-  font-family: $secondary;
+  font-family: $tertiary !important;
+  font-size: 15px;
 }
 
 nav {
@@ -78,7 +82,6 @@ nav {
 h2 {
   font-family: $secondary;
   font-weight: $bold;
-  font-style: italic;
   font-size: 20px;
 }
 
@@ -101,8 +104,13 @@ p {
   font-size: 15px;
 }
 
-.padding-bottom-30 {
-  padding-bottom: 30px;
+//backgrounds
+.light-gray-background {
+  background-color: $light-gray-background;
+}
+
+.medium-padding-bottom {
+  @include medium-padding-bottom;
 }
 
 .margin-top-30 {
@@ -181,21 +189,6 @@ p {
   margin: 10px;
 }
 
-.about {
-  background-color: $lightBlue;
-  text-align: center;
-
-  .social-icons {
-    background: none;
-    color: $darkPurple;
-    border: none;
-    font-size: 20px;
-    padding-top: 20px;
-    text-transform: none;
-
-  }
-
-}
 
 .external {
   padding: 10px 40px;
