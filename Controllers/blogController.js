@@ -44,8 +44,7 @@ module.exports = {
         title: req.body.title,
         live: false,
         views: 0,
-        category: "Reading",
-        description: ""
+        category: "Reading"
       })
       .then(done => {
         res.send(done);
