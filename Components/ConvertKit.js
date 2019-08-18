@@ -11,7 +11,8 @@ class ConvertKit extends Component {
     tags: "",
     loading: false,
     title: this.props.title,
-    button: "Yes, Please"
+    button: "Yes, Please",
+    errorText: ""
   };
 
   /**
@@ -19,31 +20,46 @@ class ConvertKit extends Component {
    * @param {*} e
    */
   submitForm = e => {
-    this.onSuccess();
     e.preventDefault();
-    console.log(e.target);
-    let data = {
-      first_name: this.state.name,
-      email: this.state.email,
-      tags: this.state.tags
-    };
-
-    /**
-     * submit the subscriber and update the form
-     */
-    api.submitSubscriber(data).then(data => {
+    if (this.state.name === "") {
       this.setState({
-        loading: false,
-        title: "Check your email!",
-        name: "",
-        email: "",
-        button: "SUBMITTED"
+        errorText: "Name is required."
       });
-      document.getElementById("convert-name").value = "";
-      document.getElementById("convert-email").value = "";
-      document.getElementById("convert-select").value = "grade";
-      console.log(data);
-    });
+    } else if (this.state.email === "") {
+      this.setState({
+        errorText: "Email is required."
+      });
+    } else if (this.state.tags === "grade" || this.state.tags === "") {
+      this.setState({
+        errorText: "A grade must be selected."
+      });
+    } else {
+      this.onSuccess();
+      console.log(e.target);
+      let data = {
+        first_name: this.state.name,
+        email: this.state.email,
+        tags: this.state.tags
+      };
+
+      /**
+       * submit the subscriber and update the form
+       */
+      api.submitSubscriber(data).then(data => {
+        this.setState({
+          loading: false,
+          title: "Check your email!",
+          name: "",
+          email: "",
+          button: "SUBMITTED",
+          errorText: ""
+        });
+        document.getElementById("convert-name").value = "";
+        document.getElementById("convert-email").value = "";
+        document.getElementById("convert-select").value = "grade";
+        console.log(data);
+      });
+    }
   };
 
   /**
@@ -144,6 +160,7 @@ class ConvertKit extends Component {
             <div className="columns is-centered">
               <div className="column is-2">
                 <PBtn type="submit">{this.state.button}</PBtn>
+                <p className="errorText">{this.state.errorText}</p>
               </div>
             </div>
           </div>

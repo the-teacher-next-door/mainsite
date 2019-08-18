@@ -75,6 +75,7 @@
     "react-scripts": "3.0.0",
     "react-share": "^3.0.0",
     "react-slick": "^0.24.0",
+    "request": "^2.88.0",
     "visual-ajs": "^0.0.6"
   }
 }
