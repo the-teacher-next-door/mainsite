@@ -17,7 +17,7 @@ router.post("/login", function(req, res, next) {
     }
     // Redirect if it fails
     if (!user) {
-      return res.redirect("/login");
+      return res.redirect("/admin");
     }
     req.logIn(user._id, function(err) {
       if (err) {
@@ -25,7 +25,7 @@ router.post("/login", function(req, res, next) {
       }
       // Redirect if it succeeds
       console.log(user);
-      if (user.username === "admin") {
+      if (user.admin === true) {
         return res.redirect("/admin");
       } else {
         return res.redirect("/teacher-freebies");
