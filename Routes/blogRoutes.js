@@ -17,6 +17,7 @@ router.route("/blog/views").post(blogController.updateViews);
 router.route("/blog/new").post(blogController.new);
 
 router.route("/blog/search/:search").get(blogController.search);
+router.route("/blog/delete/:id").delete(blogController.delete);
 
 router.route("/blog/categorySearch/:search").get(blogController.categorySearch);
 module.exports = router;

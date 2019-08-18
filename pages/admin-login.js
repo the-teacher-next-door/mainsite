@@ -6,7 +6,6 @@ import AdminNav from "../Components/AdminNav/AdminNav";
 const Login = props => {
   return (
     <div className="login">
-      <AdminNav />
       <form className="login-form" action="/api/login" method="POST">
         <div className="form-group">
           <h2>The Teacher Next Door</h2>

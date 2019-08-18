@@ -112,5 +112,18 @@ module.exports = {
       .then(blogs => {
         res.send(blogs);
       });
+  },
+  delete: (req, res) => {
+    console.log(req.params.id);
+    db.blogs
+      .deleteOne({
+        _id: req.params.id
+      })
+      .then(data => {
+        res.send("deleted");
+      })
+      .catch(err => {
+        res.send("err");
+      });
   }
 };

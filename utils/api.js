@@ -27,6 +27,9 @@ export default {
   loadBlog: data => {
     return axios.get(`/api/blog/load/${data}`);
   },
+  deleteBlog: data => {
+    return axios.delete(`/api/blog/delete/${data}`);
+  },
   loadFour: category => {
     return axios.get(`/api/blog/loadFour/${category}`);
   },

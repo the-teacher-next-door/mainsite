@@ -58,8 +58,8 @@ const Admin = props => {
     <Layout>
       {/* toast message on error */}
       <Toast className={toastClass} text={toastText} />
+      <AdminNav />
       <div className="container-fluid admin">
-        <AdminNav />
         <div className="container">
           <div className="columns">
             <div className="column is-12">
@@ -91,12 +91,10 @@ const Admin = props => {
                 </div>
               </div>
               <div className="columns is-multiline">
-
                 {blogs.map((blog, index) => {
                   return (
                     <div className="column is-12">
                       <div className="columns">
-
                         <div className="blogDisplay">
                           <div className="column is-1">
                             <Link href={`/admin-blog/${blog.title}`}>
@@ -105,7 +103,9 @@ const Admin = props => {
                           </div>
                           <div className="column is-1">{blog.date}</div>
                           <div className="column is-1">{blog.views}</div>
-                          <div className="column is-1">{blog.live.toString()}</div>
+                          <div className="column is-1">
+                            {blog.live.toString()}
+                          </div>
                           <div className="column is-1">{blog.category}</div>
                         </div>
                       </div>

@@ -50,7 +50,7 @@
 @include for-tablet-landscape-up {
   nav {
     background-color: $lightPurple !important;
-    display: block !important;
+    display: flex !important;
     @include border-bottom;
 
     a {

@@ -30,7 +30,7 @@
 
 @include for-768-and-up {
   .tabletNav {
-    display: block !important;
+    display: flex !important;
     background-color: $lightPurple;
     position: relative;
     z-index: 3;

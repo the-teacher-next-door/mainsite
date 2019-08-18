@@ -125,9 +125,6 @@ const NewBlog = props => {
   };
 
   const save = async () => {
-    // TODO convertToRaw and save to db
-    //TODO convertFromRaw on blogPage w/ editor set to readonly
-
     if (titleInputVal !== "") {
       if (category !== "category") {
         console.log("save");
@@ -164,6 +161,14 @@ const NewBlog = props => {
     }
   };
 
+  const deleteBlog = e => {
+    api.deleteBlog(id).then(res => {
+      console.log(res);
+      if (res.data === "deleted") {
+        window.location.href = "/admin";
+      }
+    });
+  };
   const handleChange = event => {
     if (event.target.name === "titleInputVal") {
       setTitleInputVal(event.target.value);
@@ -220,6 +225,9 @@ const NewBlog = props => {
                       <i className="far fa-save"></i>
                     </PBtn>
                     <PBtn onClick={toggleLive}>Preview</PBtn>
+                    <PBtn onClick={deleteBlog}>
+                      <i className="far fa-trash-alt"></i>
+                    </PBtn>
                     <Input
                       placeholder="Image URL"
                       className="img-input"
