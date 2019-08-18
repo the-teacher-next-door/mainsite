@@ -58,7 +58,7 @@ const CommentCard = props => {
     setTextAreaError(false);
     setErrorMessage("");
 
-    let submit = await api.submitComment(data);
+    let submit = await api.submitReply(data);
     switch (submit.data.message) {
       case "name is required":
         setNameError(true);
@@ -68,8 +68,16 @@ const CommentCard = props => {
         setTextAreaError(true);
         setErrorMessage("Comment is required.");
         break;
+      case "Please select captcha.":
+        setErrorMessage("Please select captcha.");
+        break;
+      case "Failed verification":
+        setErrorMessage("Captcha failed.");
+        break;
       default:
-        setReplies(replies.data);
+        api.loadReplies(props.id).then(replies => {
+          setReplies(replies.data);
+        });
         break;
     }
   };
@@ -82,6 +90,10 @@ const CommentCard = props => {
       setButtonText("Close");
       form.style.display = "block";
     } else {
+      setNameError(false);
+      setTextAreaError(false);
+      setErrorMessage("");
+   
       setButtonText("Reply");
       form.style.display = "none";
     }
@@ -122,6 +134,7 @@ const CommentCard = props => {
               }`}
               placeholder="Add your reply..."
             ></textarea>
+
             <PBtn className="submitReplyBtn" type="submit">
               Submit Reply
             </PBtn>

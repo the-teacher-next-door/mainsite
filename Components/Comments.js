@@ -88,6 +88,7 @@ class Comments extends Component {
           <div className="contianer commentSubmitSection">
             <div className="columns is-multiline is-centered">
               <div className="column is-8 ">
+                <h1>Join the conversation!</h1>
                 <h2>
                   <i className="far fa-comments"></i>
                   <span> </span>
@@ -126,7 +127,9 @@ class Comments extends Component {
                         data-sitekey="6LdGlrMUAAAAACp_K0MkG53wJHR7NYARvxnOT6Cs"
                       ></div>
 
-                      <PBtn type="submit">Submit</PBtn>
+                      <PBtn type="submit" id="submitBtn">
+                        Submit
+                      </PBtn>
                       <p className="errorText">{this.state.errorMessage}</p>
                     </div>
                   </div>

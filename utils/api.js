@@ -98,6 +98,9 @@ export default {
   submitComment: data => {
     return axios.put(`/api/comments/submit`, data);
   },
+  submitReply: data => {
+    return axios.put(`/api/comments/submitReply`, data);
+  },
   loadComments: data => {
     return axios.get(`/api/comments/load/${data}`);
   },
