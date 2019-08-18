@@ -27,8 +27,12 @@ const Freebies = props => {
         <Container>
           {props.user ? (
             <Container className="teacher-freebies-container">
-              <PBtn onClick={logout}>Logout</PBtn>
               <TitleComponent img={Backpack} h1="Freebies" />
+              {/* <Columns className="is-centered">
+                <Column className="is-2 has-text-centered">
+                  <PBtn onClick={logout}>Logout</PBtn>
+                </Column>
+              </Columns> */}
               <Columns className="is-multiline is-centered">
                 {props.freebies.map((freebie, index) => {
                   return (

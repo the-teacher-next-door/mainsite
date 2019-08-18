@@ -264,7 +264,6 @@ nextApp
     server.get("/admin-freebies", (req, res) => {
       db.users.findById(req.user).then(user => {
         if (req.isAuthenticated() && user.admin === true) {
-          return nextApp.render(req, res, "/admin-slider");
           return nextApp.render(req, res, "/admin-freebies");
         } else {
           return nextApp.render(req, res, "/admin-login");
