@@ -2,7 +2,6 @@ const db = require("../Models");
 
 module.exports = {
   submit: (req, res) => {
-    console.log(req.body);
     db.comments
       .create({
         name: req.body.name,
@@ -13,6 +12,14 @@ module.exports = {
       })
       .then(done => {
         res.send(done);
+      })
+      .catch(err => {
+        console.log(err);
+        if (err.message.includes("`name` is required")) {
+          res.send({ message: `name is required` });
+        } else {
+          res.send({ message: `comment is required` });
+        }
       });
   },
   load: (req, res) => {

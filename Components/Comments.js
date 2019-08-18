@@ -3,10 +3,14 @@ import Input from "./Input";
 import PBtn from "./PBtn";
 import api from "../utils/api";
 import CommentCard from "./CommentCard";
+import Column from "./FormatComponents/Column";
 
 class Comments extends Component {
   state = {
-    comments: []
+    comments: [],
+    nameError: false,
+    textAreaError: false,
+    errorMessage: ""
   };
 
   componentDidMount() {
@@ -17,7 +21,7 @@ class Comments extends Component {
     api.loadComments(this.props.blogId).then(data => {
       console.log(data.data);
       this.setState({
-        comments: data.data
+        comments: data.data.reverse()
       });
     });
   };
@@ -31,8 +35,31 @@ class Comments extends Component {
       blogId: this.props.blogId,
       reply: false
     };
+    //reset the form inputs
+    this.setState({
+      nameError: false,
+      textAreaError: false,
+      errorMessage: ""
+    });
 
     let submit = await api.submitComment(data);
+    switch (submit.data.message) {
+      case "name is required":
+        this.setState({
+          nameError: true,
+          errorMessage: "Name is required."
+        });
+        break;
+      case "comment is required":
+        this.setState({
+          textAreaError: true,
+          errorMessage: "Comment is required."
+        });
+        break;
+      default:
+        this.loadComments();
+        break;
+    }
     console.log(submit);
   };
   render() {
@@ -40,8 +67,14 @@ class Comments extends Component {
       <div className="comments">
         <div className="contianer commentSubmitSection">
           <div className="columns is-multiline is-centered">
-            <div className="column is-12 has-text-centered">
-              <h1>Comments</h1>
+            <div className="column is-8 ">
+              <h2>
+                <i className="far fa-comments"></i>
+                <span> </span>
+                {this.state.comments.length}
+                <span> </span>
+                Comments
+              </h2>
             </div>
             <div className="column is-8 has-text-centered">
               <form onSubmit={this.formSubmit} id="commentSubmit">
@@ -51,7 +84,9 @@ class Comments extends Component {
                       type="text"
                       name="firstname"
                       placeholder="First Name"
-                      className="commentInput"
+                      className={`commentInput ${
+                        this.state.nameError ? "inputError" : ""
+                      }`}
                     />
                   </div>
                   <div className="column is-12">
@@ -60,11 +95,14 @@ class Comments extends Component {
                       cols="30"
                       rows="10"
                       placeholder="Add your comment..."
-                      className="comment-textarea"
+                      className={`comment-textarea ${
+                        this.state.textAreaError ? "inputError" : ""
+                      }`}
                     ></textarea>
                   </div>
                   <div className="column is-2">
                     <PBtn type="submit">Submit</PBtn>
+                    <p className="errorText">{this.state.errorMessage}</p>
                   </div>
                 </div>
               </form>
@@ -77,13 +115,15 @@ class Comments extends Component {
             {this.state.comments.map(comment => {
               if (comment.reply === false) {
                 return (
-                  <CommentCard
-                    name={comment.name}
-                    date={comment.date}
-                    comment={comment.comment}
-                    id={comment._id}
-                    blogId={this.props.blogId}
-                  />
+                  <Column className="is-8 card">
+                    <CommentCard
+                      name={comment.name}
+                      date={comment.date}
+                      comment={comment.comment}
+                      id={comment._id}
+                      blogId={this.props.blogId}
+                    />
+                  </Column>
                 );
               } else {
               }

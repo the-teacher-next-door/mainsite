@@ -302,3 +302,12 @@ p {
 .iconImage {
   max-width: 100px;
 }
+
+.errorText {
+  color: red;
+  font-weight: 700;
+}
+
+.inputError {
+  border: 1px solid red !important;
+}

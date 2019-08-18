@@ -7,16 +7,12 @@ const ShareMenu = props => {
     setUrl(window.location.href);
   }, []);
   return (
-    <div className="container">
+    <div className="container share-menu">
       <h2>Don't Forget to Share this Post!</h2>
       <ul>
         <li>
-          <FacebookProvider appId="878288262298017">
-            <ShareButton href={url}>Share</ShareButton>
-          </FacebookProvider>
-
           <iframe
-            src={`https://www.facebook.com/plugins/share_button.php?href=${url}&layout=button_count&size=small&appId=878288262298017&=width=106&height=28`}
+            src={`https://www.facebook.com/plugins/share_button.php?href=${url}&layout=button_count&size=small&appId=1509492819325338&=width=106&height=28`}
             width="106"
             height="28"
             style={{ border: "none", overflow: "hidden" }}
