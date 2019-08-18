@@ -34,8 +34,17 @@
 
 
 .freebies {
-  ul {
-    list-style-type: disc;
+  .teacher-freebies-container {
+
+
+    @include large-padding-top;
+    @include large-padding-bottom;
+
+    h1 {
+      @include medium-padding-bottom;
+    }
+
+
   }
 
   .freebie-img {
@@ -47,10 +56,10 @@
     background-color: #ffffff;
     border-top: 1px solid rgba(0, 0, 0, 0.226);
     @include large-padding-top;
-    @include large-padding-bottom;
   }
 
   .padding-30 {
+
     padding: 30px;
 
   }
@@ -60,6 +69,10 @@
   }
 
   .top-section {
+    ul {
+      list-style-type: disc;
+    }
+
     background-color: #f2f2f2;
     @include large-padding-top;
     @include large-padding-bottom;
