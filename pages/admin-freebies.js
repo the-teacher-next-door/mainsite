@@ -109,6 +109,11 @@ const Images = props => {
                           <p>{image.originalname}</p>
                         </div>
                         <Input
+                          defaultValue={image.originalname}
+                          placeholder="Freebie Name"
+                          name="name"
+                        />
+                        <Input
                           defaultValue={image.img}
                           placeholder="Image URL"
                           name="img"
