@@ -26,7 +26,6 @@ const NewBlog = props => {
   const [editorState, setEditorState] = useState(EditorState.createEmpty());
   const [editorHTML, setEditorHTML] = useState({ __html: "<div></div>" });
   const [titleInputVal, setTitleInputVal] = useState("");
-  const [descriptionVal, setDescriptionVal] = useState("");
   const [id, setId] = useState("");
   const [imageurl, setImageurl] = useState("");
   const [live, setLive] = useState(false);
@@ -44,7 +43,6 @@ const NewBlog = props => {
       setId(blog.data._id);
       setImageurl(blog.data.img);
       setLive(blog.data.live);
-      setDescriptionVal(blog.data.description);
       setCategory(blog.data.category);
       console.log(blog);
 
@@ -94,8 +92,7 @@ const NewBlog = props => {
           id: id,
           img: imageurl,
           category: category,
-          live: change,
-          description: descriptionVal
+          live: change
         };
 
         const res = await api.saveBlog(data);
@@ -181,10 +178,6 @@ const NewBlog = props => {
     if (event.target.name === "category") {
       setCategory(event.target.value);
     }
-
-    if (event.target.name === "descriptionVal") {
-      setDescriptionVal(event.target.value);
-    }
   };
 
   const selectChange = event => {
@@ -254,17 +247,7 @@ const NewBlog = props => {
                     <option value="Ideas">Classroom Ideas</option>
                   </select>
                 </div>
-                <div className="description">
-                  <Input
-                    type="textbox"
-                    className="description-box"
-                    placeholder="Description"
-                    onChange={handleChange}
-                    name="descriptionVal"
-                    value={descriptionVal}
-                    maxLength="140"
-                  />
-                </div>
+
                 <div className="title">
                   <Input
                     type="textbox"
