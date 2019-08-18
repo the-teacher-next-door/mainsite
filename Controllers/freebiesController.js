@@ -15,7 +15,8 @@ module.exports = {
         { _id: req.body._id },
         {
           $set: {
-            img: req.body.img
+            img: req.body.img,
+            originalname: req.body.originalname
           }
         }
       )

@@ -38,7 +38,8 @@ const Images = props => {
     const data = new FormData(e.target);
     let newSlide = {
       _id: e.target.dataset["id"],
-      img: data.get("img")
+      img: data.get("img"),
+      originalname: data.get("name")
     };
 
     api.saveFreebie(newSlide).then(done => {
@@ -73,6 +74,11 @@ const Images = props => {
                           <img src={Temp} alt="" />
                           <p>{image.originalname}</p>
                         </div>
+                        <Input
+                          defaultValue={image.img}
+                          placeholder="Freebie Name"
+                          name="name"
+                        />
                         <Input
                           defaultValue={image.img}
                           placeholder="Image URL"

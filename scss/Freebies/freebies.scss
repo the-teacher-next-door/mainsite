@@ -46,6 +46,8 @@
   .freebie-display {
     background-color: #ffffff;
     border-top: 1px solid rgba(0, 0, 0, 0.226);
+    @include large-padding-top;
+    @include large-padding-bottom;
   }
 
   .padding-30 {
@@ -59,6 +61,8 @@
 
   .top-section {
     background-color: #f2f2f2;
-    padding: 20px;
+    @include large-padding-top;
+    @include large-padding-bottom;
+
   }
 }

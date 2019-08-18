@@ -12,7 +12,7 @@ class SocialClips extends Component {
   render() {
     return (
       <>
-        <div className="container-fluid social">
+        <div className="container-fluid social-clips">
           <div className="container">
             <div className="columns">
               <div className="column is-4">
@@ -20,7 +20,7 @@ class SocialClips extends Component {
                 <a
                   data-pin-do="embedUser"
                   data-pin-board-width="375"
-                  data-pin-scale-height="600"
+                  data-pin-scale-height="545"
                   data-pin-scale-width="80"
                   href="https://www.pinterest.com/TeacherNextDoor/"
                 ></a>
@@ -30,12 +30,12 @@ class SocialClips extends Component {
                 <iframe
                   src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FTheTeacherNextDoor%2F&tabs=timeline&width=400&height=786&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId=878288262298017"
                   width="395"
-                  height="710"
+                  height="700"
                   style={{
                     width: "100%",
                     border: "0",
                     overflow: "hidden",
-                    height: "100%"
+                    height: "94%"
                   }}
                   scrolling="no"
                   frameBorder="0"
@@ -50,7 +50,12 @@ class SocialClips extends Component {
                   scrolling="no"
                   allowtransparency="true"
                   class="lightwidget-widget"
-                  style="width:100%;border:0;overflow:hidden;"
+                  style={{
+                    width: "100%",
+                    border: "0",
+                    overflow: "hidden",
+                    height: "100%"
+                  }}
                 ></iframe>
               </div>
             </div>

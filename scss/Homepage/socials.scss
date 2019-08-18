@@ -1,0 +1,9 @@
+.social-clips {
+  @include large-padding-top;
+  @include large-padding-bottom;
+
+  h2 {
+    @include medium-padding-bottom;
+  }
+
+}
