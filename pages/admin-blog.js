@@ -132,8 +132,7 @@ const NewBlog = props => {
           id: id,
           img: imageurl,
           category: category,
-          live: live,
-          description: descriptionVal
+          live: live
         };
 
         console.log(data);
