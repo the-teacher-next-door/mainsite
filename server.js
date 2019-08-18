@@ -368,8 +368,9 @@ nextApp
     server.post(`/api/email/send`, async (req, res) => {
       const email_format = `
         <ul>
-          <li>${req.body.name}</li> 
-          <li>${req.body.email}</li>
+          <li>Name: ${req.body.name}</li> 
+          <li>Email: ${req.body.email}</li>
+          <li>Help Topic: ${req.body.topic}</li>
         </ul>
 
         <h3>Email</h3>

@@ -11,7 +11,7 @@ const ContactForm = props => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [text, setText] = useState("");
-  const [issue, setIssue] = useState("blog");
+  const [topic, settopic] = useState("blog");
   const handleSubmit = e => {
     e.preventDefault();
     let fd = new FormData(e.target);
@@ -20,7 +20,7 @@ const ContactForm = props => {
       name: fd.get("name"),
       email: fd.get("email"),
       text: fd.get("text"),
-      issue: fd.get("issue")
+      topic: fd.get("topic")
     };
     api.sendEmail(data).then(res => {
       console.log(res);
@@ -38,8 +38,8 @@ const ContactForm = props => {
       case "text":
         setText(e.target.value);
         break;
-      case "issue":
-        setIssue(e.target.value);
+      case "topic":
+        settopic(e.target.value);
       default:
         break;
     }
@@ -81,7 +81,7 @@ const ContactForm = props => {
               <i className="far fa-envelope"></i>
             </div>
             <div className="column is-2 relative">
-              <select name="issue" onChange={handleChange} value={issue}>
+              <select name="topic" onChange={handleChange} value={topic}>
                 <option value="blog">Blog</option>
                 <option value="purchase">Purchase</option>
                 <option value="testimonial">Testimonial</option>
