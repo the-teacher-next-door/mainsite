@@ -100,7 +100,7 @@ nextApp
     }
     function checkZipType(file, cb) {
       // Allowed ext
-      const filetypes = /zip/;
+      const filetypes = /zip|pdf/;
       // Check ext
       const extname = filetypes.test(
         path.extname(file.originalname).toLowerCase()
