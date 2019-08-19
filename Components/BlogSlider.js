@@ -44,7 +44,9 @@ const BlogSlider = props => (
         <ContainerFluid>
           <Columns className="is-centered">
             <Column className="is-2">
-              <PBtn className="margin-top-30">Read More</PBtn>
+              <Link href="/my-blog">
+                <a className="margin-top-30">Read More</a>
+              </Link>
             </Column>
           </Columns>
         </ContainerFluid>
