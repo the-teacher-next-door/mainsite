@@ -114,7 +114,7 @@ nextApp
         cb("Error: Zips Only!");
       }
     }
-    server.use(express.urlencoded({ extended: true }));
+    server.use(express.urlencoded({ limit: "50mb", extended: true }));
     server.use(express.json());
     server.use(expressValidator());
 
