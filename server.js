@@ -68,7 +68,7 @@ nextApp
     // Init Upload
     const upload = multer({
       storage: storage,
-      limits: { fileSize: 1000000 },
+      limits: { fileSize: 2000000 },
       fileFilter: function(req, file, cb) {
         checkFileType(file, cb);
       }
@@ -76,7 +76,7 @@ nextApp
 
     const freebiesUpload = multer({
       storage: freebiesStorage,
-      limits: { fileSize: 10000000 },
+      limits: { fileSize: 20000000 },
       fileFilter: function(req, file, cb) {
         checkZipType(file, cb);
       }
