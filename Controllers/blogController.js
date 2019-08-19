@@ -97,7 +97,6 @@ module.exports = {
       .find({
         $or: [
           { title: { $regex: query, $options: "i" } },
-          { blog: { $regex: query, $options: "i" } },
           { category: { $regex: query, $options: "i" } }
         ]
       })
