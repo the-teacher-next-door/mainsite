@@ -61,6 +61,10 @@ nextApp
       next();
     });
 
+    //tinify
+    const tinify = require("tinify");
+    tinify.key = "WzqmfsbnJKXCv0Zv9Mrw0b3FyGy8msQd";
+
     // Init Upload
     const upload = multer({
       storage: storage,
@@ -290,6 +294,8 @@ nextApp
     server.post("/api/upload", (req, res) => {
       console.log(req.file);
       upload(req, res, err => {
+        var source = tinify.fromFile(req.file.path);
+        source.toFile(req.file.path);
         if (err) {
           res.send({
             msg: err
