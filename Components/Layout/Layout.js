@@ -2,8 +2,6 @@ import React from "react";
 import Head from "next/head";
 
 import "../../scss/style.scss";
-import MobileNav from "../mobileNav";
-import TabletNav from "../TabletNav";
 const Layout = props => {
   return (
     <div className="page-layout">
@@ -15,8 +13,6 @@ const Layout = props => {
         ></link>
         <script src="https://kit.fontawesome.com/33b13ebe41.js"></script>
       </Head>
-      <MobileNav />
-      <TabletNav />
       {props.children}
       <style jsx global>{`
         body {
