@@ -37,6 +37,7 @@ class SearchBar extends Component {
               <i className="fas fa-search"></i>
             </PBtn>
           </a>
+          {/* yup */}
         </Link>
       </form>
     );
