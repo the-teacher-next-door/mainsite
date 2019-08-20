@@ -1,6 +1,8 @@
-@mixin for-tablet-portrait-up {}
+@mixin for-tablet-portrait-up {
+}
 
-@mixin for-phone-only {}
+@mixin for-phone-only {
+}
 
 @mixin for-phone-only {
 	@media (max-width: 599px) {
@@ -32,7 +34,6 @@
 	}
 }
 
-
 .blogPage {
 	overflow: hidden;
 	background-color: #ffffff;
@@ -63,18 +64,15 @@
 		flex-direction: column;
 		padding: 20px;
 		border-bottom: 1px solid rgba(0, 0, 0, 0.226);
-
-
 	}
 
 	.share-menu {
 		ul {
 			@include small-padding-top;
-
 		}
 
 		li {
-			padding: 0
+			padding: 0;
 		}
 	}
 
@@ -89,6 +87,7 @@
 
 	.blog-text img {
 		margin: 0 auto;
+		max-width: 400px;
 	}
 }
 
@@ -217,19 +216,18 @@
 		h2 {
 			background: $darkBlue;
 		}
-
-
 	}
 }
-
 
 @include for-tablet-landscape-up {
 	padding: 20px;
 }
 
-@mixin for-tablet-portrait-up {}
+@mixin for-tablet-portrait-up {
+}
 
-@mixin for-phone-only {}
+@mixin for-phone-only {
+}
 
 @mixin for-phone-only {
 	@media (max-width: 599px) {
