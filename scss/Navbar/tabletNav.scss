@@ -1,32 +1,32 @@
-@mixin for-phone-only {
-  @media (max-width: 768px) {
-    @content;
-  }
-}
+// @mixin for-phone-only {
+//   @media (max-width: 768px) {
+//     @content;
+//   }
+// }
 
-@mixin for-768-and-up {
-  @media (min-width: 768px) {
-    @content;
-  }
-}
+// @mixin for-768-and-up {
+//   @media (min-width: 768px) {
+//     @content;
+//   }
+// }
 
-@mixin for-tablet-portrait-up {
-  @media (min-width: 600px) {
-    @content;
-  }
-}
+// @mixin for-tablet-portrait-up {
+//   @media (min-width: 600px) {
+//     @content;
+//   }
+// }
 
-@mixin for-desktop-up {
-  @media (min-width: 1400px) {
-    @content;
-  }
-}
+// @mixin for-desktop-up {
+//   @media (min-width: 1400px) {
+//     @content;
+//   }
+// }
 
-@include for-phone-only {
-  .tabletNav {
-    display: none !important;
-  }
-}
+// @include for-phone-only {
+//   .tabletNav {
+//     display: none !important;
+//   }
+// }
 
 @include for-768-and-up {
   .tabletNav {
@@ -35,7 +35,12 @@
     position: relative;
     z-index: 3;
 
-
+    .menuIcon {
+      background: none;
+      border: none;
+      font-size: 42px;
+      color: #FFF;
+    }
 
     .toolbar {
       padding: 0 20px;
@@ -50,7 +55,7 @@
       box-shadow: 0 3px 6px rgba(0, 0, 0, 0.281);
       opacity: 0;
       z-index: 2;
-      top: 80px;
+      top: 106px;
       pointer-events: none;
 
       .mobileIcons {

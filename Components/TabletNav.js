@@ -18,7 +18,7 @@ const TabletNav = ({ user, history }) => {
       <div className="columns toolbar is-centered">
         <div className="column is-6">
           {/* hamburger menu */}
-          <button onClick={toggleShow}>
+          <button className="menuIcon" onClick={toggleShow}>
             <i className="fas fa-bars"></i>
           </button>
         </div>
