@@ -17,7 +17,7 @@ const MiniConvert = props => (
         <div className="column is-2 right-column">
           <Link href={`/freebies-register`}>
             <a>
-              <PBtn>SUBSCRIBE</PBtn>
+              <PBtn>Yes, Please</PBtn>
             </a>
           </Link>
         </div>
