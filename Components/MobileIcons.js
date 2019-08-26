@@ -13,7 +13,7 @@ const MobileIcons = () => {
           <Link as={`/reading`} href="/reading?q=reading">
             <a className="icon-link-tags">
               <img src={BookIcon} className="icons image" alt="" />
-              Reading
+              <p>Reading</p>
             </a>
           </Link>
         </li>
@@ -21,7 +21,7 @@ const MobileIcons = () => {
           <Link as={`/writing`} href="/writing?q=writing">
             <a className="icon-link-tags">
               <img src={Pencil} className="icons image" alt="" />
-              Writing & Grammar
+              <p>Writing & Grammar</p>
             </a>
           </Link>
         </li>
@@ -29,7 +29,7 @@ const MobileIcons = () => {
           <Link as={`/math`} href="/math?q=math">
             <a className="icon-link-tags">
               <img src={Calc} className="icons image" alt="" />
-              Math
+              <p>Math</p>
             </a>
           </Link>
         </li>
@@ -37,7 +37,7 @@ const MobileIcons = () => {
           <Link as={`/holidays`} href="/holidays?q=holidays">
             <a className="icon-link-tags">
               <img src={Mug} className="icons image" alt="" />
-              Holidays
+              <p>Holidays</p>
             </a>
           </Link>
         </li>
@@ -45,7 +45,7 @@ const MobileIcons = () => {
           <Link as={`/ideas`} href="/ideas?q=ideas">
             <a className="icon-link-tags">
               <img src={Light} className="icons image" alt="" />
-              Classroom Ideas
+              <p>Classroom Ideas</p>
             </a>
           </Link>
         </li>

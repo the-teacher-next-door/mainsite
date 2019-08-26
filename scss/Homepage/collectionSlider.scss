@@ -1,5 +1,28 @@
 @import '../mixins/LayoutMixins.scss';
 
+
+.collections {
+  @include large-padding-top;
+  @include large-padding-bottom;
+
+  .slick-track {
+    display: flex;
+
+
+    .grey {
+      background-color: rgb(231, 231, 231);
+    }
+
+  }
+
+  a {
+    @include custom-padding(10px, 40px, 10px, 40px);
+    border-radius: 4px;
+  }
+
+}
+
+
 @include for-tablet-landscape-up {
   .collections {
     @include large-padding-top;
@@ -8,9 +31,7 @@
     .slick-track {
       display: flex;
 
-      img {
-        max-width: 150px;
-      }
+
 
       .grey {
         background-color: rgb(231, 231, 231);
@@ -26,30 +47,4 @@
   }
 }
 
-
-@include for-desktop-up {
-
-  .collections {
-    @include large-padding-top;
-    @include large-padding-bottom;
-
-    .slick-track {
-      display: flex;
-
-      img {
-        max-width: 300px;
-      }
-
-      .grey {
-        background-color: rgb(231, 231, 231);
-      }
-
-    }
-
-    a {
-      @include custom-padding(10px, 40px, 10px, 40px);
-      border-radius: 4px;
-    }
-
-  }
-}
+@include for-desktop-up {}

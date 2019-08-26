@@ -1,3 +1,5 @@
+@import '../mixins/LayoutMixins.scss';
+
 .about {
   @include large-padding-top;
   @include large-padding-bottom;
@@ -34,3 +36,5 @@
     color: #695395;
   }
 }
+
+@include for-phone-only {}

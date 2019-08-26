@@ -285,3 +285,21 @@ p {
 .inputError {
   border: 1px solid red !important;
 }
+
+
+@include for-phone-only {
+
+  h1 {
+    font-size: 20px;
+  }
+
+  p {
+    font-size: 12px;
+    padding: 10px;
+  }
+
+  h2 {
+    font-size: 15px;
+    padding: 10px;
+  }
+}

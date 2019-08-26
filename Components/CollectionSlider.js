@@ -19,7 +19,36 @@ class CollectionSlider extends Component {
       slidesToScroll: 1,
       arrows: false,
       centerPadding: "30px",
-      swipeToSlide: true
+      swipeToSlide: true,
+      responsive: [
+        {
+          breakpoint: 1024,
+          settings: {
+            infinite: true,
+            autoplay: true,
+            cssEase: "linear",
+            speed: 3000,
+            slidesToShow: 3,
+            slidesToScroll: 1,
+            arrows: false,
+            centerPadding: "20px",
+            swipeToSlide: true
+          }
+        },
+        {
+          breakpoint: 769,
+          settings: {
+            infinite: true,
+            autoplay: true,
+            cssEase: "linear",
+            speed: 3000,
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            arrows: false,
+            swipeToSlide: true
+          }
+        }
+      ]
     };
     return (
       <div className="container-fluid collections border-bottom ">
