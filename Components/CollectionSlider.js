@@ -36,7 +36,7 @@ class CollectionSlider extends Component {
           })}
         </Slider>
         <div className="columns is-centered is-desktop margin-top-30">
-          <div className="column is-6 ">
+          <div className="column is-6">
             <PBtn
               link="https://www.teacherspayteachers.com/Store/The-Teacher-Next-Door"
               external={true}
