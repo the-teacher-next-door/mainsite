@@ -1,71 +1,55 @@
-@mixin for-tablet-portrait-up {}
-
-@mixin for-phone-only {}
-
-@mixin for-phone-only {
-  @media (max-width: 599px) {
-    @content;
-  }
-}
-
-@mixin for-tablet-portrait-up {
-  @media (min-width: 600px) {
-    @content;
-  }
-}
-
-@mixin for-tablet-landscape-up {
-  @media (min-width: 900px) {
-    @content;
-  }
-}
-
-@mixin for-desktop-up {
-  @media (min-width: 1200px) {
-    @content;
-  }
-}
-
-@mixin for-big-desktop-up {
-  @media (min-width: 1800px) {
-    @content;
-  }
-}
-
-.collections {
-  @include large-padding-top;
-  @include large-padding-bottom;
-
-  .slick-track {
-    display: flex;
-
-    img {
-      max-width: 300px;
-    }
-
-    .grey {
-      background-color: rgb(231, 231, 231);
-    }
-
-  }
-
-  a {
-    @include custom-padding(10px, 40px, 10px, 40px);
-    border-radius: 4px;
-  }
-
-}
+@import '../mixins/LayoutMixins.scss';
 
 @include for-tablet-landscape-up {
-  padding: 20px;
+  .collections {
+    @include large-padding-top;
+    @include large-padding-bottom;
+
+    .slick-track {
+      display: flex;
+
+      img {
+        max-width: 150px;
+      }
+
+      .grey {
+        background-color: rgb(231, 231, 231);
+      }
+
+    }
+
+    a {
+      @include custom-padding(10px, 40px, 10px, 40px);
+      border-radius: 4px;
+    }
+
+  }
 }
 
-@mixin for-tablet-portrait-up {}
 
-@mixin for-phone-only {}
+@include for-desktop-up {
 
-@mixin for-phone-only {
-  @media (max-width: 599px) {
-    @content;
+  .collections {
+    @include large-padding-top;
+    @include large-padding-bottom;
+
+    .slick-track {
+      display: flex;
+
+      img {
+        max-width: 300px;
+      }
+
+      .grey {
+        background-color: rgb(231, 231, 231);
+      }
+
+    }
+
+    a {
+      @include custom-padding(10px, 40px, 10px, 40px);
+      border-radius: 4px;
+    }
+
   }
 }
