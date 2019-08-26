@@ -1,56 +1,22 @@
-@mixin for-phone-only {
-  @media (max-width: 768px) {
-    @content;
-  }
-}
-
-@mixin for-768-and-up {
-  @media (min-width: 768px) {
-    @content;
-  }
-}
-
-@mixin for-tablet-portrait-up {
-  @media (min-width: 900px) {
-    @content;
-  }
-}
-
-@mixin for-tablet-landscape-up {
-  @media (min-width: 1200px) {
-    @content;
-  }
-}
-
-@mixin for-desktop-up {
-  @media (min-width: 1410px) {
-    @content;
-  }
-}
-
-@mixin for-big-desktop-up {
-  @media (min-width: 1800px) {
-    @content;
-  }
-}
+@import '../mixins/LayoutMixins.scss';
 
 @include for-phone-only {
   nav {
-    display: none !important;
+    display: none;
   }
 }
 
-@include for-768-and-up {
+@include for-tablet-portrait-up {
   nav {
-    display: none !important;
+    display: none;
   }
-}
 
+}
 
 @include for-tablet-landscape-up {
   nav {
     background-color: $lightPurple !important;
-    display: flex !important;
+    display: none;
     @include border-bottom;
 
     a {
@@ -160,6 +126,7 @@
 
 
   nav {
+    display: block;
     background-color: $lightPurple !important;
 
     a {
@@ -183,8 +150,6 @@
     }
 
     .navbar-start {
-
-
 
       span {
         display: flex;

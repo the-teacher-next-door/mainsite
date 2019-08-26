@@ -1,38 +1,4 @@
-@mixin for-phone-only {
-  @media (max-width: 768px) {
-    @content;
-  }
-}
-
-@mixin for-768-and-up {
-  @media (min-width: 768px) {
-    @content;
-  }
-}
-
-@mixin for-tablet-portrait-up {
-  @media (min-width: 900px) {
-    @content;
-  }
-}
-
-@mixin for-tablet-landscape-up {
-  @media (min-width: 1200px) {
-    @content;
-  }
-}
-
-@mixin for-desktop-up {
-  @media (min-width: 1410px) {
-    @content;
-  }
-}
-
-@mixin for-big-desktop-up {
-  @media (min-width: 1800px) {
-    @content;
-  }
-}
+@import '../mixins/LayoutMixins.scss';
 
 @include for-phone-only {
   .icon-nav {
@@ -40,12 +6,11 @@
   }
 }
 
-@include for-768-and-up {
+@include for-tablet-portrait-up {
   .icon-nav {
     display: none !important;
   }
 }
-
 
 @include for-tablet-landscape-up {
   .icon-nav {

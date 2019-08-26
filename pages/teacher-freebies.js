@@ -14,6 +14,7 @@ import Column from "../Components/FormatComponents/Column";
 import Layout from "../Components/Layout/Layout";
 import Backpack from "../images/E.png";
 import TitleComponent from "../Components/TitleComponent";
+import TabletNav from "../Components/TabletNav";
 const Freebies = props => {
   const logout = async () => {
     await api.logout();
@@ -23,6 +24,7 @@ const Freebies = props => {
   return (
     <Layout>
       <div className="freebies">
+        <TabletNav />
         <Header />
         <Container>
           {props.user ? (

@@ -1,39 +1,10 @@
-// @mixin for-phone-only {
-//   @media (max-width: 768px) {
-//     @content;
-//   }
-// }
-
-// @mixin for-768-and-up {
-//   @media (min-width: 768px) {
-//     @content;
-//   }
-// }
-
-// @mixin for-tablet-portrait-up {
-//   @media (min-width: 600px) {
-//     @content;
-//   }
-// }
-
-// @mixin for-desktop-up {
-//   @media (min-width: 1400px) {
-//     @content;
-//   }
-// }
-
-// @include for-phone-only {
-//   .tabletNav {
-//     display: none !important;
-//   }
-// }
-
-@include for-768-and-up {
+@include for-phone-only {
   .tabletNav {
-    display: flex !important;
+    display: flex;
     background-color: $lightPurple;
     position: relative;
     z-index: 3;
+    text-align: left;
 
     .menuIcon {
       background: none;
@@ -44,19 +15,44 @@
 
     .toolbar {
       padding: 0 20px;
-      align-items: center;
       margin: 0;
     }
 
     .navPanel {
       background-color: #fff;
-      display: flex;
-      position: absolute;
+      position: fixed;
+      top: 0;
+      left: -500px;
       box-shadow: 0 3px 6px rgba(0, 0, 0, 0.281);
       opacity: 0;
       z-index: 2;
-      top: 106px;
       pointer-events: none;
+      height: 100vh;
+      max-width: 300px;
+      transition: all .5s ease;
+      overflow: auto;
+      margin: 0;
+
+      ul {
+        width: 100%;
+
+        li {
+          border-bottom: 1px solid #f2f2f2;
+          padding: 20px;
+          width: 100%;
+
+
+          a {
+            padding: 40px;
+            font-size: 20px;
+          }
+        }
+      }
+
+      .socials {
+        padding: 0;
+        margin-left: 40px;
+      }
 
       .mobileIcons {
         ul li {
@@ -69,8 +65,118 @@
       }
     }
 
+    .overlay {
+      height: 100vh;
+      position: fixed;
+      top: 0;
+      width: 100vw;
+      z-index: 1;
+      display: none;
+      top: 0;
+      background-color: rgba(0, 0, 0, 0.322);
+      display: none;
+      height: 100vh;
+      transition: all .5s ease;
+
+      &.show {
+        display: block;
+      }
+    }
+
     .show {
+
       pointer-events: auto;
+      left: 0;
+      opacity: 1;
+    }
+  }
+}
+
+@include for-tablet-portrait-up {
+  .tabletNav {
+    display: flex;
+    background-color: $lightPurple;
+    position: relative;
+    z-index: 3;
+    text-align: left;
+
+    .menuIcon {
+      background: none;
+      border: none;
+      font-size: 42px;
+      color: #FFF;
+    }
+
+    .toolbar {
+      padding: 0 20px;
+      margin: 0;
+    }
+
+    .navPanel {
+      background-color: #fff;
+      position: fixed;
+      top: 0;
+      left: -500px;
+      box-shadow: 0 3px 6px rgba(0, 0, 0, 0.281);
+      opacity: 0;
+      z-index: 2;
+      pointer-events: none;
+      height: 100vh;
+      max-width: 300px;
+      transition: all .5s ease;
+      overflow: auto;
+      margin: 0;
+
+      ul {
+        width: 100%;
+
+        li {
+          border-bottom: 1px solid #f2f2f2;
+          padding: 20px;
+          width: 100%;
+
+
+          a {
+            padding: 40px;
+            font-size: 20px;
+          }
+        }
+      }
+
+
+      .mobileIcons {
+        ul li {
+          float: left;
+
+          .icons {
+            max-width: 70px;
+          }
+        }
+      }
+    }
+
+    .overlay {
+      height: 100vh;
+      position: fixed;
+      top: 0;
+      width: 100vw;
+      z-index: 1;
+      display: none;
+      top: 0;
+      background-color: rgba(0, 0, 0, 0.322);
+      display: none;
+      height: 100vh;
+      transition: all .5s ease;
+
+      &.show {
+        display: block;
+      }
+    }
+
+    .show {
+
+      pointer-events: auto;
+      left: 0;
       opacity: 1;
     }
   }

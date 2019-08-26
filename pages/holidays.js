@@ -15,10 +15,12 @@ import IconImages from "../Components/IconImages";
 import Mug from "../images/Mug.png";
 import Paper from "../images/V.png";
 import PBtn from "../Components/PBtn";
+import TabletNav from "../Components/TabletNav";
 const Blogs = props => {
   return (
     <Layout>
       <div className="categoryPages">
+        <TabletNav />
         <NavNext />
         <IconNav />
         <MiniConvert />
@@ -115,7 +117,7 @@ const Blogs = props => {
     </Layout>
   );
 };
-Blogs.getInitialProps = async function ({ req, query }) {
+Blogs.getInitialProps = async function({ req, query }) {
   const baseUrl = req ? `${req.protocol}://${req.get("Host")}` : "";
   const response = await fetch(baseUrl + "/api/blog/search/" + query.q);
 

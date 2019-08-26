@@ -15,10 +15,12 @@ import IconImages from "../Components/IconImages";
 import Book from "../images/BookIcon.png";
 import Paper from "../images/V.png";
 import PBtn from "../Components/PBtn";
+import TabletNav from "../Components/TabletNav";
 const Blogs = props => {
   return (
     <Layout>
       <div className="categoryPages">
+        <TabletNav />
         <NavNext />
         <IconNav />
         <MiniConvert />

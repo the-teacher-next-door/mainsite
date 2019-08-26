@@ -1,5 +1,6 @@
 @import './mixins/LayoutMixins.scss';
 @import './_vars.scss';
+@import './Homepage/main.scss';
 @import "./Navbar/navbar.scss";
 @import "./Admin/adminnav.scss";
 @import "./Admin/admin.scss";
@@ -16,7 +17,6 @@
 @import "./Reading/reading.scss";
 @import "./CommentCard/commentCard.scss";
 @import "./Freebies/freebies.scss";
-@import "./Navbar/mobileNav.scss";
 @import "./Navbar/tabletNav.scss";
 @import "./MeetJenn/meetJenn.scss";
 @import "./Card/card.scss";

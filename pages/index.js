@@ -15,7 +15,6 @@ import "isomorphic-fetch";
 import Header from "../Components/Header";
 import Head from "next/head";
 import TabletNav from "../Components/TabletNav";
-import MobileNav from "../Components/mobileNav";
 const SocialClips = dynamic(() =>
   import("../Components/SocialClips/SocialClips")
 );
@@ -49,7 +48,6 @@ class Home extends Component {
         <div className="wrapper-home">
           <Header />
           <TabletNav />
-          <MobileNav />
           <Jumbotron mainImage={Slider} />
           <ConvertKit title="JOIN MY NEWSLETTER!" />
           <CollectionSlider items={this.state.items} />

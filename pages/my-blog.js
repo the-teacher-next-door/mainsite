@@ -13,11 +13,13 @@ import Holidays from "../images/Mug.png";
 import Ideas from "../images/Light.png";
 import Link from "next/link";
 import PBtn from "../Components/PBtn";
+import TabletNav from "../Components/TabletNav";
 const Blogs = props => {
   if (props.rBlogs !== undefined) {
     return (
       <Layout>
         <div className="blogs">
+          <TabletNav />
           <NavNext />
           <IconNav />
           <MiniConvert />

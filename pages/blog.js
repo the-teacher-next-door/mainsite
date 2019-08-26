@@ -25,6 +25,7 @@ import Calculator from "../images/Calc.png";
 import Pencil from "../images/Pencil.png";
 import Light from "../images/Light.png";
 import Mug from "../images/Mug.png";
+import TabletNav from "../Components/TabletNav";
 const BlogPage = props => {
   const categories = props.blogs.category.split(",");
   const [blogs, setBlogs] = useState([]);
@@ -35,6 +36,7 @@ const BlogPage = props => {
   }, []);
   return (
     <Layout>
+      <TabletNav />
       <div className="blogPage">
         <Header />
         <div className="container-fluid blog-container">
@@ -132,7 +134,7 @@ const BlogPage = props => {
   );
 };
 
-BlogPage.getInitialProps = async function ({ req, query }) {
+BlogPage.getInitialProps = async function({ req, query }) {
   console.log(query);
   const baseUrl = req ? `${req.protocol}://${req.get("Host")}` : "";
   const response = await fetch(baseUrl + "/api/blog/load/" + query.q);
