@@ -18,6 +18,7 @@
 @import "./CommentCard/commentCard.scss";
 @import "./Freebies/freebies.scss";
 @import "./Navbar/tabletNav.scss";
+@import "./Navbar/mobileNav.scss";
 @import "./MeetJenn/meetJenn.scss";
 @import "./Card/card.scss";
 @import "./Contact/contact_page.scss";
@@ -64,6 +65,7 @@ h1 {
   font-size: 50px;
   display: flex;
   border-image-slice: #231942;
+  text-shadow: 0 4px 12px rgba(59, 33, 54, 0.274);
   align-items: center;
   justify-content: center;
 }

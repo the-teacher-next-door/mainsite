@@ -1,4 +1,4 @@
-.tabletNav {
+.mobileNav {
   display: flex;
   background-color: $lightPurple;
   position: relative;
@@ -135,16 +135,11 @@
 }
 
 @include for-phone-only {
-  .tabletNav {
-    display: none;
-  }
-}
-
-@include for-tablet-portrait-up {
-  .tabletNav {
+  .mobileNav {
     display: flex;
     background-color: $lightPurple;
-    position: relative;
+    position: fixed;
+    bottom: 0;
     z-index: 3;
     text-align: left;
 
@@ -219,6 +214,12 @@
       left: 0;
       opacity: 1;
     }
+  }
+}
+
+@include for-tablet-portrait-up {
+  .mobileNav {
+    display: none;
   }
 }
 

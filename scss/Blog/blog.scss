@@ -1,8 +1,6 @@
-@mixin for-tablet-portrait-up {
-}
+@mixin for-tablet-portrait-up {}
 
-@mixin for-phone-only {
-}
+@mixin for-phone-only {}
 
 @mixin for-phone-only {
 	@media (max-width: 599px) {
@@ -39,8 +37,21 @@
 	background-color: #ffffff;
 
 	.preview {
+		h1 {
+			span {
+
+				font-family: 'Cabin' !important;
+				font-size: 50px !important;
+			}
+		}
+
 		p {
-			padding: 20px;
+			span {
+				font-family: 'Roboto' !important;
+			}
+
+			padding-bottom: 20px;
+
 		}
 	}
 
@@ -223,11 +234,9 @@
 	padding: 20px;
 }
 
-@mixin for-tablet-portrait-up {
-}
+@mixin for-tablet-portrait-up {}
 
-@mixin for-phone-only {
-}
+@mixin for-phone-only {}
 
 @mixin for-phone-only {
 	@media (max-width: 599px) {
