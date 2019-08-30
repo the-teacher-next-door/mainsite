@@ -224,8 +224,55 @@ nextApp
       return nextApp.render(req, res, "/");
     });
 
+    // blog routes
     server.get("/blog/:slug", (req, res) => {
       return nextApp.render(req, res, "/blog", { q: req.params.slug });
+    });
+
+    //for older blog routes
+    server.get("/my-blog/reading/:slug", (req, res) => {
+      console.log(req.params.slug);
+      let string = req.params.slug;
+
+      string = string.replace(/-/g, " ");
+      console.log(`new ${string}`);
+      return nextApp.render(req, res, "/blog", { q: string });
+    });
+
+    server.get("/my-blog/writing/:slug", (req, res) => {
+      console.log(req.params.slug);
+      let string = req.params.slug;
+
+      string = string.replace(/-/g, " ");
+      console.log(`new ${string}`);
+      return nextApp.render(req, res, "/blog", { q: string });
+    });
+
+    server.get("/my-blog/math/:slug", (req, res) => {
+      console.log(req.params.slug);
+      let string = req.params.slug;
+
+      string = string.replace(/-/g, " ");
+      console.log(`new ${string}`);
+      return nextApp.render(req, res, "/blog", { q: string });
+    });
+
+    server.get("/my-blog/holidays/:slug", (req, res) => {
+      console.log(req.params.slug);
+      let string = req.params.slug;
+
+      string = string.replace(/-/g, " ");
+      console.log(`new ${string}`);
+      return nextApp.render(req, res, "/blog", { q: string });
+    });
+
+    server.get("/my-blog/classroom-ideas/:slug", (req, res) => {
+      console.log(req.params.slug);
+      let string = req.params.slug;
+
+      string = string.replace(/-/g, " ");
+      console.log(`new ${string}`);
+      return nextApp.render(req, res, "/blog", { q: string });
     });
 
     server.get("/my-blog/:slug", (req, res) => {

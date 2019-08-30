@@ -206,9 +206,9 @@ const NewBlog = props => {
         </AdminNav>
 
         <div className="container">
-          <div className="row">
-            <div className="col-xl-12">
-              <div className="editorContent">
+          <div className="columns">
+            <div className="column is-8">
+              <div className="editorContent preview">
                 <div className="sidebar"></div>
 
                 <div className="toolbar">

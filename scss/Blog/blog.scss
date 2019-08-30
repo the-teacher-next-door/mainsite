@@ -32,7 +32,8 @@
 	}
 }
 
-.blogPage {
+.blogPage,
+.new-blog {
 	overflow: hidden;
 	background-color: #ffffff;
 
@@ -97,7 +98,11 @@
 	}
 
 	.blog-text img {
+		float: none;
+		height: auto;
+		position: relative;
 		margin: 0 auto;
+		left: 27%;
 		max-width: 400px;
 	}
 }
