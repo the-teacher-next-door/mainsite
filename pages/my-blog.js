@@ -49,6 +49,7 @@ const Blogs = props => {
                       <div className="column is-3" key={index}>
                         <Card
                           title={blog.title}
+                          cleanTitle={blog.cleanTitle}
                           img={blog.img}
                           description={blog.description}
                           category={blog.category.split(",")[0]}
@@ -84,6 +85,7 @@ const Blogs = props => {
                       <div className="column is-3" key={index}>
                         <Card
                           title={blog.title}
+                          cleanTitle={blog.cleanTitle}
                           img={blog.img}
                           description={blog.description}
                           category={blog.category.split(",")[0]}
@@ -119,6 +121,7 @@ const Blogs = props => {
                       <div className="column is-3" key={index}>
                         <Card
                           title={blog.title}
+                          cleanTitle={blog.cleanTitle}
                           img={blog.img}
                           description={blog.description}
                           category={blog.category.split(",")[0]}
@@ -154,6 +157,7 @@ const Blogs = props => {
                       <div className="column is-3" key={index}>
                         <Card
                           title={blog.title}
+                          cleanTitle={blog.cleanTitle}
                           img={blog.img}
                           description={blog.description}
                           category={blog.category.split(",")[0]}
@@ -190,6 +194,7 @@ const Blogs = props => {
                       <div className="column is-3" key={index}>
                         <Card
                           title={blog.title}
+                          cleanTitle={blog.cleanTitle}
                           img={blog.img}
                           description={blog.description}
                           category={blog.category.split(",")[0]}
@@ -223,6 +228,7 @@ const Blogs = props => {
                     <div className="column is-3" key={index}>
                       <Card
                         title={blog.title}
+                        cleanTitle={blog.cleanTitle}
                         img={blog.img}
                         description={blog.description}
                         category={blog.category.split(",")[0]}
