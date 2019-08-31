@@ -4,7 +4,7 @@ import Link from "next/link";
 const Card = props => (
   <Link
     as={`/my-blog/${
-      props.category === "Ideas"
+      props.category === "ideas"
         ? "classroom-ideas"
         : props.category.toLowerCase()
     }/${props.cleanTitle}`}
