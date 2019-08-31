@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import MobileNavPanel from "./MobileNavPanel";
-import Logo from "../images/Logo.png";
+import Logo from "../images/logo.png";
 const MobileNav = ({ user }) => {
   const [show, setShow] = useState("no-show");
 
