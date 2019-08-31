@@ -214,7 +214,7 @@
 }
 
 @include for-tablet-portrait-up {
-  .mobileNav {
+  .mobileFooter {
     display: none;
   }
 }
@@ -223,7 +223,7 @@
 
 
 @include for-tablet-landscape-up {
-  .tabletNav {
+  .mobileFooter {
     display: none !important;
   }
 }
