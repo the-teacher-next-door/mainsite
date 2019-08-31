@@ -19,19 +19,20 @@ const BlogSlider = props => (
         <Columns className="is-multiline is-centerd">
           {props.blogs.map((blog, index) => {
             if (blog.live && index < 8) {
-              let cleanTitle = blog.title.replace(" ", "-");
-              console.log(cleanTitle);
               return (
                 <Column className="is-3" key={index}>
                   <Link
-                    as={`/blog/${cleanTitle}`}
-                    href={`/blog?q=${blog.title}`}
+                    as={`/my-blog/${blog.category.toLowerCase()}/${
+                      blog.cleanTitle
+                    }`}
+                    href={`/blog?q=${blog.cleanTitle}`}
                   >
                     <a>
                       <Card
                         title={blog.title}
+                        cleanTitle={blog.cleanTitle}
                         img={blog.img}
-                        category={blog.category}
+                        category={blog.category.toLowerCase()}
                         description={blog.description}
                       />
                     </a>

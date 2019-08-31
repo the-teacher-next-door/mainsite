@@ -11,6 +11,7 @@ module.exports = {
   },
   save: (req, res) => {
     console.log(req.body.description);
+    const cleanTitle = req.body.title.toLowerCase().replace(/ /g, "-");
     db.blogs
       .updateOne(
         { _id: req.body.id },
@@ -19,6 +20,7 @@ module.exports = {
             username: req.body.username,
             blog: req.body.blog,
             title: req.body.title,
+            cleanTitle,
             img: req.body.img,
             live: req.body.live,
             category: req.body.category,
@@ -74,9 +76,10 @@ module.exports = {
       });
   },
   load: (req, res) => {
+    console.log("req: " + req.params);
     db.blogs
       .findOne({
-        title: req.params.title
+        cleanTitle: req.params.title
       })
       .then(done => {
         res.send(done);

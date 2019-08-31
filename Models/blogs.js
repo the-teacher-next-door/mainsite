@@ -8,6 +8,7 @@ const blogSchema = new Schema({
   username: { type: String, required: true },
   blog: { type: String, required: true },
   title: { type: String, required: true, unique: true },
+  cleanTitle: { type: String, required: true, unique: true },
   date: { type: String, default: convertDate() },
   img: { type: String, required: false },
   live: { type: Boolean, required: true },

@@ -19,7 +19,10 @@ const Card = props => (
         </Link>
       </p>
       <div className="card-footer-item">
-        <Link as={`/blog/${props.title}`} href={`/blog?q=${props.title}`}>
+        <Link
+          as={`/my-blog/${props.category}/${props.cleanTitle}`}
+          href={`/blog?q=${props.cleanTitle}`}
+        >
           <a>
             <SBtn>Read More</SBtn>
           </a>

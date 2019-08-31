@@ -135,7 +135,6 @@ const BlogPage = props => {
 };
 
 BlogPage.getInitialProps = async function({ req, query }) {
-  console.log(query);
   const baseUrl = req ? `${req.protocol}://${req.get("Host")}` : "";
   const response = await fetch(baseUrl + "/api/blog/load/" + query.q);
 
