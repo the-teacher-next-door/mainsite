@@ -1,4 +1,11 @@
 .card {
+  transition: all .5s ease;
+
+  &:hover {
+    transform: scale(1.1);
+    box-shadow: 0 8px 6px #c7c7c7;
+  }
+
   h2 {
     text-overflow: ellipsis;
     /* color: black; */
