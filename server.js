@@ -68,7 +68,7 @@ nextApp
     // Init Upload
     const upload = multer({
       storage: storage,
-      limits: { fileSize: 20000000 },
+      limits: { fileSize: 90000000 },
       fileFilter: function(req, file, cb) {
         checkFileType(file, cb);
       }
@@ -76,7 +76,7 @@ nextApp
 
     const freebiesUpload = multer({
       storage: freebiesStorage,
-      limits: { fileSize: 20000000 },
+      limits: { fileSize: 90000000 },
       fileFilter: function(req, file, cb) {
         checkZipType(file, cb);
       }
@@ -111,7 +111,7 @@ nextApp
       if (mimetype && extname) {
         return cb(null, true);
       } else {
-        cb("Error: Zips Only!");
+        cb("Error: Zips and PDFs Only!");
       }
     }
     server.use(express.urlencoded({ extended: true }));

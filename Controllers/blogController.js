@@ -76,10 +76,18 @@ module.exports = {
       });
   },
   load: (req, res) => {
-    console.log("req: " + req.params);
     db.blogs
       .findOne({
         cleanTitle: req.params.title
+      })
+      .then(done => {
+        res.send(done);
+      });
+  },
+  loadAdmin: (req, res) => {
+    db.blogs
+      .findOne({
+        title: req.params.title
       })
       .then(done => {
         res.send(done);

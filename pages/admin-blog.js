@@ -38,7 +38,7 @@ const NewBlog = props => {
     let url = window.location.href.split("/");
 
     //need to convert from raw
-    api.loadBlog(url[4]).then(blog => {
+    api.loadBlogAdmin(url[4]).then(blog => {
       setTitleInputVal(blog.data.title);
       setId(blog.data._id);
       setImageurl(blog.data.img);
