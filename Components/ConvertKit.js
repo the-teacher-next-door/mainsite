@@ -4,6 +4,7 @@ import PBtn from "./PBtn";
 import { Helmet } from "react-helmet";
 import api from "../utils/api";
 import Letter from "../images/A.png";
+import TitleComponent from "./TitleComponent";
 class ConvertKit extends Component {
   state = {
     name: "",
@@ -98,8 +99,7 @@ class ConvertKit extends Component {
     return (
       <div className="container-fluid convertKit">
         <div className="container">
-          <img src={Letter} alt="" />
-          <h1>{this.state.title}</h1>
+          <TitleComponent img={Letter} h1={this.state.title} />
           <h2>
             Gain access to a library of FREE resources for upper elementary
             classrooms!

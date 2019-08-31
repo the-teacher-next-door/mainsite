@@ -100,8 +100,6 @@ const Blogs = props => {
         <div className="container-fluid light-gray-background blog-container">
           <div className="container">
             <div className="has-text-centered math">
-              <IconImages img={Paper} />
-              <h1 className="padding-50">"Math" Blogs</h1>
               <div className="columns is-multiline is-centered">
                 {blogs.map((blog, index) => {
                   if (blog.live && blog.category === "Math") {

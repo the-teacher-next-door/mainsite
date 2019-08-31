@@ -102,7 +102,6 @@ const Writing = props => {
         <div className="container-fluid blog-container light-gray-background">
           <div className="container">
             <div className="has-text-centered reading">
-              <IconImages img={Paper} />
               <div className="columns is-multiline is-centered">
                 {blogs.map((blog, index) => {
                   if (blog.live && blog.category === "Writing") {
