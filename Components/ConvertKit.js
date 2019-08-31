@@ -102,7 +102,7 @@ class ConvertKit extends Component {
           <h1>{this.state.title}</h1>
           <h2>
             Gain access to a library of FREE resources for upper elementary
-            grades!
+            classrooms!
           </h2>
           <p>
             By entering your information, you agree to receive email from me.

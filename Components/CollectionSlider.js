@@ -52,7 +52,7 @@ class CollectionSlider extends Component {
     };
     return (
       <div className="container-fluid collections border-bottom ">
-        <TitleComponent img={Present} h1="My Products" />
+        <TitleComponent img={Present} h1="My Resources" />
         <Slider {...settings}>
           {this.props.items.map((item, index) => {
             return (

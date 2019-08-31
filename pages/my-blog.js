@@ -30,8 +30,8 @@ const Blogs = props => {
                   <img src={Reading} alt="" />
                   <h1>Reading</h1>
                   <p>
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                    Minus quod ratione atqu.
+                    Find lots of reading ideas, activities, and resources to
+                    increase reading comprehension.
                   </p>
                 </div>
                 <div className="column is-2">
@@ -60,50 +60,14 @@ const Blogs = props => {
                 })}
               </div>
             </div>
-            <div className="math">
-              <div className="columns is-vcentered padding-top-30">
-                <div className="column inline">
-                  <img src={Math} alt="" />
-                  <h1>Math</h1>
-                  <p>
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                    Minus quod ratione atqu.
-                  </p>
-                </div>
-                <div className="column is-2">
-                  <Link as={`/math`} href="/math?q=math">
-                    <a>
-                      <PBtn>VIEW MORE</PBtn>
-                    </a>
-                  </Link>
-                </div>
-              </div>
-              <div className="columns">
-                {props.mBlogs.map((blog, index) => {
-                  if (blog.live && blog.category === "Math") {
-                    return (
-                      <div className="column is-3" key={index}>
-                        <Card
-                          title={blog.title}
-                          cleanTitle={blog.cleanTitle}
-                          img={blog.img}
-                          description={blog.description}
-                          category={blog.category.split(",")[0]}
-                        />
-                      </div>
-                    );
-                  }
-                })}
-              </div>
-            </div>
             <div className="writing">
               <div className="columns is-vcentered padding-top-30">
                 <div className="column inline">
                   <img src={Writing} alt="" />
                   <h1>Writing & Grammar</h1>
                   <p>
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                    Minus quod ratione atqu.
+                    This section is filled with helpful tips to boost writing
+                    and grammar skills.
                   </p>
                 </div>
                 <div className="column is-2">
@@ -132,14 +96,50 @@ const Blogs = props => {
                 })}
               </div>
             </div>
+            <div className="math">
+              <div className="columns is-vcentered padding-top-30">
+                <div className="column inline">
+                  <img src={Math} alt="" />
+                  <h1>Math</h1>
+                  <p>
+                    Find strategies and tips to help you teach upper grade math
+                    confidently!
+                  </p>
+                </div>
+                <div className="column is-2">
+                  <Link as={`/math`} href="/math?q=math">
+                    <a>
+                      <PBtn>VIEW MORE</PBtn>
+                    </a>
+                  </Link>
+                </div>
+              </div>
+              <div className="columns">
+                {props.mBlogs.map((blog, index) => {
+                  if (blog.live && blog.category === "Math") {
+                    return (
+                      <div className="column is-3" key={index}>
+                        <Card
+                          title={blog.title}
+                          cleanTitle={blog.cleanTitle}
+                          img={blog.img}
+                          description={blog.description}
+                          category={blog.category.split(",")[0]}
+                        />
+                      </div>
+                    );
+                  }
+                })}
+              </div>
+            </div>
             <div className="holidays">
               <div className="columns is-vcentered padding-top-30">
                 <div className="column inline">
                   <img src={Holidays} alt="" />
                   <h1>Holidays</h1>
                   <p>
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                    Minus quod ratione atqu.
+                    Year ‘round seasonal activities, holiday ideas, and mentor
+                    texts are included here.
                   </p>
                 </div>
                 <div className="column is-2">
@@ -175,8 +175,8 @@ const Blogs = props => {
                   <img src={Ideas} alt="" />
                   <h1>Classroom Ideas</h1>
                   <p>
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                    Minus quod ratione atqu.
+                    You’ll find practical ideas for classroom organization and
+                    management for the upper grade classroom!
                   </p>
                 </div>
                 <div className="column is-2">

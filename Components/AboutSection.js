@@ -1,6 +1,7 @@
 import React from "react";
 import Jenn from "../images/jennphoto.png";
 import PBtn from "./PBtn";
+import Link from "next/link";
 const AboutSection = props => {
   return (
     <div className="container-fluid about">
@@ -12,12 +13,15 @@ const AboutSection = props => {
       <div className="columns is-centered">
         <div className="column is-6 ">
           <h2>
-            Welcome, teacher friends! I’m Jenn Larson, a teacher, a mother, and
-            a writer. My goal is to provide resources, tips, and strategies to
+            Welcome, teacher friends! I’m Jenn Larson, a teacher, a mom, and an
+            author. My goal is to provide resources, tips, and strategies to
             help teachers make a difference in the lives of their students. I
             believe that using effective teaching strategies, making learning
             fun, and communicating that you care, can help students achieve to
-            the best of their abilities.
+            the best of their abilities.{" "}
+            <Link href="/meet-jenn">
+              <a id="sub-link">Learn more about me.</a>
+            </Link>
           </h2>
           <ul>
             <li>
