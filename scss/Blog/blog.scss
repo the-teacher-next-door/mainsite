@@ -39,8 +39,11 @@
 
 	.preview {
 		h1 {
-			span {
+			justify-content: flex-start;
 
+			span {
+				color: $darkPurple !important;
+				justify-content: flex-start;
 				font-family: 'Cabin' !important;
 				font-size: 50px !important;
 			}
