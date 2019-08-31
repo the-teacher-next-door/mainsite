@@ -3,7 +3,11 @@ import SBtn from "./SBtn";
 import Link from "next/link";
 const Card = props => (
   <Link
-    as={`/my-blog/${props.category.toLowerCase()}/${props.cleanTitle}`}
+    as={`/my-blog/${
+      props.category === "Ideas"
+        ? "classroom-ideas"
+        : props.category.toLowerCase()
+    }/${props.cleanTitle}`}
     href={`/blog?q=${props.cleanTitle}`}
   >
     <div className="card">
