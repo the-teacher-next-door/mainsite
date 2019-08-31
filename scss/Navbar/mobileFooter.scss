@@ -1,24 +1,15 @@
-.mobileNav {
+.mobileFooter {
   display: flex;
-  background-color: $lightPurple;
+  background-color: $lightPurple !important;
   position: relative;
   z-index: 3;
   text-align: left;
-  padding: 0 !important;
 
   .menuIcon {
     background: none;
     border: none;
     font-size: 42px;
     color: #FFF;
-  }
-
-  .logo {
-    background-color: #fff;
-  }
-
-  i {
-    color: $darkPurple;
   }
 
   .toolbar {
@@ -143,7 +134,7 @@
 }
 
 @include for-phone-only {
-  .mobileNav {
+  .mobileFooter {
     display: flex;
     background-color: $lightPurple;
     z-index: 3;

@@ -16,6 +16,7 @@ import Header from "../Components/Header";
 import Head from "next/head";
 import TabletNav from "../Components/TabletNav";
 import MobileNav from "../Components/MobileNav";
+import MobileFooter from "../Components/mobileFooter";
 const SocialClips = dynamic(() =>
   import("../Components/SocialClips/SocialClips")
 );
@@ -57,6 +58,7 @@ class Home extends Component {
           <SocialClips />
           <AboutSection />
           <FooterNext />
+          <MobileFooter />
         </div>
         <style jsx>{`
           .wrapper-home {
