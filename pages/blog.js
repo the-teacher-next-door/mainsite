@@ -26,9 +26,12 @@ import Pencil from "../images/Pencil.png";
 import Light from "../images/Light.png";
 import Mug from "../images/Mug.png";
 import TabletNav from "../Components/TabletNav";
+import Head from "next/head";
 const BlogPage = props => {
   const categories = props.blogs.category.split(",");
   const [blogs, setBlogs] = useState([]);
+  const [url, setUrl] = useState("");
+
   useEffect(() => {
     api.loadBlogs().then(blog => {
       setBlogs(blog.data);
@@ -36,6 +39,18 @@ const BlogPage = props => {
   }, []);
   return (
     <Layout>
+      <Head>
+        <meta property="og:type" content="blog" />
+        <meta property="og:title" content={props.blogs.title} />
+        <meta property="og:description" content={props.blogs.description} />
+        <meta
+          property="og:url"
+          content={`the-teacher-next-door.com/blog/${props.blogs.cleanTitle}`}
+        />
+        <meta property="og:site_name" content="the-teacher-next-door.com" />
+        <meta property="article:published_time" content={props.blogs.date} />
+        <meta property="article:author" content="Jennifer Larson" />
+      </Head>
       <TabletNav />
       <div className="blogPage">
         <Header />

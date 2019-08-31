@@ -19,41 +19,46 @@ function Meet(props) {
   const info = [
     {
       heading: `Teaching Experience`,
-      summary:
-        "I have been a teacher for over 20 years! I taught second grade for about ten years and then 4th/5th for about ten years too. Teaching is in my blood as my mother and father were both teachers and my brother works as a professor of history. I look forward to going to work each day and am excited to be able to share teaching ideas and some of the things I make for my classroom with you."
+      summary: `My father and mother both started out as teachers and my brother is a history professor, so I think teaching
+        must run in my family! I didn’t set out to be a teacher, but originally wanted to be a counselor. I graduated
+        with a degree in psychology. Right out of college, I worked as a substitute teacher, and fell in love with
+        teaching! I went back to college to get my teaching credential, and later a master’s degree and I’ve taught now
+        for over twenty years! Most of my teaching experience is at the elementary level, first in second grade, but
+        more recently in fourth and fifth grades.`
     },
     {
       heading: `My Teaching Style`,
-      summary: `Teaching to the whole child is important to me and while I want
-    my students to do well on standardized tests, and work towards
-    that end, I have never felt that tests were the most important
-    thing that I teach. I believe in motivating kids to become life
-    long learners, while modeling the character traits that they
-    need to grow into happy, well-adjusted adults. I love to add
-    humor to the learning day and try to make even the most dull
-    subject come to life. I truly care about the kids I teach and
-    want them to have the best year possible.`
+      summary: `Teaching to the whole child is important to me and while I want my students to do well on standardized tests,
+      and work towards that end, I have never felt that tests were the most important thing that I teach. Besides
+      content learning, I believe in motivating kids to become life-long learners, while encouraging the character
+      traits they need to grow into happy, kind adults.
+      My teaching philosophy starts by making meaningful connections with my students. I really work hard to
+      create a positive classroom climate and use Morning Meetings as our cornerstone.
+      Keeping kids motivated is huge to me and I like to plan activities which are learning focused but really fun! I
+      use a variety of teaching and learning formats, including lots of games, while incorporating movement when
+      possible. I love to add humor to the learning day and try to make even the most dull subject come to life. I
+      truly care about the kids I teach and want them to have the best year possible.`
     },
     {
       heading: `Honors/Awards/Shining Teacher Moment`,
-      summary: `I have been a teacher for over 20 years! I taught second grade
-  for about ten years and then 4th/5th for about ten years too.
-  Teaching is in my blood as my mother and father were both
-  teachers and my brother works as a professor of history. I look
-  forward to going to work each day and am excited to be able to
-  share teaching ideas and some of the things I make for my
-  classroom with you.`
+      summary: `Mentor Teacher
+       2013 -2014 Woman of the Year (National Association of Professional Women)
+       Published Author`
     },
     {
       heading: `My Own Educational History`,
-      summary: `I have a BA in Psychology and a Master's in
-      Curriculum/Instruction.`
+      summary: ` - BA in Psychology
+      - Master’s Degree in Education: Curriculum and Instruction`
     },
     {
       heading: `My Family`,
-      summary: ` I have two kids. My son and his wife (who is like my second
-        daughter) live in San Francisco. My daughter is currently in
-        college. I also have a boyfriend and two rescue cats.`
+      summary: ` There were three kids in my family and I grew up as the middle child and only daughter. My father started as a
+      teacher but eventually became the head of Special Services for our local school district. My mother was also a
+      teacher but became a stay at home mom as we were growing up. Later, she went to seminary and became an
+      ordained pastor.
+      I have two kids of my own. My son and his wife both live and work in San Diego. My daughter is in the
+      teaching program. Right now, she and her fiancé are planning a summer wedding. I also have a long time
+      boyfriend and three rescue cats (Lola, Willie, and Callie).`
     }
   ];
   const [books, setBooks] = useState([]);

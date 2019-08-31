@@ -4,7 +4,7 @@ const ShareMenu = props => {
   const [url, setUrl] = useState("");
 
   useEffect(() => {
-    setUrl(window.location.href);
+    setUrl(encodeURIComponent(window.location.href));
   }, []);
   return (
     <div className="container share-menu">
@@ -25,7 +25,16 @@ const ShareMenu = props => {
             allow="encrypted-media"
           ></iframe>
         </li>
-        <li></li>
+        <li>
+          <a
+            data-pin-do="buttonBookmark"
+            data-pin-tall="true"
+            data-pin-url={url}
+            href="https://www.pinterest.com/pin/create/button/"
+          >
+            Pinterest
+          </a>
+        </li>
         <li></li>
         <li></li>
       </ul>

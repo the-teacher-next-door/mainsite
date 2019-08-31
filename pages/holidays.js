@@ -107,6 +107,7 @@ const Blogs = props => {
                         <Card
                           title={blog.title}
                           img={blog.img}
+                          cleanTitle={blog.cleanTitle}
                           description={blog.description}
                           category={blog.category.split(",")[0]}
                         />
