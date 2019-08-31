@@ -56,7 +56,7 @@ const MobileNavPanel = props => (
           TpT
         </Socials>
       </li>
-      <li>
+      <li className="searchbar-li">
         <SearchBar />
       </li>
     </ul>

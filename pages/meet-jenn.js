@@ -15,6 +15,8 @@ import Book from "../images/B.png";
 import ContainerFluid from "../Components/FormatComponents/ContainerFluid";
 import Container from "../Components/FormatComponents/Container";
 import TabletNav from "../Components/TabletNav";
+import MobileFooter from "../Components/mobileFooter";
+import MobileNav from "../Components/MobileNav";
 function Meet(props) {
   const info = [
     {
@@ -107,6 +109,8 @@ function Meet(props) {
     <Layout>
       <div className="meet">
         <TabletNav />
+        <MobileNav />
+        <MobileFooter />
         <NavNext />
         <IconNav />
         <div className="container-fluid aboutSection">

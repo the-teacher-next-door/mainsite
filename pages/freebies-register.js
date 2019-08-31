@@ -10,6 +10,7 @@ import FooterNext from "../Components/FooterNext";
 import Layout from "../Components/Layout/Layout";
 import NavNext from "../Components/NavNext";
 import TabletNav from "../Components/TabletNav";
+import MobileFooter from "../Components/mobileFooter";
 const FreebiesReg = props => {
   const [freebies, setFreebies] = useState([]);
 
@@ -23,6 +24,8 @@ const FreebiesReg = props => {
     <Layout>
       <div className="freebies wrapper-freebies">
         <TabletNav />
+        <MobileNav />
+        <MobileFooter />
         <NavNext />
         <IconNav />
 

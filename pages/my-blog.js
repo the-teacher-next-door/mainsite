@@ -14,12 +14,16 @@ import Ideas from "../images/Light.png";
 import Link from "next/link";
 import PBtn from "../Components/PBtn";
 import TabletNav from "../Components/TabletNav";
+import MobileFooter from "../Components/mobileFooter";
+import MobileNav from "../Components/MobileNav";
 const Blogs = props => {
   if (props.rBlogs !== undefined) {
     return (
       <Layout>
         <div className="blogs">
           <TabletNav />
+          <MobileNav />
+          <MobileFooter />
           <NavNext />
           <IconNav />
           <MiniConvert />
