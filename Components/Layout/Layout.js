@@ -6,7 +6,7 @@ const Layout = props => {
   return (
     <div className="page-layout">
       <Head>
-        <title>My styled page</title>
+        <title>The Teacher Next Door</title>
         <link
           href="https://fonts.googleapis.com/css?family=Cabin:400,700|Lato:400,700|Roboto:400,700&display=swap"
           rel="stylesheet"
