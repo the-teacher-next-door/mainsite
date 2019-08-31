@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { useState, useEffect } from "react";
 import NavNext from "../Components/NavNext";
 import IconNav from "../Components/IconNav";
 import Layout from "../Components/Layout/Layout";
@@ -16,7 +16,17 @@ import Light from "../images/Light.png";
 import Paper from "../images/V.png";
 import PBtn from "../Components/PBtn";
 import TabletNav from "../Components/TabletNav";
+import api from "../utils/api";
 const Blogs = props => {
+  const [blogs, setBlogs] = useState([]);
+
+  useEffect(() => {
+    let url = window.location.href.split("/");
+    console.log(url[3]);
+    api.search(url[3]).then(data => {
+      setBlogs(data.data);
+    });
+  }, []);
   return (
     <Layout>
       <div className="categoryPages">
@@ -94,7 +104,7 @@ const Blogs = props => {
               <IconImages img={Paper} />
               <h1 className="padding-50">"Classroom" Blogs</h1>
               <div className="columns is-multiline is-centered">
-                {props.blogs.map((blog, index) => {
+                {blogs.map((blog, index) => {
                   if (blog.live && blog.category === "Ideas") {
                     return (
                       <div className="column is-3" key={index}>
@@ -117,11 +127,5 @@ const Blogs = props => {
     </Layout>
   );
 };
-Blogs.getInitialProps = async function({ req, query }) {
-  const baseUrl = req ? `${req.protocol}://${req.get("Host")}` : "";
-  const response = await fetch(baseUrl + "/api/blog/search/" + query.q);
 
-  const blogs = await response.json();
-  return { blogs: blogs };
-};
 export default Blogs;
