@@ -61,8 +61,6 @@ const MobileNavPanel = props => (
       </li>
     </ul>
     <MobileIcons />
-
-    <div className="column is-12"></div>
   </div>
 );
 
