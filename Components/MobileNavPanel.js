@@ -56,12 +56,13 @@ const MobileNavPanel = props => (
           TpT
         </Socials>
       </li>
+      <li>
+        <SearchBar />
+      </li>
     </ul>
     <MobileIcons />
 
-    <div className="column is-12">
-      <SearchBar />
-    </div>
+    <div className="column is-12"></div>
   </div>
 );
 
