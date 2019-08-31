@@ -87,7 +87,7 @@ module.exports = {
   loadAdmin: (req, res) => {
     db.blogs
       .findOne({
-        title: req.params.title
+        _id: req.params.id
       })
       .then(done => {
         res.send(done);

@@ -97,7 +97,7 @@ const Admin = props => {
                       <div className="columns">
                         <div className="blogDisplay">
                           <div className="column is-1">
-                            <Link href={`/admin-blog/${blog.title}`}>
+                            <Link href={`/admin-blog/${blog._id}`}>
                               <a>{blog.title}</a>
                             </Link>
                           </div>
