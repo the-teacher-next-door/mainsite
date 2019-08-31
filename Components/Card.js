@@ -2,17 +2,21 @@ import React from "react";
 import SBtn from "./SBtn";
 import Link from "next/link";
 const Card = props => (
-  <div className="card">
-    <div className="card-image">
-      <figure className="image">
-        <img src={props.img} alt={props.title} />
-      </figure>
-    </div>
+  <Link
+    as={`/my-blog/${props.category.toLowerCase()}/${props.cleanTitle}`}
+    href={`/blog?q=${props.cleanTitle}`}
+  >
+    <div className="card">
+      <div className="card-image">
+        <figure className="image">
+          <img src={props.img} alt={props.title} />
+        </figure>
+      </div>
 
-    <div className="card-body">
+      {/* <div className="card-body">
       <h2 className="card-title">{props.title}</h2>
-    </div>
-    <div className="card-footer">
+    </div> */}
+      {/* <div className="card-footer">
       <p className="card-footer-item">
         <Link href={`/${props.category}`}>
           <a>{props.category}</a>
@@ -28,8 +32,9 @@ const Card = props => (
           </a>
         </Link>
       </div>
+    </div> */}
     </div>
-  </div>
+  </Link>
 );
 
 export default Card;

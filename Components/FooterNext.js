@@ -8,7 +8,7 @@ const FooterNext = props => {
       <div className="container">
         <div class="navbar-brand"></div>
 
-        <div id="navbarExampleTransparentExample" class="navbar-menu">
+        <div id="footerNav" class="navbar-menu">
           <div class="navbar-start">
             <span>
               <ul>

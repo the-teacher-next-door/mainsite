@@ -107,6 +107,12 @@
       align-items: center;
     }
 
+    #footerNav {
+      p {
+        color: $darkPurple;
+      }
+    }
+
     .primary-button {
       margin: 0;
       @include custom-padding(3px, 10px, 3px, 10px);
