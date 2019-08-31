@@ -110,7 +110,6 @@ function Meet(props) {
       <div className="meet">
         <TabletNav />
         <MobileNav />
-        <MobileFooter />
         <NavNext />
         <IconNav />
         <div className="container-fluid aboutSection">
@@ -224,6 +223,7 @@ function Meet(props) {
           </div>
         </Container>
         <Footer />
+        <MobileFooter />
       </div>
     </Layout>
   );

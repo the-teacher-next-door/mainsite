@@ -27,7 +27,6 @@ const Freebies = props => {
     <Layout>
       <div className="freebies">
         <TabletNav />
-        <MobileFooter />
         <MobileNav />
         <Header />
         <Container>
@@ -36,7 +35,7 @@ const Freebies = props => {
               <TitleComponent img={Backpack} h1="Freebies" />
               {/* <Columns className="is-centered">
                 <Column className="is-2 has-text-centered">
-                  <PBtn onClick={logout}>Logout</PBtn>
+                <PBtn onClick={logout}>Logout</PBtn>
                 </Column>
               </Columns> */}
               <Columns className="is-multiline is-centered">
@@ -94,6 +93,7 @@ const Freebies = props => {
           )}
         </Container>
         <Footer />
+        <MobileFooter />
       </div>
     </Layout>
   );

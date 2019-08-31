@@ -17,6 +17,8 @@ import Paper from "../images/V.png";
 import PBtn from "../Components/PBtn";
 import TabletNav from "../Components/TabletNav";
 import api from "../utils/api";
+import MobileNav from "../Components/MobileNav";
+import MobileFooter from "../Components/mobileFooter";
 const Blogs = props => {
   const [blogs, setBlogs] = useState([]);
 
@@ -31,13 +33,14 @@ const Blogs = props => {
     <Layout>
       <div className="categoryPages">
         <TabletNav />
+        <MobileNav />
         <NavNext />
         <IconNav />
         <MiniConvert />
         {/* Title box */}
         <div className="container titlebox">
           <div className="columns is-multiline is-centered">
-            <div className="column is-6">
+            <div className="column is-6 has-text-centered">
               <h1>
                 <IconImages img={Mug} /> Holidays
               </h1>
@@ -120,6 +123,7 @@ const Blogs = props => {
           </div>
         </div>
         <Footer />
+        <MobileFooter />
       </div>
     </Layout>
   );

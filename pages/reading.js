@@ -34,14 +34,13 @@ const Blogs = props => {
       <div className="categoryPages">
         <TabletNav />
         <MobileNav />
-        <MobileFooter />
         <NavNext />
         <IconNav />
         <MiniConvert />
         {/* Title box */}
         <div className="container titlebox">
           <div className="columns is-multiline ">
-            <div className="column is-6">
+            <div className="column is-6 has-text-centered">
               <h1>
                 <IconImages img={Book} /> Reading
               </h1>
@@ -129,6 +128,7 @@ const Blogs = props => {
           </div>
         </div>
         <Footer />
+        <MobileFooter />
       </div>
     </Layout>
   );

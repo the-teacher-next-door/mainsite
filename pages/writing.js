@@ -35,7 +35,6 @@ const Writing = props => {
       <div className="categoryPages">
         <TabletNav />
         <MobileNav />
-        <MobileFooter />
         <NavNext />
         <IconNav />
         <MiniConvert />
@@ -127,6 +126,7 @@ const Writing = props => {
           </div>
         </div>
         <Footer />
+        <MobileFooter />
       </div>
     </Layout>
   );

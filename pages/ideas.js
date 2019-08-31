@@ -17,6 +17,8 @@ import Paper from "../images/V.png";
 import PBtn from "../Components/PBtn";
 import TabletNav from "../Components/TabletNav";
 import api from "../utils/api";
+import MobileNav from "../Components/MobileNav";
+import MobileFooter from "../Components/mobileFooter";
 const Blogs = props => {
   const [blogs, setBlogs] = useState([]);
 
@@ -31,6 +33,7 @@ const Blogs = props => {
     <Layout>
       <div className="categoryPages">
         <TabletNav />
+        <MobileNav />
         <NavNext />
         <IconNav />
         <MiniConvert />
@@ -122,6 +125,7 @@ const Blogs = props => {
           </div>
         </div>
         <Footer />
+        <MobileFooter />
       </div>
     </Layout>
   );

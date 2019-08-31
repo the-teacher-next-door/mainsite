@@ -23,7 +23,6 @@ const Blogs = props => {
         <div className="blogs">
           <TabletNav />
           <MobileNav />
-          <MobileFooter />
           <NavNext />
           <IconNav />
           <MiniConvert />
@@ -244,6 +243,7 @@ const Blogs = props => {
             </div>
           </div>
           <Footer />
+          <MobileFooter />
         </div>
       </Layout>
     );

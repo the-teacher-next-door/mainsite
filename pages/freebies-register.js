@@ -10,6 +10,7 @@ import FooterNext from "../Components/FooterNext";
 import Layout from "../Components/Layout/Layout";
 import NavNext from "../Components/NavNext";
 import TabletNav from "../Components/TabletNav";
+import MobileNav from "../Components/MobileNav";
 import MobileFooter from "../Components/mobileFooter";
 const FreebiesReg = props => {
   const [freebies, setFreebies] = useState([]);
@@ -25,7 +26,6 @@ const FreebiesReg = props => {
       <div className="freebies wrapper-freebies">
         <TabletNav />
         <MobileNav />
-        <MobileFooter />
         <NavNext />
         <IconNav />
 
@@ -102,6 +102,7 @@ const FreebiesReg = props => {
             </div>
             <ConvertKit title="JOIN MY NEWSLETTER!" />
             <FooterNext />
+            <MobileFooter />
           </div>
         </div>
       </div>
