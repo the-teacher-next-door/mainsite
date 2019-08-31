@@ -8,7 +8,10 @@ const ShareMenu = props => {
   }, []);
   return (
     <div className="container share-menu">
-      <h2>Don't Forget to Share this Post!</h2>
+      <h2>
+        If this post was helpful to you, I’d love for you to pin it or to share
+        it with a teacher friend!
+      </h2>
       <ul>
         <li>
           <iframe
