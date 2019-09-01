@@ -6,7 +6,7 @@ import Header from "../Components/Header";
 import api from "../utils/api";
 import Link from "next/link";
 import "isomorphic-fetch";
-import Footer from "../Components/Footer";
+import Footer from "../Components/Footer/FooterNext";
 import ContainerFluid from "../Components/FormatComponents/ContainerFluid";
 import Container from "../Components/FormatComponents/Container";
 import Columns from "../Components/FormatComponents/Columns";
@@ -14,8 +14,6 @@ import Column from "../Components/FormatComponents/Column";
 import Layout from "../Components/Layout/Layout";
 import Backpack from "../images/E.png";
 import TitleComponent from "../Components/TitleComponent";
-import MobileFooter from "../Components/mobileFooter";
-import MobileNav from "../Components/Navbar/MobileNav";
 const Freebies = props => {
   const logout = async () => {
     await api.logout();
@@ -25,7 +23,6 @@ const Freebies = props => {
   return (
     <Layout>
       <div className="freebies">
-        <MobileNav />
         <Header />
         <Container>
           {props.user ? (
@@ -91,7 +88,6 @@ const Freebies = props => {
           )}
         </Container>
         <Footer />
-        <MobileFooter />
       </div>
     </Layout>
   );

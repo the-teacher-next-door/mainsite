@@ -1,21 +1,15 @@
 import React, { useState, useEffect } from "react";
-import PBtn from "../Components/PBtn";
-import Input from "../Components/Input";
-import IconNav from "../Components/IconNav";
-import NavNext from "../Components/NavNext";
 import Layout from "../Components/Layout/Layout";
 import Link from "next/link";
 import api from "../utils/api";
-import Footer from "../Components/Footer";
+import Footer from "../Components/Footer/FooterNext";
 import Socials from "../Components/Socials";
 import SBtn from "../Components/SBtn";
 import Jenn from "../images/jennphoto.png";
 import TitleComponent from "../Components/TitleComponent";
 import Book from "../images/B.png";
-import ContainerFluid from "../Components/FormatComponents/ContainerFluid";
 import Container from "../Components/FormatComponents/Container";
-import MobileFooter from "../Components/mobileFooter";
-import MobileNav from "../Components/Navbar/MobileNav";
+import Header from "../Components/Header";
 function Meet(props) {
   const info = [
     {
@@ -107,9 +101,7 @@ function Meet(props) {
   return (
     <Layout>
       <div className="meet">
-        <MobileNav />
-        <NavNext />
-        <IconNav />
+        <Header/>
         <div className="container-fluid aboutSection">
           <div className="container">
             <div className="columns is-multiline is-centered">
@@ -221,7 +213,6 @@ function Meet(props) {
           </div>
         </Container>
         <Footer />
-        <MobileFooter />
       </div>
     </Layout>
   );

@@ -15,7 +15,7 @@ import Header from "../Components/Header";
 import { useRouter } from "next/router";
 import "isomorphic-fetch";
 import Comments from "../Components/Comments";
-import FooterNext from "../Components/Footer";
+import Footer from "../Components/Footer/FooterNext";
 import ShareMenu from "../Components/ShareMenu";
 import BlogSlider from "../Components/BlogSlider";
 import api from "../utils/api";
@@ -141,7 +141,7 @@ const BlogPage = props => {
             <Comments blogId={props.blogs._id} />
           </div>
         </div>
-        <FooterNext />
+        <Footer />
       </div>
     </Layout>
   );

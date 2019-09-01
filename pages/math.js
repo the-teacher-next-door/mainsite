@@ -1,11 +1,9 @@
 import React, { useState, useEffect } from "react";
-import NavNext from "../Components/NavNext";
-import IconNav from "../Components/IconNav";
 import Layout from "../Components/Layout/Layout";
 import "isomorphic-fetch";
 import Card from "../Components/Card";
 import MiniConvert from "../Components/miniConvert";
-import Footer from "../Components/Footer";
+import Footer from "../Components/Footer/FooterNext";
 import Slide from "../Components/Slide";
 import Link from "next/link";
 import R1 from "../images/math1.jpg";
@@ -16,8 +14,7 @@ import Calculator from "../images/Calc.png";
 import Paper from "../images/V.png";
 import PBtn from "../Components/PBtn";
 import api from "../utils/api";
-import MobileNav from "../Components/Navbar/MobileNav";
-import MobileFooter from "../Components/mobileFooter";
+import Header from "../Components/Header";
 const Blogs = props => {
   const [blogs, setBlogs] = useState([]);
 
@@ -31,9 +28,7 @@ const Blogs = props => {
   return (
     <Layout>
       <div className="categoryPages">
-        <MobileNav />
-        <NavNext />
-        <IconNav />
+        <Header/>
         <MiniConvert />
         {/* Title box */}
         <div className="container titlebox">
@@ -122,7 +117,6 @@ const Blogs = props => {
           </div>
         </div>
         <Footer />
-        <MobileFooter />
       </div>
     </Layout>
   );

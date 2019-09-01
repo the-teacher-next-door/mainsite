@@ -1,16 +1,11 @@
 import React, { useState, useEffect } from "react";
-import PBtn from "../Components/PBtn";
-import Input from "../Components/Input";
-import IconNav from "../Components/IconNav";
 import api from "../utils/api";
 import ConvertKit from "../Components/ConvertKit";
 import AboutSection from "../Components/AboutSection";
 import FreebieLogin from "../Components/FreebieLogin";
-import FooterNext from "../Components/FooterNext";
 import Layout from "../Components/Layout/Layout";
-import NavNext from "../Components/NavNext";
-import MobileNav from "../Components/Navbar/MobileNav";
-import MobileFooter from "../Components/mobileFooter";
+import Header from "../Components/Header";
+import Footer from '../Components/Footer/FooterNext';
 const FreebiesReg = props => {
   const [freebies, setFreebies] = useState([]);
 
@@ -23,9 +18,7 @@ const FreebiesReg = props => {
   return (
     <Layout>
       <div className="freebies wrapper-freebies">
-        <MobileNav />
-        <NavNext />
-        <IconNav />
+        <Header/>
 
         <div className="container-fluid">
           <FreebieLogin register={false} />
@@ -99,8 +92,7 @@ const FreebiesReg = props => {
               </div>
             </div>
             <ConvertKit title="JOIN MY NEWSLETTER!" />
-            <FooterNext />
-            <MobileFooter />
+            <Footer/>
           </div>
         </div>
       </div>

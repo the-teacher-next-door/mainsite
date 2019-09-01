@@ -1,23 +1,18 @@
 import React, { useState, useEffect } from "react";
-import NavNext from "../Components/NavNext";
-import IconNav from "../Components/IconNav";
 import Layout from "../Components/Layout/Layout";
 import "isomorphic-fetch";
 import Card from "../Components/Card";
 import MiniConvert from "../Components/miniConvert";
-import Footer from "../Components/Footer";
-import Slide from "../Components/Slide";
+import Footer from "../Components/Footer/FooterNext";
 import Link from "next/link";
 import R1 from "../images/holidays1.jpg";
 import R2 from "../images/holidays2.jpg";
 import R3 from "../images/holidays3.jpg";
 import IconImages from "../Components/IconImages";
 import Mug from "../images/Mug.png";
-import Paper from "../images/V.png";
 import PBtn from "../Components/PBtn";
 import api from "../utils/api";
-import MobileNav from "../Components/Navbar/MobileNav";
-import MobileFooter from "../Components/mobileFooter";
+import Header from "../Components/Header";
 const Blogs = props => {
   const [blogs, setBlogs] = useState([]);
 
@@ -31,9 +26,7 @@ const Blogs = props => {
   return (
     <Layout>
       <div className="categoryPages">
-        <MobileNav />
-        <NavNext />
-        <IconNav />
+       <Header/>
         <MiniConvert />
         {/* Title box */}
         <div className="container titlebox">
@@ -121,7 +114,6 @@ const Blogs = props => {
           </div>
         </div>
         <Footer />
-        <MobileFooter />
       </div>
     </Layout>
   );

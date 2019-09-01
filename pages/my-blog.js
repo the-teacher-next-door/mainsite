@@ -5,7 +5,7 @@ import Layout from "../Components/Layout/Layout";
 import "isomorphic-fetch";
 import Card from "../Components/Card";
 import MiniConvert from "../Components/miniConvert";
-import Footer from "../Components/Footer";
+import Footer from "../Components/Footer/FooterNext";
 import Reading from "../images/BookIcon.png";
 import Writing from "../images/Pencil.png";
 import Math from "../images/Calc.png";
@@ -13,13 +13,13 @@ import Holidays from "../images/Mug.png";
 import Ideas from "../images/Light.png";
 import Link from "next/link";
 import PBtn from "../Components/PBtn";
+import Header from "../Components/Header";
 const Blogs = props => {
   if (props.rBlogs !== undefined) {
     return (
       <Layout>
         <div className="blogs">
-          <NavNext />
-          <IconNav />
+         <Header/>
           <MiniConvert />
           <div className="container blog-container">
             <div className="reading">

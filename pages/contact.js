@@ -5,7 +5,7 @@ import IconNav from "../Components/IconNav";
 import Header from "../Components/Header";
 import ContactForm from "../Components/ContactForm";
 import Layout from "../Components/Layout/Layout";
-import Footer from "../Components/Footer";
+import Footer from "../Components/Footer/FooterNext";
 const Contact = props => {
   return (
     <Layout>

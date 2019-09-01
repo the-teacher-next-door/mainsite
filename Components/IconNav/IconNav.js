@@ -9,8 +9,11 @@ import Link from "next/link";
 import Container from "../FormatComponents/Container";
 import Column from "../FormatComponents/Column";
 import Columns from "../FormatComponents/Columns";
+import ContainerFluid from "../FormatComponents/ContainerFluid";
 const IconNav = props => (
-  <Container className="icon-nav">
+  <ContainerFluid className="icon-nav">
+    <Container>
+
     <Columns>
       <Column className="is-6 left">
         <img src={Logo} alt="" className="logo image " />
@@ -60,7 +63,8 @@ const IconNav = props => (
         </ul>
       </Column>
     </Columns>
-  </Container>
+    </Container>
+  </ContainerFluid>
 );
 
 export default IconNav;
