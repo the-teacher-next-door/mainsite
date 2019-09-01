@@ -8,7 +8,6 @@ import Toast from "../Components/toast";
 import Container from "../Components/FormatComponents/Container";
 import Columns from "../Components/FormatComponents/Columns";
 import Column from "../Components/FormatComponents/Column";
-import Card from "../Components/Card";
 const Admin = props => {
   const [blogs, setBlogs] = useState([]);
   const [toastText, setToastText] = useState("");
