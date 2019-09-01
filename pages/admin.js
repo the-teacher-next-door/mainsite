@@ -5,6 +5,10 @@ import Link from "next/link";
 import api from "../utils/api";
 import Layout from "../Components/Layout/Layout";
 import Toast from "../Components/toast";
+import Container from "../Components/FormatComponents/Container";
+import Columns from "../Components/FormatComponents/Columns";
+import Column from "../Components/FormatComponents/Column";
+import Card from "../Components/Card";
 const Admin = props => {
   const [blogs, setBlogs] = useState([]);
   const [toastText, setToastText] = useState("");
@@ -59,64 +63,38 @@ const Admin = props => {
       {/* toast message on error */}
       <Toast className={toastClass} text={toastText} />
       <AdminNav />
-      <div className="container-fluid admin">
-        <div className="container">
-          <div className="columns">
-            <div className="column is-12">
-              <div className="blogs">
-                <div className="blogs-header-bar">
-                  <h2>Blogs</h2>
-                  <span className="ml-auto">
-                    <PBtn className="createNew" onClick={newBlog}>
-                      <i className="fas fa-plus"></i>
-                    </PBtn>
-                  </span>
-                </div>
-              </div>
-              <div className="row-contained">
-                <div className="col-xl-3">
-                  <p>Title</p>
-                </div>
-                <div className="col-xl-1">
-                  <p>Date</p>
-                </div>
-                <div className="col-xl-1">
-                  <p>Views</p>
-                </div>
-                <div className="col-xl-1">
-                  <p>Live</p>
-                </div>
-                <div className="col-xl-2">
-                  <p>Categories</p>
-                </div>
-              </div>
-              <div className="columns is-multiline">
-                {blogs.map((blog, index) => {
-                  return (
-                    <div className="column is-12">
-                      <div className="columns">
-                        <div className="blogDisplay">
-                          <div className="column is-1">
-                            <Link href={`/admin-blog/${blog._id}`}>
-                              <a>{blog.title}</a>
-                            </Link>
-                          </div>
-                          <div className="column is-1">{blog.date}</div>
-                          <div className="column is-1">{blog.views}</div>
-                          <div className="column is-1">
-                            {blog.live.toString()}
-                          </div>
-                          <div className="column is-1">{blog.category}</div>
-                        </div>
+      <Container className="admin">
+        <Columns className="blogs-header-bar">
+          <Column className="is-6 left">
+            <h1>Blogs</h1>
+          </Column>
+          <Column className="is-6 right">
+            <PBtn className="createNew" onClick={newBlog}>
+              <i className="fas fa-plus"></i>
+            </PBtn>
+          </Column>
+        </Columns>
+        <Columns className="is-multiline">
+          {blogs.map((blog, index) => {
+            return (
+              <Column className="is-3">
+                <Link href={`/admin-blog/${blog._id}`}>
+                  <a>
+                    <div className="card">
+                      <div className="card-image">
+                        <figure className="image">
+                          <img src={blog.img} alt={blog.title} />
+                        </figure>
+                        <p style={{ padding: "30px" }}>{blog.title}</p>
                       </div>
                     </div>
-                  );
-                })}
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+                  </a>
+                </Link>
+              </Column>
+            );
+          })}
+        </Columns>
+      </Container>
     </Layout>
   );
 };

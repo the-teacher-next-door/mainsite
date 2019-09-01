@@ -207,12 +207,11 @@ const NewBlog = props => {
 
         <div className="container">
           <div className="columns">
-            <div className="column is-8">
+            <div className="column is-12">
               <div className="editorContent preview">
-                <div className="sidebar"></div>
 
                 <div className="toolbar">
-                  <div>
+                  <div className="buttons">
                     <PBtn onClick={save}>
                       <i className="far fa-save"></i>
                     </PBtn>

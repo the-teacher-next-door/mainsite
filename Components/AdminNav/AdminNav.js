@@ -36,7 +36,7 @@ const AdminNav = props => (
         </li>
         <li>
           <Link href="/admin-books">
-            <a>books</a>
+            <a>Books</a>
           </Link>
         </li>
         <li>
@@ -47,61 +47,10 @@ const AdminNav = props => (
       </ul>
     </div>
     <span className="ml-auto">
-      <PBtn onClick={logout}>Logout</PBtn>
+      <PBtn onClick={logout}>
+        <i className="fas fa-sign-out-alt"></i>
+      </PBtn>
     </span>
-    <style jsx>
-      {`
-        .admin-navbar {
-          display: flex;
-          height: 76px;
-          align-items: center;
-          background-color: #7c7093;
-          padding: 0 130px;
-          border-bottom: 1px solid #c6c6c6;
-          margin-bottom: 30px;
-        }
-        .title {
-          background: rgb(255, 255, 255);
-          width: 100%;
-          max-width: 145px;
-          text-align: center;
-          padding: 11px;
-          color: #695395;
-          font-weight: 700;
-          height: 100%;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-        }
-
-        #navbarNav {
-          height: 100%;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          width: 100%;
-        }
-
-        #navbarNav ul {
-          margin: 0;
-          height: 100%;
-          display: flex;
-          align-items: center;
-        }
-
-        #navbarNav .active {
-          border-bottom: 3px solid #ffffff;
-        }
-
-        #navbarNav ul li {
-          float: left;
-          margin: 10px;
-          height: 100%;
-          display: flex;
-          align-items: center;
-        }
-      `}
-    </style>
   </nav>
 );
 

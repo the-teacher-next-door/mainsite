@@ -27,6 +27,7 @@
 @import "./Homepage/socials.scss";
 @import "./TitleComponent/TitleComponent.scss";
 @import "../Components/SearchBar/SearchBar.scss";
+@import "./Admin/admin-blog.scss";
 @import "../node_modules/bulma/bulma.sass";
 
 $primary: 'Cabin',
@@ -232,11 +233,6 @@ p {
     background-color: $lightBlue;
     border: 2px solid $darkBlue;
   }
-}
-
-
-.active {
-  background-color: $lightBlue;
 }
 
 .relative {
