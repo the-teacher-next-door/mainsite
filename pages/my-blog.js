@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import NavNext from "../Components/NavNext";
-import IconNav from "../Components/IconNav";
+import NavNext from "../Components/Navbar/NavNext";
+import IconNav from "../Components/IconNav/IconNav";
 import Layout from "../Components/Layout/Layout";
 import "isomorphic-fetch";
 import Card from "../Components/Card";
@@ -13,14 +13,11 @@ import Holidays from "../images/Mug.png";
 import Ideas from "../images/Light.png";
 import Link from "next/link";
 import PBtn from "../Components/PBtn";
-import MobileFooter from "../Components/mobileFooter";
-import MobileNav from "../Components/Navbar/MobileNav";
 const Blogs = props => {
   if (props.rBlogs !== undefined) {
     return (
       <Layout>
         <div className="blogs">
-          <MobileNav />
           <NavNext />
           <IconNav />
           <MiniConvert />
@@ -241,7 +238,6 @@ const Blogs = props => {
             </div>
           </div>
           <Footer />
-          <MobileFooter />
         </div>
       </Layout>
     );

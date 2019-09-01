@@ -1,24 +1,21 @@
 import React from "react";
-import Logo from "../images/logo.png";
-import BookIcon from "../images/BookIcon.png";
-import Calc from "../images/Calc.png";
-import Light from "../images/Light.png";
-import Mug from "../images/Mug.png";
-import Pencil from "../images/Pencil.png";
+import Logo from "../../images/logo.png";
+import BookIcon from "../../images/BookIcon.png";
+import Calc from "../../images/Calc.png";
+import Light from "../../images/Light.png";
+import Mug from "../../images/Mug.png";
+import Pencil from "../../images/Pencil.png";
 import Link from "next/link";
-import PBtn from "./PBtn";
+import Container from "../FormatComponents/Container";
+import Column from "../FormatComponents/Column";
+import Columns from "../FormatComponents/Columns";
 const IconNav = props => (
-  <nav
-    className="navbar white icon-nav"
-    role="navigation"
-    aria-label="main navigation"
-  >
-    <div className="container">
-      <div className="navbar-start">
+  <Container className="icon-nav">
+    <Columns>
+      <Column className="is-6 left">
         <img src={Logo} alt="" className="logo image " />
-        <img src="" alt="" />
-      </div>
-      <div className="navbar-end">
+      </Column>
+      <Column className="is-6 right">
         <ul>
           <li>
             <Link as={`/reading`} href="/reading?q=reading">
@@ -61,9 +58,9 @@ const IconNav = props => (
             </Link>
           </li>
         </ul>
-      </div>
-    </div>
-  </nav>
+      </Column>
+    </Columns>
+  </Container>
 );
 
 export default IconNav;
