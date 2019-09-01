@@ -1,0 +1,74 @@
+@import '../../scss/mixins/LayoutMixins.scss';
+
+@include for-phone-only {
+  .navbar {
+
+    .left {
+      display: flex;
+
+      .menuIcon {
+        background: none;
+        border: none;
+        font-size: 30px;
+        color: #FFF;
+      }
+
+      i {
+        color: $darkPurple;
+      }
+    }
+
+    .right {
+      display: none;
+    }
+
+
+    .logo {
+      background-color: #fff;
+    }
+
+  }
+
+}
+
+@include for-tablet-portrait-up {
+  .navbar {
+    .left {
+      display: flex;
+
+      .menuIcon {
+        background: none;
+        border: none;
+        font-size: 30px;
+        color: #FFF;
+      }
+
+      i {
+        color: $darkPurple;
+      }
+    }
+
+    .right {
+      display: none;
+    }
+
+
+    .logo {
+      background-color: #fff;
+    }
+  }
+}
+
+
+@include for-tablet-landscape-up {
+  .navbar {
+
+    .left {
+      display: none !important;
+    }
+
+    .right {
+      display: flex;
+    }
+  }
+}

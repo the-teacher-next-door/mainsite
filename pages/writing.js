@@ -16,9 +16,8 @@ import Book from "../images/BookIcon.png";
 import Pencil from "../images/Pencil.png";
 import Paper from "../images/V.png";
 import PBtn from "../Components/PBtn";
-import TabletNav from "../Components/TabletNav";
 import api from "../utils/api";
-import MobileNav from "../Components/MobileNav";
+import MobileNav from "../Components/Navbar/MobileNav";
 import MobileFooter from "../Components/mobileFooter";
 const Writing = props => {
   const [blogs, setBlogs] = useState([]);
@@ -33,7 +32,6 @@ const Writing = props => {
   return (
     <Layout>
       <div className="categoryPages">
-        <TabletNav />
         <MobileNav />
         <NavNext />
         <IconNav />

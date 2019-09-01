@@ -1,0 +1,105 @@
+.navPanel {
+  background-color: $lightPurple;
+  position: fixed;
+  top: 10px;
+  left: -500px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.281);
+  opacity: 0;
+  z-index: 2;
+  pointer-events: none;
+  height: 100%;
+  max-width: 300px;
+  transition: all .5s ease;
+  overflow: auto;
+  margin: 0;
+
+  .column {
+    padding: 20px;
+
+  }
+
+  form {
+    display: flex;
+    justify-content: center;
+  }
+
+  .socials {
+    padding: 10px;
+  }
+
+  .searchBar {
+    background-color: $white;
+    color: $white;
+    width: 100%;
+    color: $darkPurple;
+    left: 0;
+    position: relative;
+    padding: 6px;
+    border-radius: 8px 0 0 8px;
+    border: 1px solid $white;
+    font-family: 'Roboto', sans-serif;
+  }
+
+  .searchBar::placeholder {
+    color: $lightPurple;
+  }
+
+  .icon-button {
+    background-color: $lightPurple !important;
+    color: $white;
+    padding: 0;
+    border: 1px solid $darkPurple !important;
+    width: 150%;
+
+    &:hover {
+      color: $white;
+      background-color: $darkPurple !important;
+      transform: scale(1.1)
+    }
+  }
+
+  .mobileIcons {
+    background-color: $white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+
+    .icon-link-tags {
+      padding: 20px;
+      align-items: center;
+      justify-content: center;
+      display: flex;
+    }
+
+    .icons {
+      max-width: 70px;
+    }
+
+  }
+
+}
+
+.overlay {
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  z-index: 1;
+  display: none;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0.322);
+  display: none;
+  height: 100vh;
+  transition: all .5s ease;
+
+  &.show {
+    display: block;
+  }
+}
+
+.show {
+  pointer-events: auto;
+  left: 0;
+  opacity: 1;
+}

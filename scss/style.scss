@@ -1,7 +1,8 @@
 @import './mixins/LayoutMixins.scss';
 @import './_vars.scss';
 @import './Homepage/main.scss';
-@import "./Navbar/navbar.scss";
+@import '../Components/Navbar/navbar.scss';
+@import '../Components/Navbar/navPanel.scss';
 @import "./Admin/adminnav.scss";
 @import "./Admin/admin.scss";
 @import "./Admin/adminlogin.scss";
@@ -17,15 +18,15 @@
 @import "./Reading/reading.scss";
 @import "./CommentCard/commentCard.scss";
 @import "./Freebies/freebies.scss";
-@import "./Navbar/tabletNav.scss";
-@import "./Navbar/mobileNav.scss";
-@import "./Navbar/mobileFooter.scss";
+@import "../Components/Footer/footer.scss";
+@import "../Components/Footer/mobile.scss";
 @import "./MeetJenn/meetJenn.scss";
 @import "./Card/card.scss";
 @import "./Contact/contact_page.scss";
 @import "./BlogSlider/blog-slider.scss";
 @import "./Homepage/socials.scss";
 @import "./TitleComponent/TitleComponent.scss";
+@import "../Components/SearchBar/SearchBar.scss";
 @import "../node_modules/bulma/bulma.sass";
 
 $primary: 'Cabin',
@@ -74,16 +75,7 @@ code {
 }
 
 
-.row-contained {
-  width: 100%;
-  max-width: 1140px;
-  display: flex;
-  flex-wrap: wrap;
-  margin: 0 auto;
-  justify-content: center;
-}
-
-.center {
+a .center {
   justify-content: center;
   display: flex;
   flex-direction: column;
@@ -161,7 +153,7 @@ h1 {
   font-size: 40px;
   display: flex;
   border-image-slice: #231942;
-  text-shadow: 0 4px 12px rgba(59, 33, 54, 0.274);
+  text-shadow: 0 4px 12px rgba(59, 3gg3, 54, 0.274);
   align-items: center;
   justify-content: center;
 }

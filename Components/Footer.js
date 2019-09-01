@@ -1,5 +1,5 @@
 import React from "react";
-import FooterNext from "./FooterNext";
+import FooterNext from "./Footer/FooterNext";
 import AboutSection from "./AboutSection";
 
 const Footer = props => {

@@ -25,7 +25,6 @@ import Calculator from "../images/Calc.png";
 import Pencil from "../images/Pencil.png";
 import Light from "../images/Light.png";
 import Mug from "../images/Mug.png";
-import TabletNav from "../Components/TabletNav";
 import Head from "next/head";
 const BlogPage = props => {
   const categories = props.blogs.category.split(",");
@@ -51,7 +50,6 @@ const BlogPage = props => {
         <meta property="article:published_time" content={props.blogs.date} />
         <meta property="article:author" content="Jennifer Larson" />
       </Head>
-      <TabletNav />
       <div className="blogPage">
         <Header />
         <div className="container-fluid blog-container">

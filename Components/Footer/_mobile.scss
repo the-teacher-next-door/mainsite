@@ -1,0 +1,27 @@
+@import '../../scss/mixins/LayoutMixins.scss';
+
+@include for-phone-only {
+  .footer {
+
+    .right {
+      display: none;
+    }
+  }
+}
+
+@include for-tablet-portrait-up {
+  .footer {
+
+    .right {
+      display: none;
+    }
+  }
+}
+
+@include for-desktop-up {
+  .footer {
+    .right {
+      display: flex;
+    }
+  }
+}

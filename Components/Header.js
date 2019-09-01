@@ -1,6 +1,6 @@
 import React from "react";
 import IconNav from "./IconNav";
-import NavNext from "./NavNext";
+import NavNext from "./Navbar/NavNext";
 const Header = props => (
   <div className="container-fluid">
     <NavNext />

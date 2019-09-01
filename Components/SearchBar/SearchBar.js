@@ -1,7 +1,6 @@
 import React, { Component } from "react";
-import Input from "./Input";
-import api from "../utils/api";
-import PBtn from "./PBtn";
+import Input from "../Input";
+import PBtn from "../PBtn";
 import Link from "next/link";
 class SearchBar extends Component {
   state = {
@@ -37,7 +36,6 @@ class SearchBar extends Component {
               <i className="fas fa-search"></i>
             </PBtn>
           </a>
-          {/* yup */}
         </Link>
       </form>
     );

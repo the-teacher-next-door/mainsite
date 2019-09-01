@@ -1,0 +1,20 @@
+.searchBar {
+  background-color: $white;
+  color: $white;
+  width: 100%;
+  color: $darkPurple;
+  left: 0;
+  position: relative;
+  padding: 6px;
+  border-radius: 8px 0 0 8px;
+  border-radius: 8px 0 0 8px;
+  border-top: 1px solid $darkPurple;
+  border-bottom: 1px solid $darkPurple;
+  border-left: 1px solid $darkPurple;
+  font-family: 'Roboto', sans-serif;
+}
+
+
+.searchBar::placeholder {
+  color: $lightPurple;
+}
