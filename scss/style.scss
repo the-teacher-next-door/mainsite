@@ -203,10 +203,10 @@ p {
 
 .primary-button {
   background-color: $lightPurple;
-  border: 2px solid $darkPurple;
   color: $darkPurple;
   font-family: $secondary;
   text-transform: uppercase;
+  max-width: 200px;
   width: 90%;
   transition: all .5s ease;
 

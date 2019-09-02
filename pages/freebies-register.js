@@ -5,7 +5,7 @@ import AboutSection from "../Components/AboutSection";
 import FreebieLogin from "../Components/FreebieLogin";
 import Layout from "../Components/Layout/Layout";
 import Header from "../Components/Header";
-import Footer from '../Components/Footer/FooterNext';
+import Footer from "../Components/Footer/FooterNext";
 const FreebiesReg = props => {
   const [freebies, setFreebies] = useState([]);
 
@@ -18,7 +18,7 @@ const FreebiesReg = props => {
   return (
     <Layout>
       <div className="freebies wrapper-freebies">
-        <Header/>
+        <Header />
 
         <div className="container-fluid">
           <FreebieLogin register={false} />
@@ -73,7 +73,7 @@ const FreebiesReg = props => {
           </div>
 
           <div className="container-fluid freebie-display">
-            <h1>Some Freebies</h1>
+            <h1>Join to gain access to these Freebies!</h1>
             <div className="container padding-30">
               {/* freebies resources */}
               <div className="columns is-centered has-text-centered">
@@ -92,7 +92,7 @@ const FreebiesReg = props => {
               </div>
             </div>
             <ConvertKit title="JOIN MY NEWSLETTER!" />
-            <Footer/>
+            <Footer />
           </div>
         </div>
       </div>

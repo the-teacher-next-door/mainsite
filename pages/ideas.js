@@ -26,7 +26,7 @@ const Blogs = props => {
   return (
     <Layout>
       <div className="categoryPages">
-        <Header/>
+        <Header />
         <MiniConvert />
         {/* Title box */}
         <div className="container titlebox">

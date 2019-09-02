@@ -68,9 +68,9 @@ nav {
 
   .icon-button {
     background-color: $lightPurple !important;
-    color: $white;
+    color: $darkPurple;
     padding: 0;
-    border: 1px solid $darkPurple !important;
+    border: none !important;
 
     &:hover {
       color: $white;

@@ -5,6 +5,9 @@ import { Helmet } from "react-helmet";
 import api from "../utils/api";
 import Letter from "../images/A.png";
 import TitleComponent from "./TitleComponent";
+import Container from "./FormatComponents/Container";
+import Columns from "./FormatComponents/Columns";
+import Column from "./FormatComponents/Column";
 class ConvertKit extends Component {
   state = {
     name: "",
@@ -111,59 +114,80 @@ class ConvertKit extends Component {
         </div>
 
         <form id="convert-form" onSubmit={this.submitForm}>
-          <div className="container">
-            <div className="columns is-centered">
-              <div className="column is-2 relative">
-                <Input
-                  className="convert-input"
-                  id="convert-name"
-                  type="text"
-                  placeholder="First Name"
-                  name="name"
-                  onChange={this.handleChange}
-                />
-                <i class="fas fa-user"></i>
-              </div>
-              <div className="column is-2 relative">
-                <Input
-                  className="convert-input"
-                  id="convert-email"
-                  type="email"
-                  placeholder="Email"
-                  name="email"
-                  onChange={this.handleChange}
-                />
-                <i class="far fa-envelope"></i>
-              </div>
-              <div className="column is-2 relative">
-                <select
-                  name="tags"
-                  onChange={this.handleChange}
-                  id="convert-select"
-                >
-                  <option value="grade" defaultValue="selected">
-                    Select a Grade
-                  </option>
-                  <option value="548828">Pre-k</option>
-                  <option value="548830">First</option>
-                  <option value="548832">Second</option>
-                  <option value="548833">Third</option>
-                  <option value="548834">Fourth</option>
-                  <option value="548836">Fifth</option>
-                  <option value="548837">Sixth</option>
-                </select>
-                <i class="fas fa-graduation-cap"></i>
-              </div>
-            </div>
-          </div>
-          <div className="container">
-            <div className="columns is-centered">
-              <div className="column is-2">
+          <Container>
+            <Columns className="is-centered">
+              <Column className="is-6">
+                <div className="field is-horizontal">
+                  <div className="field-body">
+                    <div className="field has-addons">
+                      <p className="control">
+                        <a className="button is-static">
+                          <i class="fas fa-user"></i>
+                        </a>
+                      </p>
+                      <p className="control is-expanded">
+                        <Input
+                          className="input"
+                          id="convert-name"
+                          type="text"
+                          placeholder="First Name"
+                          name="name"
+                          onChange={this.handleChange}
+                        />
+                      </p>
+                    </div>
+                    <div className="field has-addons">
+                      <p className="control">
+                        <a className="button is-static">
+                          <i class="far fa-envelope"></i>
+                        </a>
+                      </p>
+                      <p className="control is-expanded">
+                        <Input
+                          className="input"
+                          id="convert-email"
+                          type="email"
+                          placeholder="Email"
+                          name="email"
+                          onChange={this.handleChange}
+                        />
+                      </p>
+                    </div>
+
+                    <div className="field has-addons is-narrow">
+                      <p className="control">
+                        <a className="button is-static">
+                          <i class="fas fa-graduation-cap"></i>
+                        </a>
+                      </p>
+                      <p className="control full">
+                        <div className="select is-fullwidth">
+                          <select
+                            className="is-fullwidth"
+                            name="tags"
+                            onChange={this.handleChange}
+                          >
+                            <option value="grade" defaultValue="selected">
+                              Select a Grade
+                            </option>
+                            <option value="548828">Pre-k</option>
+                            <option value="548830">First</option>
+                            <option value="548832">Second</option>
+                            <option value="548833">Third</option>
+                            <option value="548834">Fourth</option>
+                            <option value="548836">Fifth</option>
+                            <option value="548837">Sixth</option>
+                          </select>
+                        </div>
+                      </p>
+                    </div>
+                  </div>
+                </div>
                 <PBtn type="submit">{this.state.button}</PBtn>
                 <p className="errorText">{this.state.errorText}</p>
-              </div>
-            </div>
-          </div>
+              </Column>
+            </Columns>
+          </Container>
         </form>
       </div>
     );
