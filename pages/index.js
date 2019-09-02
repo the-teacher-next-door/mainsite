@@ -46,7 +46,10 @@ class Home extends Component {
         </Head>
         <div className="wrapper-home">
           <Header />
-          <Jumbotron mainImage={Slider} />
+          <Jumbotron
+            mainImage={Slider}
+            h1="Find Helpful Ideas and Freebies For the Busy Teacher"
+          />
           <ConvertKit title="JOIN MY NEWSLETTER!" />
           <CollectionSlider items={this.state.items} />
           <BlogSlider blogs={this.state.blogs} />
