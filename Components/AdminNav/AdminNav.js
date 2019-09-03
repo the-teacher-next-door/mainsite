@@ -10,7 +10,7 @@ const logout = () => {
 
 const AdminNav = props => (
   <nav className={`container-fluid admin-navbar ${props.className}`}>
-    <span className="title">Admin Panel</span>
+    <h2 className="title">Admin Panel</h2>
 
     <div id="navbarNav">
       <ul>

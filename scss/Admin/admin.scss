@@ -85,3 +85,15 @@
 @include for-tablet-landscape-up {
   padding: 20px;
 }
+
+
+.admin-images {
+  p {
+    overflow: hidden;
+  }
+
+  img {
+
+    max-height: 300px;
+  }
+}
