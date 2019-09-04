@@ -18,7 +18,7 @@ const BlogSlider = props => (
         <TitleComponent img={Paper} h1="Recent Blogs" />
         <Columns className="is-multiline is-centerd">
           {props.blogs.map((blog, index) => {
-            if (blog.live && index < 8) {
+            if (blog.status === "publish" && index < 8) {
               return (
                 <Column className="is-3" key={index}>
                   <a>
@@ -26,7 +26,7 @@ const BlogSlider = props => (
                       title={blog.title}
                       cleanTitle={blog.cleanTitle}
                       img={blog.img}
-                      category={blog.category.toLowerCase()}
+                      category={blog.categories}
                       description={blog.description}
                     />
                   </a>

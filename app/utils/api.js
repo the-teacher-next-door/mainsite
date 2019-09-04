@@ -4,7 +4,7 @@ import axios from "axios";
 // It accepts a "query" or term to search the recipe api for
 export default {
   wordpressCallLoadIndex: () => {
-    return axios.get(`http://localhost:8000/wp-json/wp/v2/posts`);
+    return axios.get(`https://tnd-4605b0.easywp.com/wp-json/wp/v2/posts`);
   },
   login: data => {
     return axios.post(`/api/login`, data);

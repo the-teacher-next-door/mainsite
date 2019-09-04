@@ -38,6 +38,9 @@ class Home extends Component {
     // });
     api.wordpressCallLoadIndex().then(posts => {
       console.log(posts);
+      this.setState({
+        blogs: posts.data
+      });
     });
   }
   render() {
