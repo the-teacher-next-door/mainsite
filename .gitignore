@@ -1,3 +1,5 @@
+/app/node_modules
+/wordpress
 # Public Dir For images
 public/
 # Logs

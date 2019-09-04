@@ -206,10 +206,9 @@ const NewBlog = props => {
         </AdminNav>
 
         <div className="container">
-          <div className="columns">
-            <div className="column is-12">
+          <div className="columns is-centered">
+            <div className="column is-8">
               <div className="editorContent preview">
-
                 <div className="toolbar">
                   <div className="buttons">
                     <PBtn onClick={save}>

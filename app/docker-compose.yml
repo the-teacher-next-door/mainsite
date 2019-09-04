@@ -1,0 +1,13 @@
+version: "3.3"
+
+services:
+  "nextjs-ui":
+    build:
+      context: ./
+      dockerfile: ./Dockerfile
+    container_name: "nextjs-ui"
+    expose:
+      - "3000"
+    ports:
+      - "3000:3000"
+    # If you want local changes to update the Docker container, you can pass through project files like this:

@@ -3,6 +3,9 @@ import axios from "axios";
 // The getRecipes method retrieves recipes from the server
 // It accepts a "query" or term to search the recipe api for
 export default {
+  wordpressCallLoadIndex: () => {
+    return axios.get(`http://localhost:8000/wp-json/wp/v2/posts`);
+  },
   login: data => {
     return axios.post(`/api/login`, data);
   },

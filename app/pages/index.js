@@ -25,16 +25,19 @@ class Home extends Component {
   };
 
   componentDidMount() {
-    api.loadBlogs().then(blogs => {
-      console.log(blogs);
-      this.setState({
-        blogs: blogs.data
-      });
-    });
-    api.loadSliderImages().then(slider => {
-      this.setState({
-        items: slider.data
-      });
+    // api.loadBlogs().then(blogs => {
+    //   console.log(blogs);
+    //   this.setState({
+    //     blogs: blogs.data
+    //   });
+    // });
+    // api.loadSliderImages().then(slider => {
+    //   this.setState({
+    //     items: slider.data
+    //   });
+    // });
+    api.wordpressCallLoadIndex().then(posts => {
+      console.log(posts);
     });
   }
   render() {
