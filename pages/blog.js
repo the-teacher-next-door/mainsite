@@ -27,20 +27,18 @@ import Light from "../images/Light.png";
 import Mug from "../images/Mug.png";
 import Head from "next/head";
 const BlogPage = props => {
-  const categories = props.blogs.category.split(",");
-  const [blogs, setBlogs] = useState([]);
-  const [url, setUrl] = useState("");
+  console.log(props.blogs);
+  console.log(props.allBlogs);
+  // const categories = props.blogs.category.split(",");
 
-  useEffect(() => {
-    api.loadBlogs().then(blog => {
-      setBlogs(blog.data);
-    });
-  }, []);
   return (
     <Layout>
       <Head>
         <meta property="og:type" content="blog" />
-        <meta property="og:title" content={props.blogs.title} />
+        <meta
+          property="og:title"
+          content={props.blogs.data[0].title.rendered}
+        />
         <meta property="og:description" content={props.blogs.description} />
         <meta
           property="og:url"
@@ -57,27 +55,29 @@ const BlogPage = props => {
             <div className="column is-12">
               <div className="title-container">
                 <div className="categories">
-                  {categories.map(category => {
-                    if (category === "Reading") {
+                  {props.blogs.data[0].categories.map(category => {
+                    if (category === 2) {
                       return <IconImages img={Book} />;
                     }
-                    if (category === "Writing") {
+                    if (category === 3) {
                       return <IconImages img={Pencil} />;
                     }
-                    if (category === "Math") {
+                    if (category === 4) {
                       return <IconImages img={Calculator} />;
                     }
-                    if (category === "Holidays") {
+                    if (category === 5) {
                       return <IconImages img={Mug} />;
                     }
-                    if (category === "Ideas") {
+                    if (category === 6) {
                       return <IconImages img={Light} />;
                     }
                   })}
                 </div>
-                <h1 className="blog-title">{props.blogs.title}</h1>
+                <h1 className="blog-title">
+                  {props.blogs.data[0].title.rendered}
+                </h1>
                 <p>By: Jennifer Larson</p>
-                <p>{props.blogs.date}</p>
+                <p>{props.blogs.data[0].date}</p>
                 <ul>
                   <li>
                     {" "}
@@ -128,14 +128,18 @@ const BlogPage = props => {
           <div className="container blog-text">
             <div className="columns is-centered ">
               <div className="column is-8">
-                <span dangerouslySetInnerHTML={{ __html: props.blogs.blog }} />
+                <span
+                  dangerouslySetInnerHTML={{
+                    __html: props.blogs.data[0].content.rendered
+                  }}
+                />
                 <div className="shareMenu">
                   <ShareMenu />
                 </div>
               </div>
             </div>
           </div>
-          <BlogSlider blogs={blogs} />
+          <BlogSlider blogs={props.allBlogs.data} />
 
           <div className="continer-fluid" id="comments">
             <Comments blogId={props.blogs._id} />
@@ -148,10 +152,13 @@ const BlogPage = props => {
 };
 
 BlogPage.getInitialProps = async function({ req, query }) {
-  const baseUrl = req ? `${req.protocol}://${req.get("Host")}` : "";
-  const response = await fetch(baseUrl + "/api/blog/load/" + query.q);
+  // const baseUrl = req ? `${req.protocol}://${req.get("Host")}` : "";
+  // const response = await fetch(baseUrl + "/api/blog/load/" + query.q);
+  let blogs = await api.loadBlog(query.q);
+  let allBlogs = await api.loadBlogs();
 
-  const blogs = await response.json();
-  return { blogs: blogs };
+  blogs = JSON.parse(blogs);
+  allBlogs = JSON.parse(allBlogs);
+  return { blogs: blogs, allBlogs: allBlogs };
 };
 export default BlogPage;

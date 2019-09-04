@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { useState, useEffect } from "react";
 import Jumbotron from "../Components/Jumbotron/Jumbotron";
 import Link from "next/link";
 import dynamic from "next/dynamic";
@@ -14,61 +14,52 @@ import FooterNext from "../Components/Footer/FooterNext";
 import "isomorphic-fetch";
 import Header from "../Components/Header";
 import Head from "next/head";
-const SocialClips = dynamic(() =>
-  import("../Components/SocialClips/SocialClips")
-);
+import SocialClips from "../Components/SocialClips/SocialClips";
 
-class Home extends Component {
-  state = {
-    blogs: [],
-    items: []
-  };
+const Home = () => {
+  const [blogs, setBlogs] = useState([]);
+  const [items, setItems] = useState([]);
 
-  componentDidMount() {
+  useEffect(() => {
     api.loadBlogs().then(blogs => {
-      console.log(blogs);
-      this.setState({
-        blogs: blogs.data
-      });
+      console.log(blogs.data);
+      setBlogs(blogs.data);
     });
-    api.loadSliderImages().then(slider => {
-      this.setState({
-        items: slider.data
-      });
+
+    api.loadSliderImages().then(items => {
+      setItems(items.data);
     });
-  }
-  render() {
-    return (
-      <Layout>
-        <Head>
-          <script async defer src="//assets.pinterest.com/js/pinit.js"></script>
-          <script src="https://cdn.lightwidget.com/widgets/lightwidget.js"></script>
-        </Head>
-        <div className="wrapper-home">
-          <Header />
-          <Jumbotron
-            mainImage={Slider}
-            h1="Find Helpful Ideas and Freebies For the Busy Teacher"
-          />
-          <ConvertKit title="JOIN MY NEWSLETTER!" />
-          <CollectionSlider items={this.state.items} />
-          <BlogSlider blogs={this.state.blogs} />
-          <SocialClips />
-          <AboutSection />
-          <FooterNext />
-        </div>
-        <style jsx>{`
-          .wrapper-home {
-            text-align: center;
-          }
+  }, []);
 
-          .wrapper-home .navbar {
-            background-color: #695395;
-          }
-        `}</style>
-      </Layout>
-    );
-  }
-}
+  return (
+    <Layout>
+      <Head>
+        <script async defer src="//assets.pinterest.com/js/pinit.js"></script>
+        <script src="https://cdn.lightwidget.com/widgets/lightwidget.js"></script>
+      </Head>
+      <div className="wrapper-home">
+        <Header />
+        <Jumbotron
+          mainImage={Slider}
+          h1="Find Helpful Ideas and Freebies For the Busy Teacher"
+        />
+        <ConvertKit title="JOIN MY NEWSLETTER!" />
+        <CollectionSlider items={items} />
+        <BlogSlider blogs={blogs} />
+        <SocialClips />
+        <AboutSection />
+        <FooterNext />
+      </div>
+      <style jsx>{`
+        .wrapper-home {
+          text-align: center;
+        }
 
+        .wrapper-home .navbar {
+          background-color: #695395;
+        }
+      `}</style>
+    </Layout>
+  );
+};
 export default Home;

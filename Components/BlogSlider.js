@@ -18,16 +18,15 @@ const BlogSlider = props => (
         <TitleComponent img={Paper} h1="Recent Blogs" />
         <Columns className="is-multiline is-centerd">
           {props.blogs.map((blog, index) => {
-            if (blog.live && index < 8) {
+            if (blog.status === "publish" && index < 8) {
               return (
                 <Column className="is-3" key={index}>
                   <a>
                     <Card
-                      title={blog.title}
-                      cleanTitle={blog.cleanTitle}
-                      img={blog.img}
-                      category={blog.category.toLowerCase()}
-                      description={blog.description}
+                      title={blog.title.rendered}
+                      cleanTitle={blog.slug}
+                      img={blog._embedded["wp:featuredmedia"][0].source_url}
+                      category={blog.categories}
                     />
                   </a>
                 </Column>
