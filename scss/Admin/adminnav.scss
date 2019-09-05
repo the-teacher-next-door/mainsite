@@ -42,17 +42,12 @@
   margin-bottom: 30px;
 
   .title {
-    background: rgb(255, 255, 255);
     width: 100%;
-    max-width: 145px;
-    text-align: center;
-    padding: 11px;
-    color: #695395;
+    color: $white;
     font-weight: 700;
-    height: 100%;
     display: flex;
-    justify-content: center;
     align-items: center;
+    margin: 0 !important;
   }
 
   #navbarNav {

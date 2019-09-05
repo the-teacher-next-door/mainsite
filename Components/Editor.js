@@ -6,7 +6,7 @@ const EditorNew = props => {
       editorState={props.editorState}
       toolbarClassName="toolbarClassName"
       wrapperClassName="wrapperClassName"
-      editorClassName="editorClassName"
+      editorClassName={props.editorClassName}
       onEditorStateChange={props.onEditorStateChange}
       toolbar={props.toolbar}
     />

@@ -23,7 +23,7 @@ const Home = () => {
   useEffect(() => {
     api.loadBlogs().then(blogs => {
       console.log(blogs.data);
-      setBlogs(blogs);
+      setBlogs(blogs.data);
     });
 
     api.loadSliderImages().then(items => {
@@ -45,7 +45,7 @@ const Home = () => {
         />
         <ConvertKit title="JOIN MY NEWSLETTER!" />
         <CollectionSlider items={items} />
-        <BlogSlider blogs={blogs.data} />
+        <BlogSlider blogs={blogs} />
         <SocialClips />
         <AboutSection />
         <FooterNext />

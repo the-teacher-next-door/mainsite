@@ -7,6 +7,10 @@
     border: 1px solid #00000014;
     padding: 20px;
 
+    img {
+      max-width: 400px;
+    }
+
     .DraftStyleDefault-ul {
       margin: 0;
     }
@@ -19,7 +23,9 @@
         float: none;
 
       }
+
     }
+
   }
 
   .title-box {

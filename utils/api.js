@@ -22,14 +22,10 @@ export default {
     return axios.post(`/api/blog/save`, data);
   },
   loadBlogs: () => {
-    return axios.get(
-      `https://tnd-4605b0.easywp.com/wp-json/wp/v2/posts?_embed`
-    );
+    return axios.get(`/api/blog/loadall`);
   },
   loadBlog: data => {
-    return axios.get(
-      `https://tnd-4605b0.easywp.com/wp-json/wp/v2/posts?slug=${data}`
-    );
+    return axios.get(`/api/blog/load/${data}`);
   },
   loadBlogAdmin: data => {
     return axios.get(`/api/blog/loadAdmin/${data}`);
