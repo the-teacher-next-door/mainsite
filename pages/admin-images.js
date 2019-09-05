@@ -4,9 +4,6 @@ import api from "../utils/api";
 import Upload from "../Components/Upload";
 import PBtn from "../Components/PBtn";
 import Layout from "../Components/Layout/Layout";
-import Container from "../Components/FormatComponents/Container";
-import Columns from "../Components/FormatComponents/Columns";
-import Column from "../Components/FormatComponents/Column";
 const Images = props => {
   const [images, setImages] = useState([]);
   const [url, setUrl] = useState("");
@@ -39,44 +36,43 @@ const Images = props => {
 
   return (
     <Layout>
-      <div className="container-fluid admin admin-images">
+      <div className="container-fluid admin">
         <AdminNav />
-        <Container>
-          <Columns className="blogs-header-bar">
-            <Column className="is-6 left">
-              <h1>Images</h1>
-            </Column>
-            <Column className="is-6 right">
-              <Upload loadImages={loadImages} />
-            </Column>
-          </Columns>
+        <Upload loadImages={loadImages} />
+        <div className="container">
+          <div className="row-contained">
+            <div className="col-xl-12">
+              <div className="blogs">
+                <div className="blogs-header-bar">
+                  <h2>Images</h2>
+                  <span className="ml-auto">
+                    {/* <PBtn className="createNew" onClick={newBlog}>
+                    <i className="fas fa-plus"></i>
+                  </PBtn> */}
+                  </span>
+                </div>
+              </div>
 
-          <div className="columns is-multiline">
-            {images.map((image, index) => {
-              return (
-                <div className="column is-3">
-                  <form data-path={image.path} onSubmit={deleteSubmit}>
-                    <div className="card">
-                      <div className="card-image">
-                        <figure className="image">
+              <div className="columns is-multiline">
+                {images.map((image, index) => {
+                  return (
+                    <div className="column is-3">
+                      <form data-path={image.path} onSubmit={deleteSubmit}>
+                        <div className="image">
                           <img src={`${url}/${image.path}`} alt="" />
-                        </figure>
-                        <div className="card-footer-item">
                           <p>{image.originalname}</p>
                         </div>
-                      </div>
-                      <div className="card-footer-item">
                         <PBtn type="submit">
                           <i class="far fa-trash-alt"></i>
                         </PBtn>
-                      </div>
+                      </form>
                     </div>
-                  </form>
-                </div>
-              );
-            })}
+                  );
+                })}
+              </div>
+            </div>
           </div>
-        </Container>
+        </div>
       </div>
     </Layout>
   );

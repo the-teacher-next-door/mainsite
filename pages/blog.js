@@ -25,21 +25,15 @@ import Pencil from "../images/Pencil.png";
 import Light from "../images/Light.png";
 import Mug from "../images/Mug.png";
 import Head from "next/head";
+import axios from "axios";
 const BlogPage = props => {
-  const categories = props.blogs.category.split(",");
-  const [blogs, setBlogs] = useState([]);
-  const [url, setUrl] = useState("");
-
-  useEffect(() => {
-    api.loadBlogs().then(blog => {
-      setBlogs(blog.data);
-    });
-  }, []);
+  // const categories = props.blogs.category.split(",");
+  console.log(props.secondResponse);
   return (
     <Layout>
       <Head>
         <meta property="og:type" content="blog" />
-        <meta property="og:title" content={props.blogs.title} />
+        <meta property="og:title" content={props.blogs[0].title.rendered} />
         <meta property="og:description" content={props.blogs.description} />
         <meta
           property="og:url"
@@ -56,27 +50,27 @@ const BlogPage = props => {
             <div className="column is-12">
               <div className="title-container">
                 <div className="categories">
-                  {categories.map(category => {
-                    if (category === "Reading") {
+                  {props.blogs[0].categories.map(category => {
+                    if (category === 2) {
                       return <IconImages img={Book} />;
                     }
-                    if (category === "Writing") {
+                    if (category === 3) {
                       return <IconImages img={Pencil} />;
                     }
-                    if (category === "Math") {
+                    if (category === 4) {
                       return <IconImages img={Calculator} />;
                     }
-                    if (category === "Holidays") {
+                    if (category === 5) {
                       return <IconImages img={Mug} />;
                     }
-                    if (category === "Ideas") {
+                    if (category === 6) {
                       return <IconImages img={Light} />;
                     }
                   })}
                 </div>
-                <h1 className="blog-title">{props.blogs.title}</h1>
+                <h1 className="blog-title">{props.blogs[0].title.rendered}</h1>
                 <p>By: Jennifer Larson</p>
-                <p>{props.blogs.date}</p>
+                <p>{props.blogs[0].date}</p>
                 <ul>
                   <li>
                     {" "}
@@ -127,14 +121,18 @@ const BlogPage = props => {
           <div className="container blog-text">
             <div className="columns is-centered ">
               <div className="column is-8">
-                <span dangerouslySetInnerHTML={{ __html: props.blogs.blog }} />
+                <span
+                  dangerouslySetInnerHTML={{
+                    __html: props.blogs[0].content.rendered
+                  }}
+                />
                 <div className="shareMenu">
                   <ShareMenu />
                 </div>
               </div>
             </div>
           </div>
-          <BlogSlider blogs={blogs} />
+          <BlogSlider blogs={props.allBlogs.data} />
 
           <div className="continer-fluid" id="comments">
             <Comments blogId={props.blogs._id} />
@@ -147,10 +145,25 @@ const BlogPage = props => {
 };
 
 BlogPage.getInitialProps = async function({ req, query }) {
-  const baseUrl = req ? `${req.protocol}://${req.get("Host")}` : "";
-  const response = await fetch(baseUrl + "/api/blog/load/" + query.q);
+  // const baseUrl = req ? `${req.protocol}://${req.get("Host")}` : "";
+  // console.log(baseUrl);
+  // const response = await fetch(
+  //   "http://165.22.165.117:8000/wp-json/wp/v2/posts?slug=" + query.q
+  // );
+  // const secondResponse = await fetch(baseUrl + ":8000/wp-json/wp/v2/posts");
+  // const rBlogs = await response.json();
+  // const rAllBlogs = await secondResponse.json();
+  // return { blogs: rBlogs, allBlogs: rAllBlogs };
+  const response = await axios.get(
+    "https://tnd-4605b0.easywp.com/wp-json/wp/v2/posts?slug=" + query.q
+  );
 
-  const blogs = await response.json();
-  return { blogs: blogs };
+  const secondResponse = await axios.get(
+    "https://tnd-4605b0.easywp.com/wp-json/wp/v2/posts?_embed"
+  );
+  return {
+    blogs: response.data,
+    allBlogs: secondResponse.data
+  };
 };
 export default BlogPage;
