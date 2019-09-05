@@ -133,7 +133,7 @@ const BlogPage = props => {
               </div>
             </div>
           </div>
-          <BlogSlider blogs={props.allBlogs.data} />
+          <BlogSlider blogs={props.allBlogs} />
 
           <div className="continer-fluid" id="comments">
             <Comments blogId={props.blogs._id} />

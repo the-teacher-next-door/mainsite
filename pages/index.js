@@ -15,22 +15,9 @@ import "isomorphic-fetch";
 import Header from "../Components/Header";
 import Head from "next/head";
 import SocialClips from "../Components/SocialClips/SocialClips";
+import axios from "axios";
 
-const Home = () => {
-  const [blogs, setBlogs] = useState([]);
-  const [items, setItems] = useState([]);
-
-  useEffect(() => {
-    api.loadBlogs().then(blogs => {
-      console.log(blogs.data);
-      setBlogs(blogs);
-    });
-
-    api.loadSliderImages().then(items => {
-      setItems(items.data);
-    });
-  }, []);
-
+const Home = props => {
   return (
     <Layout>
       <Head>
@@ -44,8 +31,8 @@ const Home = () => {
           h1="Find Helpful Ideas and Freebies For the Busy Teacher"
         />
         <ConvertKit title="JOIN MY NEWSLETTER!" />
-        <CollectionSlider items={items} />
-        <BlogSlider blogs={blogs.data} />
+        <CollectionSlider items={props.items} />
+        <BlogSlider blogs={props.items} />
         <SocialClips />
         <AboutSection />
         <FooterNext />
@@ -61,5 +48,19 @@ const Home = () => {
       `}</style>
     </Layout>
   );
+};
+
+Home.getInitialProps = async function({ req, query }) {
+  const response = await axios.get(
+    "https://tnd-4605b0.easywp.com/wp-json/wp/v2/posts?_embed"
+  );
+
+  const tagResponse = await axios.get(
+    "https://tnd-4605b0.easywp.com/wp-json/wp/v2/posts?tags=0&_embed"
+  );
+
+  return {
+    items: response.data
+  };
 };
 export default Home;
