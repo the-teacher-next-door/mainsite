@@ -129,7 +129,7 @@ const BlogPage = props => {
               <div className="column is-8">
                 <span dangerouslySetInnerHTML={{ __html: props.blogs.blog }} />
                 <div className="shareMenu">
-                  <ShareMenu />
+                  <ShareMenu title={props.blogs.title} />
                 </div>
               </div>
             </div>

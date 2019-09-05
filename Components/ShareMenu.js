@@ -4,7 +4,7 @@ const ShareMenu = props => {
   const [url, setUrl] = useState("");
 
   useEffect(() => {
-    setUrl(encodeURIComponent(window.location.href));
+    setUrl(window.location.href);
   }, []);
   return (
     <div className="container share-menu">
@@ -14,7 +14,19 @@ const ShareMenu = props => {
       </h2>
       <ul>
         <li>
-          <iframe
+          <a
+            onClick={() => {
+              window.open(
+                `http://www.facebook.com/sharer.php?u=${url} ${props.title}`,
+                "facebookShare",
+                "width=626,height=436"
+              );
+              return false;
+            }}
+          >
+            Facebook
+          </a>
+          {/* <iframe
             src={`https://www.facebook.com/plugins/share_button.php?href=${url}&layout=button_count&size=small&appId=1509492819325338&=width=106&height=28`}
             width="106"
             height="28"
@@ -23,14 +35,18 @@ const ShareMenu = props => {
             frameborder="0"
             allowTransparency="true"
             allow="encrypted-media"
-          ></iframe>
+          ></iframe> */}
         </li>
         <li>
           <a
-            data-pin-do="buttonBookmark"
-            data-pin-tall="true"
-            data-pin-url={url}
-            href="https://www.pinterest.com/pin/create/button/"
+            onClick={() => {
+              window.open(
+                `http://pinterest.com/pin/create/button/?url=${url}&media=https://bookriot.com/wp-content/uploads/2018/11/best-thanksgiving-books-for-kids.jpg&description=${props.title}`,
+                "pinterestShare",
+                "width=750,height=350"
+              );
+              return false;
+            }}
           >
             Pinterest
           </a>
