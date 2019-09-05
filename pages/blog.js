@@ -26,19 +26,15 @@ import Pencil from "../images/Pencil.png";
 import Light from "../images/Light.png";
 import Mug from "../images/Mug.png";
 import Head from "next/head";
+import axios from "axios";
 const BlogPage = props => {
-  console.log(props.blogs);
-  console.log(props.allBlogs);
   // const categories = props.blogs.category.split(",");
-
+  console.log(props.secondResponse);
   return (
     <Layout>
       <Head>
         <meta property="og:type" content="blog" />
-        <meta
-          property="og:title"
-          content={props.blogs.data[0].title.rendered}
-        />
+        <meta property="og:title" content={props.blogs[0].title.rendered} />
         <meta property="og:description" content={props.blogs.description} />
         <meta
           property="og:url"
@@ -55,7 +51,7 @@ const BlogPage = props => {
             <div className="column is-12">
               <div className="title-container">
                 <div className="categories">
-                  {props.blogs.data[0].categories.map(category => {
+                  {props.blogs[0].categories.map(category => {
                     if (category === 2) {
                       return <IconImages img={Book} />;
                     }
@@ -73,11 +69,9 @@ const BlogPage = props => {
                     }
                   })}
                 </div>
-                <h1 className="blog-title">
-                  {props.blogs.data[0].title.rendered}
-                </h1>
+                <h1 className="blog-title">{props.blogs[0].title.rendered}</h1>
                 <p>By: Jennifer Larson</p>
-                <p>{props.blogs.data[0].date}</p>
+                <p>{props.blogs[0].date}</p>
                 <ul>
                   <li>
                     {" "}
@@ -130,7 +124,7 @@ const BlogPage = props => {
               <div className="column is-8">
                 <span
                   dangerouslySetInnerHTML={{
-                    __html: props.blogs.data[0].content.rendered
+                    __html: props.blogs[0].content.rendered
                   }}
                 />
                 <div className="shareMenu">
@@ -153,12 +147,24 @@ const BlogPage = props => {
 
 BlogPage.getInitialProps = async function({ req, query }) {
   // const baseUrl = req ? `${req.protocol}://${req.get("Host")}` : "";
-  // const response = await fetch(baseUrl + "/api/blog/load/" + query.q);
-  let blogs = await api.loadBlog(query.q);
-  let allBlogs = await api.loadBlogs();
+  // console.log(baseUrl);
+  // const response = await fetch(
+  //   "http://165.22.165.117:8000/wp-json/wp/v2/posts?slug=" + query.q
+  // );
+  // const secondResponse = await fetch(baseUrl + ":8000/wp-json/wp/v2/posts");
+  // const rBlogs = await response.json();
+  // const rAllBlogs = await secondResponse.json();
+  // return { blogs: rBlogs, allBlogs: rAllBlogs };
+  const response = await axios.get(
+    "https://tnd-4605b0.easywp.com/wp-json/wp/v2/posts?slug=" + query.q
+  );
 
-  blogs = JSON.parse(blogs);
-  allBlogs = JSON.parse(allBlogs);
-  return { blogs: blogs, allBlogs: allBlogs };
+  const secondResponse = await axios.get(
+    "https://tnd-4605b0.easywp.com/wp-json/wp/v2/posts?_embed"
+  );
+  return {
+    blogs: response.data,
+    allBlogs: secondResponse.data
+  };
 };
 export default BlogPage;

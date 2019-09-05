@@ -15,6 +15,7 @@ const BlogSlider = props => (
   <Layout>
     <ContainerFluid className="light-gray-background blog-slider">
       <Container>
+        {console.log(props.blogs)}
         <TitleComponent img={Paper} h1="Recent Blogs" />
         <Columns className="is-multiline is-centerd">
           {props.blogs.map((blog, index) => {

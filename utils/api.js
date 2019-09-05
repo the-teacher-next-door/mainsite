@@ -22,11 +22,13 @@ export default {
     return axios.post(`/api/blog/save`, data);
   },
   loadBlogs: () => {
-    return axios.get(`http://165.22.165.117:8000/wp-json/wp/v2/posts?_embed`);
+    return axios.get(
+      `https://tnd-4605b0.easywp.com/wp-json/wp/v2/posts?_embed`
+    );
   },
   loadBlog: data => {
     return axios.get(
-      `http://165.22.165.117:8000/wp-json/wp/v2/posts?slug=${data}`
+      `https://tnd-4605b0.easywp.com/wp-json/wp/v2/posts?slug=${data}`
     );
   },
   loadBlogAdmin: data => {
