@@ -6,21 +6,18 @@ const Upload = props => {
   const [text, setText] = useState("");
   const submit = e => {
     e.preventDefault();
-    if (file !== "") {
-      const fd = new FormData();
-      fd.append("myImage", file, file.name);
-      api.upload(fd).then(done => {
-        console.log(done);
-        if (done.data.msg === "File Uploaded") {
-          setFile("");
-          setText("File Uploaded");
-          document.getElementById("file-input").value = null;
-          props.loadImages();
-        }
-      });
-    } else {
-      setText("Please select a file.");
-    }
+    console.log(file);
+    const fd = new FormData();
+    fd.append("myImage", file, file.name);
+    api.upload(fd).then(done => {
+      console.log(done);
+      if (done.data.msg === "File Uploaded") {
+        setFile("");
+        setText("File Uploaded");
+        document.getElementById("file-input").value = null;
+        props.loadImages();
+      }
+    });
   };
 
   const change = e => {
@@ -30,9 +27,7 @@ const Upload = props => {
     <form enctype="multipart/form-data" onSubmit={submit}>
       <p>{text}</p>
       <input type="file" name="myImage" onChange={change} id="file-input" />
-      <button type="submit">
-        <i className="fas fa-upload"></i>
-      </button>
+      <button type="submit">Submit</button>
     </form>
   );
 };
