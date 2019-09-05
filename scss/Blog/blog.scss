@@ -44,8 +44,10 @@
 			span {
 				color: $darkPurple !important;
 				justify-content: flex-start;
-				font-family: 'Cabin' !important;
-				font-size: 50px !important;
+
+				strong {
+					color: $darkPurple !important;
+				}
 			}
 		}
 
@@ -53,19 +55,32 @@
 			justify-content: flex-start;
 
 			span {
-				font-family: 'Lato' !important;
 				justify-content: flex-start;
-				font-size: 20px !important;
 			}
 		}
 
 		p {
-			span {
-				font-family: 'Roboto' !important;
+			span {}
+
+			&:empty {
+
+				padding-bottom: 20px;
 			}
 
-			padding-bottom: 20px;
+		}
 
+		ul {
+			list-style: circle;
+
+			li {
+				float: none;
+				margin-left: 1.5em;
+				margin-top: 10px;
+
+				&:empty {
+					padding: 20px;
+				}
+			}
 		}
 	}
 

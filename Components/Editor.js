@@ -8,6 +8,7 @@ const EditorNew = props => {
       wrapperClassName="wrapperClassName"
       editorClassName="editorClassName"
       onEditorStateChange={props.onEditorStateChange}
+      toolbar={props.toolbar}
     />
   );
 };

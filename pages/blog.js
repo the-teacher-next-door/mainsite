@@ -5,7 +5,6 @@ import {
   convertFromRaw,
   ContentState
 } from "draft-js";
-import { Editor } from "react-draft-wysiwyg";
 import draftToHtml from "draftjs-to-html";
 import htmlToDraft from "html-to-draftjs";
 import PBtn from "../Components/PBtn";

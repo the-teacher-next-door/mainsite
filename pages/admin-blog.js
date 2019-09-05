@@ -12,12 +12,14 @@ import htmlToDraft from "html-to-draftjs";
 import Input from "../Components/Input";
 import _ from "lodash";
 import api from "../utils/api";
-import EditorNew from "../Components/Editor";
 import Layout from "../Components/Layout/Layout";
 import ToggleSwitch from "../Components/ToggleSwitch";
 import createImagePlugin from "draft-js-image-plugin";
 import Toast from "../Components/toast";
 import DynamicComponent from "../Components/Dynamic";
+import Container from "../Components/FormatComponents/Container";
+import Columns from "../Components/FormatComponents/Columns";
+import Column from "../Components/FormatComponents/Column";
 
 const imagePlugin = createImagePlugin();
 const plugins = [imagePlugin];
@@ -204,12 +206,10 @@ const NewBlog = props => {
         <AdminNav title="Admin Panel">
           <PBtn onClick={props.logout}>Logout</PBtn>
         </AdminNav>
-
-        <div className="container">
-          <div className="columns">
-            <div className="column is-12">
+        <Container>
+          <Columns className="is-centered">
+            <Column className="is-8">
               <div className="editorContent preview">
-
                 <div className="toolbar">
                   <div className="buttons">
                     <PBtn onClick={save}>
@@ -257,18 +257,26 @@ const NewBlog = props => {
                   />
                 </div>
 
-                <div className="editorWrapper">
-                  <div>
-                    <DynamicComponent
-                      editorState={editorState}
-                      onEditorStateChange={onEditorStateChange}
-                    />
-                  </div>
-                </div>
+                <DynamicComponent
+                  editorState={editorState}
+                  onEditorStateChange={onEditorStateChange}
+                  editorClassName="editorWrapper"
+                  toolbar={{
+                    textAlign: {
+                      options: []
+                    },
+                    fontSize: {
+                      options: ["10", "15", "20", "30", "40", "50"]
+                    },
+                    fontFamily: {
+                      options: ["Roboto", "Lato", "Cabin"]
+                    }
+                  }}
+                />
               </div>
-            </div>
-          </div>
-        </div>
+            </Column>
+          </Columns>
+        </Container>
       </div>
     </Layout>
   );

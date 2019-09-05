@@ -1,9 +1,39 @@
 .new-blog {
+  .public-DraftStyleDefault-block {
+    margin: 0;
+  }
+
+  .editorWrapper {
+    border: 1px solid #00000014;
+    padding: 20px;
+
+    .DraftStyleDefault-ul {
+      margin: 0;
+    }
+
+
+    ul {
+      list-style-type: disc;
+
+      li {
+        float: none;
+
+      }
+    }
+  }
+
+  .title-box {
+    width: 100%;
+    padding: 20px;
+    font-size: 20px;
+    text-align: center;
+    font-weight: 700;
+    border: 1px solid #00000014;
+  }
+
   .toolbar {
     display: flex;
 
-    .buttons{
-      
-    }
+    .buttons {}
   }
 }
