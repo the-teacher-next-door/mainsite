@@ -32,10 +32,29 @@
   }
 }
 
+
+
 .admin {
   text-align: left;
-  background-color: #ffffff;
-  height: 100vh;
+  background-color: #F2F2F2;
+  min-height: 100vh;
+  height: 100%;
+  margin-left: 300px;
+  width: 100%;
+  padding-right: 300px;
+  padding: 50px;
+  ;
+
+  .container {
+    margin: 0;
+  }
+
+  .unreadComments {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px #00000024;
+  }
 
   .blogs-header-bar {
     display: flex;

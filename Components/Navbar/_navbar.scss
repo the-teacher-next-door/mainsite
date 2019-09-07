@@ -2,11 +2,14 @@
 @import './mobile.scss';
 @import './navPanel.scss';
 
-nav {
+.navbar {
   display: flex;
   background-color: $lightPurple !important;
   align-items: center !important;
   justify-content: center;
+  max-height: 70px;
+
+  height: 100%;
 
   .columns {
     width: 100%

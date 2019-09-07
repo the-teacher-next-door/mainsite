@@ -30,6 +30,7 @@ module.exports = {
         .create({
           name: req.body.name,
           comment: req.body.comment,
+          read: false,
           blogId: req.body.blogId,
           reply: req.body.reply,
           respondingTo: req.body.respondingTo
@@ -55,6 +56,7 @@ module.exports = {
         name: req.body.name,
         comment: req.body.comment,
         blogId: req.body.blogId,
+        read: false,
         reply: req.body.reply,
         respondingTo: req.body.respondingTo
       })
@@ -70,8 +72,23 @@ module.exports = {
         }
       });
   },
+  loadAll: (req, res) => {
+    db.comments.find({}).then(data => {
+      console.log(data);
+      res.send(data);
+    });
+  },
+  loadUnread: (req, res) => {
+    db.comments
+      .find({
+        read: false
+      })
+      .then(data => {
+        console.log(data);
+        res.send(data);
+      });
+  },
   load: (req, res) => {
-    console.log(req.params);
     const query = req.params.id.replace(/\+/g, " ");
     db.comments
       .find({ blogId: { $regex: query, $options: "i" } })
@@ -80,12 +97,24 @@ module.exports = {
       });
   },
   loadReplies: (req, res) => {
-    console.log(req.params);
     const query = req.params.id.replace(/\+/g, " ");
     db.comments
       .find({ respondingTo: { $regex: query, $options: "i" } })
       .then(data => {
         res.send(data);
+      });
+  },
+  delete: (req, res) => {
+    console.log(req.params.id);
+    db.blogs
+      .deleteOne({
+        _id: req.params.id
+      })
+      .then(data => {
+        res.send("deleted");
+      })
+      .catch(err => {
+        res.send("err");
       });
   }
 };

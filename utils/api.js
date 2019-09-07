@@ -107,6 +107,15 @@ export default {
   loadComments: data => {
     return axios.get(`/api/comments/load/${data}`);
   },
+  loadAllComments: () => {
+    return axios.get(`/api/comments/loadAll/`);
+  },
+  deleteComments: data => {
+    return axios.put(`/api/comments/delete`, data);
+  },
+  loadUnread: () => {
+    return axios.get(`/api/comments/loadUnread/`);
+  },
   loadReplies: data => {
     return axios.get(`/api/comments/loadReplies/${data}`);
   },

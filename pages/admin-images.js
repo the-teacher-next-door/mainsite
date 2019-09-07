@@ -4,9 +4,11 @@ import api from "../utils/api";
 import Upload from "../Components/Upload";
 import PBtn from "../Components/PBtn";
 import Layout from "../Components/Layout/Layout";
-import Container from "../Components/FormatComponents/Container";
+import ContainerFluid from "../Components/FormatComponents/ContainerFluid";
 import Columns from "../Components/FormatComponents/Columns";
 import Column from "../Components/FormatComponents/Column";
+import AdminTopBar from "../Components/AdminTopBar/AdminTopBar";
+import Container from "../Components/FormatComponents/Container";
 const Images = props => {
   const [images, setImages] = useState([]);
   const [url, setUrl] = useState("");
@@ -39,8 +41,9 @@ const Images = props => {
 
   return (
     <Layout>
-      <div className="container-fluid admin admin-images">
-        <AdminNav />
+      <AdminTopBar />
+      <AdminNav active="images" />
+      <ContainerFluid className="admin">
         <Container>
           <Columns className="blogs-header-bar">
             <Column className="is-6 left">
@@ -77,7 +80,7 @@ const Images = props => {
             })}
           </div>
         </Container>
-      </div>
+      </ContainerFluid>
     </Layout>
   );
 };

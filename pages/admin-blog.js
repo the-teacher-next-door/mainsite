@@ -20,6 +20,8 @@ import DynamicComponent from "../Components/Dynamic";
 import Container from "../Components/FormatComponents/Container";
 import Columns from "../Components/FormatComponents/Columns";
 import Column from "../Components/FormatComponents/Column";
+import ContainerFluid from "../Components/FormatComponents/ContainerFluid";
+import AdminTopBar from "../Components/AdminTopBar/AdminTopBar";
 
 const imagePlugin = createImagePlugin();
 const plugins = [imagePlugin];
@@ -201,11 +203,9 @@ const NewBlog = props => {
   };
   return (
     <Layout>
-      <Toast className={toastClass} text={toastText} />
-      <div className="container-fluid new-blog">
-        <AdminNav title="Admin Panel">
-          <PBtn onClick={props.logout}>Logout</PBtn>
-        </AdminNav>
+      <AdminTopBar />
+      <AdminNav active="blogs"></AdminNav>
+      <ContainerFluid className="admin new-blog">
         <Container>
           <Columns className="is-centered">
             <Column className="is-8">
@@ -215,10 +215,7 @@ const NewBlog = props => {
                     <PBtn onClick={save}>
                       <i className="far fa-save"></i>
                     </PBtn>
-                    <PBtn onClick={toggleLive}>Preview</PBtn>
-                    <PBtn onClick={deleteBlog}>
-                      <i className="far fa-trash-alt"></i>
-                    </PBtn>
+                    Image Url:
                     <Input
                       placeholder="Image URL"
                       className="img-input"
@@ -226,24 +223,31 @@ const NewBlog = props => {
                       name="imageurl"
                       onChange={handleChange}
                     />
+                    <select
+                      id="categorySelect"
+                      name="tags"
+                      value={category}
+                      onChange={selectChange}
+                    >
+                      <option value="category" defaultValue="selected">
+                        Select a Category
+                      </option>
+                      <option value="Reading">Reading</option>
+                      <option value="Writing">Writing & Grammar</option>
+                      <option value="Math">Math</option>
+                      <option value="Holidays">Holidays</option>
+                      <option value="Ideas">Classroom Ideas</option>
+                    </select>
+                    <PBtn onClick={deleteBlog}>
+                      <i className="far fa-trash-alt"></i>
+                    </PBtn>
                   </div>
-                  <ToggleSwitch checkboxChange={toggleLive} checked={checked} />
-
-                  <select
-                    id="categorySelect"
-                    name="tags"
-                    value={category}
-                    onChange={selectChange}
-                  >
-                    <option value="category" defaultValue="selected">
-                      Select a Category
-                    </option>
-                    <option value="Reading">Reading</option>
-                    <option value="Writing">Writing & Grammar</option>
-                    <option value="Math">Math</option>
-                    <option value="Holidays">Holidays</option>
-                    <option value="Ideas">Classroom Ideas</option>
-                  </select>
+                  <span>
+                    <ToggleSwitch
+                      checkboxChange={toggleLive}
+                      checked={checked}
+                    />
+                  </span>
                 </div>
 
                 <div className="title">
@@ -277,7 +281,7 @@ const NewBlog = props => {
             </Column>
           </Columns>
         </Container>
-      </div>
+      </ContainerFluid>
     </Layout>
   );
 };

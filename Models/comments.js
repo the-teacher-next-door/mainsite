@@ -6,6 +6,7 @@ const Schema = mongoose.Schema;
 const commentSchema = new Schema({
   name: { type: String, required: true },
   comment: { type: String, required: true },
+  read: { type: Boolean, required: true },
   blogId: { type: String, required: true },
   reply: { type: Boolean, required: true },
   respondingTo: { type: String, required: false },

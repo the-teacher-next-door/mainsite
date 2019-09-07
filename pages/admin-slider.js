@@ -8,6 +8,8 @@ import Input from "../Components/Input";
 import Container from "../Components/FormatComponents/Container";
 import Column from "../Components/FormatComponents/Column";
 import Columns from "../Components/FormatComponents/Columns";
+import ContainerFluid from "../Components/FormatComponents/ContainerFluid";
+import AdminTopBar from "../Components/AdminTopBar/AdminTopBar";
 const AdminSlider = () => {
   const [images, setImages] = useState([]);
   useEffect(() => {
@@ -46,112 +48,115 @@ const AdminSlider = () => {
 
   return (
     <Layout>
-      <AdminNav />
-      <Container className="admin">
-        <Columns className="is-multiline blogs-header-bar">
-          <Column className="is-6 left">
-            <h1>Slider</h1>
-          </Column>
-          <Column className="is-6 right">
-            <PBtn className="createNew" onClick={newImage}>
-              <i className="fas fa-plus"></i>
-            </PBtn>
-          </Column>
-        </Columns>
-        <Columns className="is-multiline">
-          {images.map((image, index) => {
-            return image.img === "" ? (
-              <Column className="is-3">
-                <form onSubmit={saveSlider} data-id={image._id}>
-                  <div className="card">
-                    <div className="card-image">
-                      <figure className="image">
-                        <img src={Temp} alt="" />
-                      </figure>
-                      <div className="card-body">
-                        <label>Slide Name</label>
-                        <Input
-                          type="text"
-                          className="input"
-                          defaultValue={image.title}
-                          placeholder="Title"
-                          name="title"
-                          // onChange={handleChange}
-                        />
-                        <label>Slide Link</label>
-                        <Input
-                          className="input"
-                          type="text"
-                          defaultValue={image.link}
-                          placeholder="Link"
-                          name="link"
-                          // onChange={handleChange}
-                        />
-                        <label>Slide Image URL</label>
-                        <Input
-                          className="input"
-                          type="text"
-                          defaultValue={image.img}
-                          placeholder="Image URL"
-                          name="img"
-                          // onChange={handleChange}
-                        />
-                      </div>
-                      <div className="card-footer-item">
-                        <PBtn type="submit">Save</PBtn>
-                      </div>
-                    </div>
-                  </div>
-                </form>
-              </Column>
-            ) : (
-              <Column className="is-3">
-                <form onSubmit={saveSlider} data-id={image._id}>
-                  <div className="card">
-                    <div className="card-image">
-                      <figure className="image">
-                        <img src={image.img} alt="" />
-                      </figure>
-                      <div className="card-content">
-                        <label>Slide Name</label>
-                        <Input
-                          type="text"
-                          className="input"
-                          defaultValue={image.title}
-                          placeholder="Title"
-                          name="title"
-                          // onChange={handleChange}
-                        />
-                        <label>Slide Link</label>
-                        <Input
-                          type="text"
-                          className="input"
-                          defaultValue={image.link}
-                          placeholder="Link"
-                          name="link"
-                          // onChange={handleChange}
-                        />
-                        <label>Slide Image URL</label>
-                        <Input
-                          type="text"
-                          className="input"
-                          defaultValue={image.img}
-                          placeholder="Image URL"
-                          name="img"
-                          // onChange={handleChange}
-                        />
-                      </div>
-                      <div className="card-footer-item">
-                        <PBtn type="submit">Save</PBtn>
+      <AdminTopBar />
+      <AdminNav active="storeLinks" />
+      <ContainerFluid className="admin">
+        <Container>
+          <Columns className="is-multiline blogs-header-bar">
+            <Column className="is-6 left">
+              <h1>Slider</h1>
+            </Column>
+            <Column className="is-6 right">
+              <PBtn className="createNew" onClick={newImage}>
+                <i className="fas fa-plus"></i>
+              </PBtn>
+            </Column>
+          </Columns>
+          <Columns className="is-multiline">
+            {images.map((image, index) => {
+              return image.img === "" ? (
+                <Column className="is-3">
+                  <form onSubmit={saveSlider} data-id={image._id}>
+                    <div className="card">
+                      <div className="card-image">
+                        <figure className="image">
+                          <img src={Temp} alt="" />
+                        </figure>
+                        <div className="card-body">
+                          <label>Slide Name</label>
+                          <Input
+                            type="text"
+                            className="input"
+                            defaultValue={image.title}
+                            placeholder="Title"
+                            name="title"
+                            // onChange={handleChange}
+                          />
+                          <label>Slide Link</label>
+                          <Input
+                            className="input"
+                            type="text"
+                            defaultValue={image.link}
+                            placeholder="Link"
+                            name="link"
+                            // onChange={handleChange}
+                          />
+                          <label>Slide Image URL</label>
+                          <Input
+                            className="input"
+                            type="text"
+                            defaultValue={image.img}
+                            placeholder="Image URL"
+                            name="img"
+                            // onChange={handleChange}
+                          />
+                        </div>
+                        <div className="card-footer-item">
+                          <PBtn type="submit">Save</PBtn>
+                        </div>
                       </div>
                     </div>
-                  </div>
-                </form>
-              </Column>
-            );
-          })}
-        </Columns>
-      </Container>
+                  </form>
+                </Column>
+              ) : (
+                <Column className="is-3">
+                  <form onSubmit={saveSlider} data-id={image._id}>
+                    <div className="card">
+                      <div className="card-image">
+                        <figure className="image">
+                          <img src={image.img} alt="" />
+                        </figure>
+                        <div className="card-content">
+                          <label>Slide Name</label>
+                          <Input
+                            type="text"
+                            className="input"
+                            defaultValue={image.title}
+                            placeholder="Title"
+                            name="title"
+                            // onChange={handleChange}
+                          />
+                          <label>Slide Link</label>
+                          <Input
+                            type="text"
+                            className="input"
+                            defaultValue={image.link}
+                            placeholder="Link"
+                            name="link"
+                            // onChange={handleChange}
+                          />
+                          <label>Slide Image URL</label>
+                          <Input
+                            type="text"
+                            className="input"
+                            defaultValue={image.img}
+                            placeholder="Image URL"
+                            name="img"
+                            // onChange={handleChange}
+                          />
+                        </div>
+                        <div className="card-footer-item">
+                          <PBtn type="submit">Save</PBtn>
+                        </div>
+                      </div>
+                    </div>
+                  </form>
+                </Column>
+              );
+            })}
+          </Columns>
+        </Container>
+      </ContainerFluid>
     </Layout>
   );
 };

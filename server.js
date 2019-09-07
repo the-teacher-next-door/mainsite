@@ -272,6 +272,16 @@ nextApp
       });
     });
 
+    server.get("/admin-blogs", (req, res) => {
+      db.users.findById(req.user).then(user => {
+        if (req.isAuthenticated() && user.admin === true) {
+          return nextApp.render(req, res, "/admin-blogs");
+        } else {
+          return nextApp.render(req, res, "/admin-login");
+        }
+      });
+    });
+
     server.get("/admin-images", (req, res) => {
       db.users.findById(req.user).then(user => {
         if (req.isAuthenticated() && user.admin === true) {

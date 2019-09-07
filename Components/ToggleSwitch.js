@@ -1,13 +1,15 @@
 import React from "react";
 const ToggleSwitch = props => (
   <div className="check">
-    <input
-      type="checkbox"
-      id="switch"
-      onChange={props.checkboxChange}
-      checked={props.checked}
-    />
-    <label htmlFor="switch">Toggle</label>
+    <label class="toggle">
+      <input
+        class="toggle-checkbox"
+        type="checkbox"
+        onChange={props.checkboxChange}
+        checked={props.checked}
+      />
+      <div class="toggle-switch"></div>
+    </label>
   </div>
 );
 

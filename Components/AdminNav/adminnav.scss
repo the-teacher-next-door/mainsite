@@ -1,0 +1,22 @@
+@import '../../scss/mixins/LayoutMixins.scss';
+@import '../../scss/vars.scss';
+
+.admin-sidebar {
+  max-width: 300px;
+  position: absolute;
+  height: 95%;
+  top: 60px;
+  width: 100%;
+  padding: 10px;
+  border-right: 1px solid #e9e9e9;
+
+  .active {
+    background-color: $darkBlue;
+  }
+
+  ul {
+    li {}
+  }
+}
+
+@include for-tablet-landscape-up {}

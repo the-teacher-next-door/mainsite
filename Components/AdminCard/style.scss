@@ -1,0 +1,26 @@
+.admin-card {
+  background-color: #fff;
+  width: 100%;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px #00000028;
+  display: flex;
+  padding: 20px;
+
+  .data {
+    font-size: 90px;
+    background-color: #fff;
+    font-family: 'Cabin';
+
+    .small-text {
+
+      font-family: 'Lato';
+    }
+
+  }
+
+  .icon {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+  }
+}
