@@ -23,17 +23,30 @@ const Upload = props => {
     }
   };
 
-  const change = e => {
-    setFile(e.target.files[0]);
-  };
+
+  const uploadImage = async (e) => {
+    const files = e.target.files;
+    console.log(files[0])
+    let x = new FormData().append('file', files[0]);
+    // x.append('upload_preset', 'tndMedia')
+
+    // const res = await fetch('https://api.cloudinary.com/v1_1/dgyuis7i8/image/upload', {
+    //   method: 'POST',
+    //   body: data
+    // })
+
+    // const file = await res.json()
+
+    //store file in db after upload...
+    console.log(x)
+    const dbSave = await api.saveImage(x);
+    setText("Uploaded")
+  }
   return (
-    <form enctype="multipart/form-data" onSubmit={submit}>
+    <>
       <p>{text}</p>
-      <input type="file" name="myImage" onChange={change} id="file-input" />
-      <button type="submit">
-        <i className="fas fa-upload"></i>
-      </button>
-    </form>
+      <input type="file" name="file" onChange={uploadImage} id="file-input" />
+    </>
   );
 };
 
