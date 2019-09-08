@@ -38,8 +38,8 @@ export default {
   loadFour: category => {
     return axios.get(`/api/blog/loadFour/${category}`);
   },
-  loadEight: category => {
-    return axios.get(`/api/blog/loadEight/${category}`);
+  loadEight: () => {
+    return axios.get(`/api/blog/loadEight`);
   },
   newBlog: data => {
     return axios.post(`/api/blog/new`, data);
