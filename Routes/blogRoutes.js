@@ -8,6 +8,7 @@ const blogController = require("../Controllers/blogController");
 router.route("/blog/loadall").get(blogController.loadall);
 
 router.route("/blog/loadFour/:category").get(blogController.loadFour);
+router.route("/blog/loadEight").get(blogController.loadEight);
 router.route("/blog/load/:title").get(blogController.load);
 router.route("/blog/loadAdmin/:id").get(blogController.loadAdmin);
 

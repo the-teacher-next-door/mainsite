@@ -18,6 +18,8 @@ export default {
   findUserById: id => {
     return axios.get(`/api/users/find/${id}`);
   },
+
+  // Blogs
   saveBlog: data => {
     return axios.post(`/api/blog/save`, data);
   },
@@ -36,9 +38,13 @@ export default {
   loadFour: category => {
     return axios.get(`/api/blog/loadFour/${category}`);
   },
+  loadEight: category => {
+    return axios.get(`/api/blog/loadEight/${category}`);
+  },
   newBlog: data => {
     return axios.post(`/api/blog/new`, data);
   },
+
   search: search => {
     return axios.get(`/api/blog/search/${search}`);
   },

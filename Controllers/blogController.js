@@ -102,6 +102,15 @@ module.exports = {
         res.send(blogs);
       });
   },
+  loadEight: (req, res) => {
+    db.blogs
+      .find({})
+      .limit(8)
+      .then(blogs => {
+        res.send(blogs);
+      });
+  },
+
   search: (req, res) => {
     const query = req.params.search.replace(/\+/g, " ");
     db.blogs

@@ -16,21 +16,7 @@ import Header from "../Components/Header";
 import Head from "next/head";
 import SocialClips from "../Components/SocialClips/SocialClips";
 
-const Home = () => {
-  const [blogs, setBlogs] = useState([]);
-  const [items, setItems] = useState([]);
-
-  useEffect(() => {
-    api.loadBlogs().then(blogs => {
-      console.log(blogs.data);
-      setBlogs(blogs.data);
-    });
-
-    api.loadSliderImages().then(items => {
-      setItems(items.data);
-    });
-  }, []);
-
+const Home = props => {
   return (
     <Layout>
       <Head>
@@ -41,8 +27,8 @@ const Home = () => {
         <Header />
         <Jumbotron mainImage={Slider} />
         <ConvertKit title="JOIN MY NEWSLETTER!" />
-        <CollectionSlider items={items} />
-        <BlogSlider blogs={blogs} />
+        <CollectionSlider items={props.items} />
+        <BlogSlider blogs={props.blogs} />
         <SocialClips />
         <AboutSection />
         <FooterNext />
@@ -58,5 +44,15 @@ const Home = () => {
       `}</style>
     </Layout>
   );
+};
+
+Home.getInitialProps = async function({ req, query }) {
+  const baseUrl = req ? `${req.protocol}://${req.get("Host")}` : "";
+  const blogResponse = await fetch(baseUrl + "/api/blog/loadEight");
+  const linkRepsonse = await fetch(baseUrl + "/api/loadSliderImages");
+
+  const blogs = await blogResponse.json();
+  const storeLinks = await linkRepsonse.json();
+  return { blogs: blogs, items: storeLinks };
 };
 export default Home;
