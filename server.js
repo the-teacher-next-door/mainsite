@@ -26,13 +26,13 @@ const Books = require("./Routes/bookRoutes");
 // Create the Express-Next App
 const nextApp = next({ dev });
 const handle = nextApp.getRequestHandler();
-
+const compression = require("compression");
 //Start the app
 nextApp
   .prepare()
   .then(() => {
     const server = express();
-
+    server.use(compression());
     //Storage for images
     const storage = multer.diskStorage({
       destination: "./public/uploads/",
