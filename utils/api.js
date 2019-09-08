@@ -19,6 +19,12 @@ export default {
     return axios.get(`/api/users/find/${id}`);
   },
 
+  //create image url after upload
+
+  saveImage: url => {
+    return axios.post(`/api/images/create`, url)
+  },
+
   // Blogs
   saveBlog: data => {
     return axios.post(`/api/blog/save`, data);
