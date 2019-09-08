@@ -6,10 +6,5 @@ module.exports = {
     db.images.find({}).then(done => {
       res.send(done);
     });
-  },
-  create: (req, res) => {
-    console.log('image body' + req.body)
-
-    // db.images.create(req.file)
   }
 };
