@@ -49,7 +49,7 @@ const Home = props => {
 Home.getInitialProps = async function({ req, query }) {
   const baseUrl = req ? `${req.protocol}://${req.get("Host")}` : "";
   const blogResponse = await fetch(baseUrl + "/api/blog/loadEight");
-  const linkRepsonse = await fetch(baseUrl + "/api/loadSliderImages");
+  const linkRepsonse = await fetch(baseUrl + "/api/slider/loadAll");
 
   const blogs = await blogResponse.json();
   const storeLinks = await linkRepsonse.json();
