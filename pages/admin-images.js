@@ -62,7 +62,11 @@ const Images = props => {
                     <div className="card">
                       <div className="card-image">
                         <figure className="image">
-                          <img src={`${url}/${image.path}`} alt="" />
+                          <img
+                            style={{ maxWidth: "40px", maxHeight: "40px" }}
+                            src={`${url}/${image.path}`}
+                            alt=""
+                          />
                         </figure>
                         <div className="card-footer-item"></div>
                       </div>
