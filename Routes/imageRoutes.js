@@ -8,5 +8,4 @@ const imageController = require("../Controllers/imageController");
 
 // router.route("/image/store").post(imageController.store);
 router.route("/images").get(imageController.loadall);
-router.route("/images/create").post(imageController.create);
 module.exports = router;
