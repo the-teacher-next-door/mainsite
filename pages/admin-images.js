@@ -64,9 +64,7 @@ const Images = props => {
                         <figure className="image">
                           <img src={`${url}/${image.path}`} alt="" />
                         </figure>
-                        <div className="card-footer-item">
-                          <p>{image.originalname}</p>
-                        </div>
+                        <div className="card-footer-item"></div>
                       </div>
                       <div className="card-footer-item">
                         <PBtn type="submit">
