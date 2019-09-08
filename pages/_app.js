@@ -31,6 +31,7 @@ class MyApp extends App {
 
     return (
       <NextContainer>
+        <Head></Head>
         <Component {...props} />
       </NextContainer>
     );
