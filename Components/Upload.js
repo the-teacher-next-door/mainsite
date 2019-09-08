@@ -23,11 +23,10 @@ const Upload = props => {
     }
   };
 
-
-  const uploadImage = async (e) => {
+  const uploadImage = e => {
     const files = e.target.files;
-    console.log(files[0])
-    let x = new FormData().append('file', files[0]);
+    let x = new FormData();
+    x.append("file", "anything");
     // x.append('upload_preset', 'tndMedia')
 
     // const res = await fetch('https://api.cloudinary.com/v1_1/dgyuis7i8/image/upload', {
@@ -38,10 +37,11 @@ const Upload = props => {
     // const file = await res.json()
 
     //store file in db after upload...
-    console.log(x)
-    const dbSave = await api.saveImage(x);
-    setText("Uploaded")
-  }
+    console.log(x);
+    api.saveImage(x).then(done => {
+      setText("Uploaded");
+    });
+  };
   return (
     <>
       <p>{text}</p>
