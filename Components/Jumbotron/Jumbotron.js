@@ -11,10 +11,10 @@ const Jumbotron = props => (
       height: `70vh`
     }}
   >
-    <div className="container">
+    {/* <div className="container">
       <h1 className="display-4">{props.h1}</h1>
       <p className="lead">{props.lead}</p>
-    </div>
+    </div> */}
   </div>
 );
 

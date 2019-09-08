@@ -20,8 +20,20 @@
       sans-serif;
     color: #A3A7BA;
     text-transform: uppercase;
+    font-size: 15px;
   }
 
+  select {
+    margin-right: 20px;
+
+    &::placeholder {
+      font-family: 'Lato'
+        sans-serif;
+      color: #A3A7BA;
+      text-transform: uppercase;
+      font-size: 15px;
+    }
+  }
 
   .field {
     .is-static {
@@ -69,5 +81,20 @@
 
   button {
     margin: 10px;
+  }
+}
+
+@include for-phone-only {
+  .convertKit {
+    input {}
+
+    .field {
+      padding: 10px;
+    }
+
+    .control {
+      padding-right: 0;
+      padding-left: 0;
+    }
   }
 }

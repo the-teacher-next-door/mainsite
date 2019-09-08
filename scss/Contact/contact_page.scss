@@ -60,11 +60,15 @@
 
 }
 
-.contact {
 
-  .footer {
-    position: absolute !important;
-    bottom: 0;
-    width: 100%;
+@include for-phone-only {
+  .contact {
+    form {
+      .control {
+        padding-right: 0;
+        padding-left: 0;
+
+      }
+    }
   }
 }

@@ -1,5 +1,7 @@
+@import '../../scss/mixins/LayoutMixins.scss';
+
+
 .title-component {
-  display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
@@ -7,5 +9,17 @@
   img {
     max-width: 70px;
 
+  }
+}
+
+@include for-phone-only {
+  .title-component {
+    display: block;
+  }
+}
+
+@include for-tablet-landscape-up {
+  .title-component {
+    display: flex;
   }
 }

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import Jumbotron from "../Components/Jumbotron/Jumbotron";
 import Link from "next/link";
 import dynamic from "next/dynamic";
-import Slider from "../images/freebies-slider.jpg";
+import Slider from "../images/freebies-slider.png";
 import ConvertKit from "../Components/ConvertKit";
 import CollectionSlider from "../Components/CollectionSlider";
 import BlogSlider from "../Components/BlogSlider";
@@ -39,10 +39,7 @@ const Home = () => {
       </Head>
       <div className="wrapper-home">
         <Header />
-        <Jumbotron
-          mainImage={Slider}
-          h1="Find Helpful Ideas and Freebies For the Busy Teacher"
-        />
+        <Jumbotron mainImage={Slider} />
         <ConvertKit title="JOIN MY NEWSLETTER!" />
         <CollectionSlider items={items} />
         <BlogSlider blogs={blogs} />

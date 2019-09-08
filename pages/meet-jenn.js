@@ -201,7 +201,7 @@ function Meet(props) {
                   </ul>
                 </div>
               </Column>
-              <Column className="is-6">
+              <Column className="is-6 storelink">
                 {/* link to store */}
                 <Link href="https://www.teacherspayteachers.com/Store/The-Teacher-Next-Door">
                   <a id="storeLink">

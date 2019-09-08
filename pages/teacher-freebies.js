@@ -14,6 +14,8 @@ import Column from "../Components/FormatComponents/Column";
 import Layout from "../Components/Layout/Layout";
 import Backpack from "../images/E.png";
 import TitleComponent from "../Components/TitleComponent";
+import FooterNext from "../Components/Footer/FooterNext";
+import AboutSection from "../Components/AboutSection";
 const Freebies = props => {
   const logout = async () => {
     await api.logout();
@@ -64,30 +66,40 @@ const Freebies = props => {
             </Container>
           ) : (
             <div className="columns is-centered is-multiline">
-              <div className="column is-12 heading">
-                <h1>Make sure to login with the info that I sent you.</h1>
-              </div>
               <div className="column is-8 has-text-centered">
                 <form className="login-form" action="/api/login" method="POST">
-                  <Input
-                    className="form-control"
-                    type="text"
-                    placeholder="Username"
-                    name="username"
-                  />
-                  <Input
-                    className="form-control"
-                    type="password"
-                    placeholder="Password"
-                    name="password"
-                  />
-                  <PBtn type="submit">Get Freebies</PBtn>
+                  <h2>Make sure to login with the info that I sent you.</h2>
+
+                  <div className="centerdiv">
+                    <div class="field">
+                      <div class="control">
+                        <input
+                          class="input"
+                          type="text"
+                          placeholder="Username"
+                          name="username"
+                        />
+                      </div>
+                    </div>
+                    <div class="field">
+                      <div class="control">
+                        <input
+                          class="input"
+                          type="text"
+                          placeholder="Password"
+                          name="password"
+                        />
+                      </div>
+                      <PBtn type="submit">Get Freebies</PBtn>
+                    </div>
+                  </div>
                 </form>
               </div>
             </div>
           )}
         </Container>
-        <Footer />
+        <AboutSection />
+        <FooterNext />
       </div>
     </Layout>
   );

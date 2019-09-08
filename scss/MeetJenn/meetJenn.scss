@@ -24,7 +24,6 @@
     .socials {
       ul {
         display: flex;
-        justify-content: flex-start;
       }
 
       position: relative;
@@ -153,5 +152,48 @@
 
   100% {
     transform: rotate(0deg);
+  }
+}
+
+@include for-phone-only {
+  .meet {
+    .info {
+      padding: 20px;
+    }
+
+    .storelink {
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .socials {
+      ul {
+
+        justify-content: center;
+        align-items: center;
+      }
+    }
+
+    .miniNav {
+      ul {
+        display: block;
+
+        li {
+          padding: 20px;
+        }
+      }
+    }
+  }
+}
+
+@include for-tablet-landscape-up {
+  .meet {
+    .socials {
+      ul {
+        justify-content: flex-start;
+      }
+    }
   }
 }

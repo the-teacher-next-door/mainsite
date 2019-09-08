@@ -11,6 +11,7 @@
         border: none;
         font-size: 30px;
         color: #FFF;
+        padding-top: 5px;
       }
 
       i {
@@ -27,6 +28,10 @@
       background-color: #fff;
     }
 
+    .mobile-logo {
+      display: block;
+      background-color: #fff;
+    }
   }
 
 }
@@ -53,7 +58,8 @@
     }
 
 
-    .logo {
+    .mobile-logo {
+      display: block;
       background-color: #fff;
     }
   }
@@ -70,6 +76,10 @@
     .right {
       display: flex;
       padding-top: 0;
+    }
+
+    .mobile-logo {
+      display: none;
     }
   }
 }

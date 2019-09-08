@@ -3,11 +3,10 @@ import Layout from "../Layout/Layout";
 import api from "../../utils/api";
 class SocialClips extends Component {
   componentDidMount() {
-    const script = document.createElement("script");
-    script.src = "//assets.pinterest.com/js/pinit.js";
-    script.async = true;
-
-    document.body.appendChild(script);
+    // const script = document.createElement("script");
+    // script.src = "//assets.pinterest.com/js/pinit.js";
+    // script.async = true;
+    // document.body.appendChild(script);
   }
   render() {
     return (
@@ -25,14 +24,13 @@ class SocialClips extends Component {
                   href="https://www.pinterest.com/TeacherNextDoor/"
                 ></a>
               </div>
-              <div className="column is-4">
+              <div className="column is-4 facebook">
                 <h2>Facebook</h2>
                 <iframe
                   src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FTheTeacherNextDoor%2F&tabs=timeline&width=400&height=786&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId=878288262298017"
                   width="395"
                   height="700"
                   style={{
-                    width: "100%",
                     border: "0",
                     overflow: "hidden",
                     height: "94%"

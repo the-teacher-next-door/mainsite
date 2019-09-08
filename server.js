@@ -221,7 +221,7 @@ nextApp
     };
 
     server.get("/", (req, res) => {
-      return nextApp.render(req, res, "/");
+      return nextApp.render(req, res, "/index");
     });
 
     // blog routes
