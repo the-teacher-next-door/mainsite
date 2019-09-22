@@ -220,7 +220,7 @@ const NewBlog = props => {
         let changeUrl = img.src;
         let imageName;
         //all the images on the page
-        if (img.src.split.length === 5) {
+        if (img.src.split("/").length === 5) {
           imageName = img.src.split("/")[5];
           console.log(imageName);
           allImages.data.forEach(currentImage => {
@@ -234,7 +234,7 @@ const NewBlog = props => {
               );
             }
           });
-        } else if (img.src.split.length === 4) {
+        } else if (img.src.split("/").length === 4) {
           imageName = img.src.split("/")[4];
           console.log(imageName);
           allImages.data.forEach(currentImage => {
