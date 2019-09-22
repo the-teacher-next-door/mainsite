@@ -207,7 +207,7 @@ const NewBlog = props => {
 
   //replace all images with correct format
   const replaceImages = async () => {
-    //get all images
+    //get all images in file system
     let allImages = await api.loadImages();
     console.log(allImages);
     let images = document.getElementsByTagName("img");
@@ -219,11 +219,20 @@ const NewBlog = props => {
       if (!images[i].src.includes("data:")) {
         let img = images[i];
         let changeUrl = img.src;
+        //all the images on the page
         let imageName = img.src.split("/")[5];
         console.log(imageName);
-        // allImages.forEach(currentImage => {
-        //   if()
-        // })
+
+        allImages.data.forEach(currentImage => {
+          console.log(currentImage.originalname);
+          if (currentImage.originalname === imageName) {
+            console.log(
+              "found image url would be " +
+                "https://the-teacher-next-door.com/public/uploads/" +
+                img.originalname
+            );
+          }
+        });
 
         // console.log(changeUrl);
       }
