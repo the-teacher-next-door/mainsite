@@ -16,7 +16,7 @@ import Layout from "../Components/Layout/Layout";
 import ToggleSwitch from "../Components/ToggleSwitch";
 import createImagePlugin from "draft-js-image-plugin";
 import Toast from "../Components/toast";
-import DynamicComponent from "../Components/Dynamic";
+import Editor from "../Components/Editor";
 import Container from "../Components/FormatComponents/Container";
 import Columns from "../Components/FormatComponents/Columns";
 import Column from "../Components/FormatComponents/Column";
@@ -315,7 +315,7 @@ const NewBlog = props => {
                   />
                 </div>
 
-                <DynamicComponent
+                <Editor
                   editorState={editorState}
                   onEditorStateChange={onEditorStateChange}
                   editorClassName="editorWrapper"
