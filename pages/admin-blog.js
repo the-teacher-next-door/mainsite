@@ -228,11 +228,6 @@ const NewBlog = props => {
             if (currentImage.originalname === imageName) {
               img.src =
                 "http://165.22.165.117/public/uploads/" + currentImage.filename;
-              console.log(
-                "found image url would be " +
-                  "https://the-teacher-next-door.com/public/uploads/" +
-                  currentImage.filename
-              );
             }
           });
         } else if (img.src.split("/").length === 6) {
@@ -241,11 +236,6 @@ const NewBlog = props => {
             if (currentImage.originalname === imageName) {
               img.src =
                 "http://165.22.165.117/public/uploads/" + currentImage.filename;
-              console.log(
-                "found image url would be " +
-                  "https://the-teacher-next-door.com/public/uploads/" +
-                  currentImage.filename
-              );
             }
           });
         }
