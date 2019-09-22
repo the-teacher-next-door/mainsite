@@ -209,7 +209,6 @@ const NewBlog = props => {
   const replaceImages = async () => {
     //get all images in file system
     let allImages = await api.loadImages();
-    console.log(allImages);
     let images = document.getElementsByTagName("img");
 
     // let x = "https://the-teacher-next-door.com/images/pages/WaxMuseumCover.jpg";
@@ -221,10 +220,8 @@ const NewBlog = props => {
         let changeUrl = img.src;
         //all the images on the page
         let imageName = img.src.split("/")[5];
-        console.log(imageName);
 
         allImages.data.forEach(currentImage => {
-          console.log(currentImage.originalname);
           if (currentImage.originalname === imageName) {
             console.log(
               "found image url would be " +
