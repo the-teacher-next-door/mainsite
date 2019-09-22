@@ -223,6 +223,8 @@ const NewBlog = props => {
         console.log(imageName);
         allImages.data.forEach(currentImage => {
           if (currentImage.filename === imageName) {
+            img.src =
+              "http://165.22.165.117/public/uploads/" + currentImage.filename;
             console.log(
               "found image url would be " +
                 "https://the-teacher-next-door.com/public/uploads/" +
