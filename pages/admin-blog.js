@@ -218,8 +218,13 @@ const NewBlog = props => {
       if (!images[i].src.includes("data:")) {
         let img = images[i];
         let changeUrl = img.src;
+        let imageName;
         //all the images on the page
-        let imageName = img.src.split("/")[4];
+        if (img.src.split.length === 5) {
+          imageName = img.src.split("/")[5];
+        } else if (img.src.split.length === 4) {
+          imageName = img.src.split("/")[4];
+        }
         console.log(imageName);
         allImages.data.forEach(currentImage => {
           if (currentImage.filename === imageName) {
