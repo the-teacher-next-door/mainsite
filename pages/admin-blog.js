@@ -41,9 +41,9 @@ const NewBlog = props => {
   useEffect(() => {
     let url = window.location.href.split("/");
 
-    setTimeout(() => {
-      replaceImages();
-    }, 3000);
+    // setTimeout(() => {
+    //   replaceImages();
+    // }, 3000);
     //need to convert from raw
     api.loadBlogAdmin(url[4]).then(blog => {
       setTitleInputVal(blog.data.title);
