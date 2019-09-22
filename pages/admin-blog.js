@@ -222,7 +222,7 @@ const NewBlog = props => {
         //all the images on the page
         console.log(img.src.split("/"), img.src.split("/").length);
         if (img.src.split("/").length === 5) {
-          imageName = img.src.split("/")[5];
+          imageName = img.src.split("/")[4];
           console.log(imageName);
           allImages.data.forEach(currentImage => {
             if (currentImage.filename === imageName) {
@@ -236,7 +236,7 @@ const NewBlog = props => {
             }
           });
         } else if (img.src.split("/").length === 4) {
-          imageName = img.src.split("/")[4];
+          imageName = img.src.split("/")[3];
           console.log(imageName);
           allImages.data.forEach(currentImage => {
             if (currentImage.filename === imageName) {
