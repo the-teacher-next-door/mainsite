@@ -41,6 +41,9 @@ const NewBlog = props => {
   useEffect(() => {
     let url = window.location.href.split("/");
 
+    setTimeout(() => {
+      replaceImages();
+    }, 3000);
     //need to convert from raw
     api.loadBlogAdmin(url[4]).then(blog => {
       setTitleInputVal(blog.data.title);
@@ -201,6 +204,22 @@ const NewBlog = props => {
       setToastText("");
     }, 7000);
   };
+
+  //replace all images with correct format
+  const replaceImages = () => {
+    let images = document.getElementsByTagName("img");
+
+    let x = "https://the-teacher-next-door.com/images/pages/WaxMuseumCover.jpg";
+    console.log(x.split("/")[5]);
+
+    for (let i = 0; i < images.length; i++) {
+      if (!images[i].src.includes("data:")) {
+        let url = images[i].src;
+        console.log(url);
+      }
+    }
+  };
+
   return (
     <Layout>
       <AdminTopBar />

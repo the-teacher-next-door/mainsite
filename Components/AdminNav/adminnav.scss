@@ -9,6 +9,9 @@
   width: 100%;
   padding: 10px;
   border-right: 1px solid #e9e9e9;
+  transition: all .5s ease;
+  left: 0;
+  background-color: #fff;
 
   .active {
     background-color: $darkBlue;
@@ -19,4 +22,26 @@
   }
 }
 
-@include for-tablet-landscape-up {}
+@include for-phone-only {
+  .admin-sidebar {
+    left: -300px;
+  }
+}
+
+@include for-tablet-portrait-up {
+  .admin-sidebar {
+    left: -300px;
+  }
+}
+
+@include for-tablet-landscape-up {
+  .admin-sidebar {
+    left: -300px;
+  }
+}
+
+@include for-desktop-up {
+  .admin-sidebar {
+    left: 0;
+  }
+}

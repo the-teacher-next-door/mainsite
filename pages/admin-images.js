@@ -54,8 +54,9 @@ const Images = props => {
             </Column>
           </Columns>
 
-          <div className="columns is-multiline">
+          <div className="columns is-multiline admin-images">
             {images.map((image, index) => {
+              console.log(image);
               return (
                 <div className="column is-3">
                   <form data-path={image.path} onSubmit={deleteSubmit}>
@@ -63,8 +64,8 @@ const Images = props => {
                       <div className="card-image">
                         <figure className="image">
                           <img
-                            style={{ maxWidth: "40px", maxHeight: "40px" }}
                             src={`${url}/${image.path}`}
+                            data-name={image.originalname}
                             alt=""
                           />
                         </figure>

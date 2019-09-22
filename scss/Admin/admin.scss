@@ -39,7 +39,6 @@
   background-color: #F2F2F2;
   min-height: 100vh;
   height: 100%;
-  margin-left: 300px;
   width: 100%;
   padding-right: 300px;
   padding: 50px;
@@ -47,6 +46,7 @@
 
   .container {
     margin: 0;
+    margin-left: 300px;
   }
 
   .unreadComments {
@@ -111,8 +111,13 @@
     overflow: hidden;
   }
 
-  img {
+  figure {
 
-    max-height: 300px;
+    img {
+      height: 100%;
+      max-height: 200px;
+      max-width: 200px;
+      margin: 0 auto;
+    }
   }
 }
