@@ -206,16 +206,26 @@ const NewBlog = props => {
   };
 
   //replace all images with correct format
-  const replaceImages = () => {
+  const replaceImages = async () => {
+    //get all images
+    let allImages = await api.loadImages();
+    console.log(allImages);
     let images = document.getElementsByTagName("img");
 
-    let x = "https://the-teacher-next-door.com/images/pages/WaxMuseumCover.jpg";
-    console.log(x.split("/")[5]);
+    // let x = "https://the-teacher-next-door.com/images/pages/WaxMuseumCover.jpg";
+    // console.log(x.split("/")[5]);
 
     for (let i = 0; i < images.length; i++) {
       if (!images[i].src.includes("data:")) {
-        let url = images[i].src;
-        console.log(url);
+        let img = images[i];
+        let changeUrl = img.src;
+        let imageName = img.src.split("/")[5];
+        console.log(imageName);
+        // allImages.forEach(currentImage => {
+        //   if()
+        // })
+
+        // console.log(changeUrl);
       }
     }
   };
