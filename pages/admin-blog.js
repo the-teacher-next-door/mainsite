@@ -226,7 +226,7 @@ const NewBlog = props => {
             console.log(
               "found image url would be " +
                 "https://the-teacher-next-door.com/public/uploads/" +
-                img.originalname
+                currentImage.filename
             );
           }
         });
