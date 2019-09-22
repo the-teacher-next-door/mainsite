@@ -220,6 +220,7 @@ const NewBlog = props => {
         let changeUrl = img.src;
         let imageName;
         //all the images on the page
+        console.log(img.src.split("/"), img.src.split("/").length);
         if (img.src.split("/").length === 5) {
           imageName = img.src.split("/")[5];
           console.log(imageName);
