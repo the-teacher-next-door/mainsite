@@ -222,21 +222,33 @@ const NewBlog = props => {
         //all the images on the page
         if (img.src.split.length === 5) {
           imageName = img.src.split("/")[5];
+          console.log(imageName);
+          allImages.data.forEach(currentImage => {
+            if (currentImage.filename === imageName) {
+              img.src =
+                "http://165.22.165.117/public/uploads/" + currentImage.filename;
+              console.log(
+                "found image url would be " +
+                  "https://the-teacher-next-door.com/public/uploads/" +
+                  currentImage.filename
+              );
+            }
+          });
         } else if (img.src.split.length === 4) {
           imageName = img.src.split("/")[4];
+          console.log(imageName);
+          allImages.data.forEach(currentImage => {
+            if (currentImage.filename === imageName) {
+              img.src =
+                "http://165.22.165.117/public/uploads/" + currentImage.filename;
+              console.log(
+                "found image url would be " +
+                  "https://the-teacher-next-door.com/public/uploads/" +
+                  currentImage.filename
+              );
+            }
+          });
         }
-        console.log(imageName);
-        allImages.data.forEach(currentImage => {
-          if (currentImage.filename === imageName) {
-            img.src =
-              "http://165.22.165.117/public/uploads/" + currentImage.filename;
-            console.log(
-              "found image url would be " +
-                "https://the-teacher-next-door.com/public/uploads/" +
-                currentImage.filename
-            );
-          }
-        });
 
         // console.log(changeUrl);
       }
