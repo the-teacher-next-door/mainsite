@@ -68,7 +68,7 @@ const NewBlog = props => {
         setChecked(false);
       }
     });
-  }, []);
+  }, [replaceImages]);
 
   const onEditorStateChange = editorState => {
     setEditorState(editorState);
