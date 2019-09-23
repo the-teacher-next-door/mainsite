@@ -34,7 +34,7 @@ module.exports = {
       })
       .catch(err => {
         console.log("err: " + err);
-        res.send({ err: "duplicate title" });
+        res.send({ err });
       });
   },
   new: (req, res) => {
