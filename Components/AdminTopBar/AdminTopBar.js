@@ -19,7 +19,6 @@ const AdminTopBar = props => {
             <div className="field">
               <div className="control has-icons-left">
                 <input className="input" placeholder="Search" />
-
                 <span className="icon is-small is-left">
                   <i className="fas fa-search"></i>
                 </span>
