@@ -41,17 +41,16 @@ const NewBlog = props => {
   useEffect(() => {
     let url = window.location.href.split("/");
 
-    setTimeout(() => {
-      replaceImages();
-    }, 3000);
     //need to convert from raw
     api.loadBlogAdmin(url[4]).then(blog => {
+      //passing blog to replace images
+      replaceImages(blog.data.blog);
+
       setTitleInputVal(blog.data.title);
       setId(blog.data._id);
       setImageurl(blog.data.img);
       setLive(blog.data.live);
       setCategory(blog.data.category);
-      console.log(blog);
 
       const blocksFromHTML = htmlToDraft(blog.data.blog);
       const { contentBlocks, entityMap } = blocksFromHTML;
@@ -202,31 +201,25 @@ const NewBlog = props => {
   };
 
   //replace all images with correct format
-  const replaceImages = async () => {
-    //get all images in file system
+  const replaceImages = async blog => {
+    console.log(blog);
     let allImages = await api.loadImages();
-    let images = document.getElementsByTagName("img");
+    let fakeEle = document.createElement("div");
 
-    // let x = "https://the-teacher-next-door.com/images/pages/WaxMuseumCover.jpg";
-    // console.log(x.split("/")[5]);
+    fakeEle.innerHTML = blog;
 
-    for (let i = 0; i < images.length; i++) {
-      if (!images[i].src.includes("data:")) {
-        let img = images[i];
-        let changeUrl = img.src;
+    let fakeImages = fakeEle.getElementsByTagName("img");
+    for (let i = 0; i < fakeImages.length; i++) {
+      if (!fakeImages[i].src.includes("data:")) {
+        let img = fakeImages[i];
         let imageName;
         //all the images on the page
-        console.log(img.src.split("/"), img.src.split("/").length);
         if (img.src.split("/").length === 5) {
           imageName = img.src.split("/")[4];
-          console.log(imageName);
           allImages.data.forEach(currentImage => {
             if (currentImage.originalname === imageName) {
               img.src =
                 "http://165.22.165.117/public/uploads/" + currentImage.filename;
-              console.log(
-                draftToHtml(convertToRaw(editorState.getCurrentContent()))
-              );
             }
           });
         } else if (img.src.split("/").length === 6) {
@@ -235,15 +228,12 @@ const NewBlog = props => {
             if (currentImage.originalname === imageName) {
               img.src =
                 "http://165.22.165.117/public/uploads/" + currentImage.filename;
-              console.log(
-                draftToHtml(convertToRaw(editorState.getCurrentContent()))
-              );
             }
           });
         }
-
-        // console.log(changeUrl);
       }
+
+      console.log(fakeEle.innerHTML);
     }
   };
 
