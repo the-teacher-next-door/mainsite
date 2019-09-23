@@ -234,6 +234,19 @@ const NewBlog = props => {
       }
 
       console.log(fakeEle.innerHTML);
+
+      let data = {
+        username: props.username,
+        blog: fakeEle.innerHTML,
+        title: titleInputVal,
+        id: id,
+        img: imageurl,
+        category: category,
+        live: live
+      };
+
+      const res = await api.saveBlog(data);
+      console.log(res);
     }
   };
 
