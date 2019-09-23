@@ -68,10 +68,6 @@ const NewBlog = props => {
         setChecked(false);
       }
     });
-
-    return () => {
-      console.log("cleaning up");
-    };
   }, []);
 
   const onEditorStateChange = editorState => {
@@ -228,6 +224,9 @@ const NewBlog = props => {
             if (currentImage.originalname === imageName) {
               img.src =
                 "http://165.22.165.117/public/uploads/" + currentImage.filename;
+              console.log(
+                draftToHtml(convertToRaw(editorState.getCurrentContent()))
+              );
             }
           });
         } else if (img.src.split("/").length === 6) {
@@ -236,6 +235,9 @@ const NewBlog = props => {
             if (currentImage.originalname === imageName) {
               img.src =
                 "http://165.22.165.117/public/uploads/" + currentImage.filename;
+              console.log(
+                draftToHtml(convertToRaw(editorState.getCurrentContent()))
+              );
             }
           });
         }
