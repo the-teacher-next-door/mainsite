@@ -44,13 +44,13 @@ const NewBlog = props => {
     //need to convert from raw
     api.loadBlogAdmin(url[4]).then(blog => {
       //passing blog to replace images
-      replaceImages(blog.data.blog);
 
       setTitleInputVal(blog.data.title);
       setId(blog.data._id);
       setImageurl(blog.data.img);
       setLive(blog.data.live);
       setCategory(blog.data.category);
+      replaceImages(blog.data.blog);
 
       const blocksFromHTML = htmlToDraft(blog.data.blog);
       const { contentBlocks, entityMap } = blocksFromHTML;
@@ -244,6 +244,8 @@ const NewBlog = props => {
         category: category,
         live: live
       };
+
+      console.log(data);
 
       const res = await api.saveBlog(data);
       console.log(res);
