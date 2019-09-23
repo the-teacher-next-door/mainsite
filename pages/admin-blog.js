@@ -50,7 +50,17 @@ const NewBlog = props => {
       setImageurl(blog.data.img);
       setLive(blog.data.live);
       setCategory(blog.data.category);
-      replaceImages(blog.data.blog);
+
+      setTimeout(() => {
+        replaceImages(
+          blog.data.blog,
+          blog.data._id,
+          blog.data.img,
+          blog.data.category,
+          blog.data.live,
+          blog.data.title
+        );
+      }, 3000);
 
       const blocksFromHTML = htmlToDraft(blog.data.blog);
       const { contentBlocks, entityMap } = blocksFromHTML;
@@ -201,7 +211,7 @@ const NewBlog = props => {
   };
 
   //replace all images with correct format
-  const replaceImages = async blog => {
+  const replaceImages = async (blog, id, imgX, category, live, titleX) => {
     console.log(blog);
     let allImages = await api.loadImages();
     let fakeEle = document.createElement("div");
@@ -238,9 +248,9 @@ const NewBlog = props => {
       let data = {
         username: props.username,
         blog: fakeEle.innerHTML,
-        title: titleInputVal,
+        title: titleX,
         id: id,
-        img: imageurl,
+        img: imgX,
         category: category,
         live: live
       };
