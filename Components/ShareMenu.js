@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { FacebookProvider, ShareButton } from "react-facebook";
+
 const ShareMenu = props => {
   const [url, setUrl] = useState("");
 
@@ -15,6 +16,12 @@ const ShareMenu = props => {
       <ul>
         <li>
           <a
+            style={{
+              padding: "10px 19px",
+              borderRadius: "3px",
+              color: "#fff",
+              backgroundColor: "#3b5998"
+            }}
             onClick={() => {
               window.open(
                 `http://www.facebook.com/sharer.php?u=${url} ${props.title}`,
@@ -24,7 +31,7 @@ const ShareMenu = props => {
               return false;
             }}
           >
-            Facebook
+            <i className="fab fa-facebook-square"></i> Facebook
           </a>
           {/* <iframe
             src={`https://www.facebook.com/plugins/share_button.php?href=${url}&layout=button_count&size=small&appId=1509492819325338&=width=106&height=28`}
@@ -39,6 +46,12 @@ const ShareMenu = props => {
         </li>
         <li>
           <a
+            style={{
+              padding: "10px 20px",
+              borderRadius: "3px",
+              color: "#fff",
+              backgroundColor: "#E60023"
+            }}
             onClick={() => {
               window.open(
                 `http://pinterest.com/pin/create/button/?url=${url}&media=https://bookriot.com/wp-content/uploads/2018/11/best-thanksgiving-books-for-kids.jpg&description=${props.title}`,
@@ -48,7 +61,7 @@ const ShareMenu = props => {
               return false;
             }}
           >
-            Pinterest
+            <i className="fab fa-pinterest"></i> Pinterest
           </a>
         </li>
         <li></li>

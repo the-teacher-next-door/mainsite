@@ -116,12 +116,16 @@
 	}
 
 	.share-menu {
+		margin-top: 50px;
+
 		ul {
 			@include small-padding-top;
 		}
 
 		li {
+			float: left !important;
 			padding: 0;
+			margin-bottom: 50px;
 		}
 	}
 
