@@ -14,7 +14,9 @@ const Images = props => {
   const [url, setUrl] = useState("");
   useEffect(() => {
     loadImages();
-    setUrl(window.location.href.split("/")[0]);
+    let splitUrl = window.location.href.split("/");
+    let host = splitUrl[0] + "//" + splitUrl[2];
+    setUrl(host);
   }, []);
 
   const loadImages = () => {
@@ -39,6 +41,18 @@ const Images = props => {
     });
   };
 
+  const copyUrl = e => {
+    let clickImageUrl = e.target.dataset["data"];
+    clickImageUrl = clickImageUrl.replace(/\\/g, "/");
+    let tempDiv = document.createElement("textArea");
+    tempDiv.value = url + "/" + clickImageUrl;
+    tempDiv.style.position = "fixed";
+    document.body.append(tempDiv);
+    tempDiv.select();
+    document.execCommand("copy");
+    document.body.removeChild(tempDiv);
+  };
+
   return (
     <Layout>
       <AdminTopBar />
@@ -56,7 +70,6 @@ const Images = props => {
 
           <div className="columns is-multiline admin-images">
             {images.map((image, index) => {
-              console.log(image);
               return (
                 <div className="column is-3">
                   <form data-path={image.path} onSubmit={deleteSubmit}>
@@ -64,12 +77,20 @@ const Images = props => {
                       <div className="card-image">
                         <figure className="image">
                           <img
-                            src={`${url}/${image.path}`}
+                            src={`${image.path}`}
                             data-name={image.originalname}
                             alt=""
                           />
                         </figure>
-                        <div className="card-footer-item"></div>
+                        <div className="card-footer-item">
+                          <PBtn
+                            type="button"
+                            data={image.path}
+                            onClick={copyUrl}
+                          >
+                            Copy Url
+                          </PBtn>
+                        </div>
                       </div>
                       <div className="card-footer-item">
                         <PBtn type="submit">

@@ -66,9 +66,7 @@ const NewBlog = props => {
       }
     });
 
-    return () => {
-      console.log("cleaning up");
-    };
+    return () => {};
   }, []);
 
   const onEditorStateChange = editorState => {
