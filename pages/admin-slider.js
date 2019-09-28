@@ -12,6 +12,7 @@ import ContainerFluid from "../Components/FormatComponents/ContainerFluid";
 import AdminTopBar from "../Components/AdminTopBar/AdminTopBar";
 const AdminSlider = () => {
   const [images, setImages] = useState([]);
+  const [menuClass, setMenuClass] = useState("hide");
   useEffect(() => {
     loadImages();
   }, []);
@@ -45,11 +46,17 @@ const AdminSlider = () => {
 
     api.saveSlider(newSlide);
   };
-
+  const showMenu = () => {
+    if (menuClass === "hide") {
+      setMenuClass("show");
+    } else {
+      setMenuClass("hide");
+    }
+  };
   return (
     <Layout>
-      <AdminTopBar />
-      <AdminNav active="storeLinks" />
+      <AdminTopBar showMenu={showMenu} />
+      <AdminNav active="storeLinks" className={menuClass} />
       <ContainerFluid className="admin">
         <Container>
           <Columns className="is-multiline blogs-header-bar">

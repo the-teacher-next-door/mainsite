@@ -4,7 +4,11 @@ import api from "../../utils/api";
 import Link from "next/link";
 import "./adminnav.scss";
 const AdminNav = props => (
-  <nav className="admin-sidebar">
+  <nav
+    className={`admin-sidebar ${
+      props.className === undefined ? "" : props.className
+    }`}
+  >
     <aside className="menu">
       <p class="menu-label">MENU</p>
       <ul class="menu-list">

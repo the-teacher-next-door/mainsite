@@ -12,6 +12,7 @@
   transition: all .5s ease;
   left: 0;
   background-color: #fff;
+  z-index: 9999;
 
   .active {
     background-color: $darkBlue;
@@ -26,17 +27,29 @@
   .admin-sidebar {
     left: -300px;
   }
+
+  .show {
+    left: 0;
+  }
 }
 
 @include for-tablet-portrait-up {
   .admin-sidebar {
     left: -300px;
   }
+
+  .show {
+    left: 0;
+  }
 }
 
 @include for-tablet-landscape-up {
   .admin-sidebar {
     left: -300px;
+  }
+
+  .show {
+    left: 0;
   }
 }
 

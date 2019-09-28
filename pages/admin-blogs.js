@@ -14,6 +14,7 @@ const Admin = props => {
   const [blogs, setBlogs] = useState([]);
   const [toastText, setToastText] = useState("");
   const [toastClass, setToastClass] = useState("hide");
+  const [menuClass, setMenuClass] = useState("hide");
   useEffect(() => {
     loadBlogs();
   }, []);
@@ -58,13 +59,17 @@ const Admin = props => {
       setToastText("");
     }, 7000);
   };
-
+  const showMenu = () => {
+    if (menuClass === "hide") {
+      setMenuClass("show");
+    } else {
+      setMenuClass("hide");
+    }
+  };
   return (
     <Layout>
-      {/* toast message on error */}
-      <Toast className={toastClass} text={toastText} />
-      <AdminTopBar />
-      <AdminNav active="blogs" />
+      <AdminTopBar showMenu={showMenu} />
+      <AdminNav active="blogs" className={menuClass} />
       <ContainerFluid className="admin">
         <Container>
           <Columns className="blogs-header-bar">

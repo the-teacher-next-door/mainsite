@@ -14,7 +14,7 @@ import Column from "../Components/FormatComponents/Column";
 import AdminTopBar from "../Components/AdminTopBar/AdminTopBar";
 const Books = props => {
   const [books, setBooks] = useState([]);
-
+  const [menuClass, setMenuClass] = useState("hide");
   useEffect(() => {
     loadBooks();
   }, []);
@@ -54,10 +54,18 @@ const Books = props => {
       loadBooks();
     });
   };
+
+  const showMenu = () => {
+    if (menuClass === "hide") {
+      setMenuClass("show");
+    } else {
+      setMenuClass("hide");
+    }
+  };
   return (
     <Layout>
-      <AdminTopBar />
-      <AdminNav active="storeLinks" />
+      <AdminTopBar showMenu={showMenu} />
+      <AdminNav active="storeLinks" className={menuClass} />
       <ContainerFluid className="admin">
         <Container>
           <Columns className="is-multiline blogs-header-bar">

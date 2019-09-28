@@ -1,4 +1,5 @@
 @import '../../scss/vars.scss';
+@import '../../scss/mixins/LayoutMixins.scss';
 
 .topBar {
   height: 60px;
@@ -46,5 +47,39 @@
 
       }
     }
+  }
+
+  .mobile-nav {
+    button {
+      margin-left: 10px;
+      background-color: transparent;
+      border: none;
+    }
+  }
+
+
+}
+
+@include for-phone-only {
+  .mobile-nav {
+    display: block;
+  }
+}
+
+@include for-tablet-portrait-up {
+  .mobile-nav {
+    display: block;
+  }
+}
+
+@include for-tablet-landscape-up {
+  .mobile-nav {
+    display: block;
+  }
+}
+
+@include for-desktop-up {
+  .mobile-nav {
+    display: none;
   }
 }

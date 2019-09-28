@@ -2,6 +2,7 @@ import React from "react";
 import "./_style.scss";
 import api from "../../utils/api";
 import PBtn from "../PBtn";
+import AdminNav from "../AdminNav/AdminNav";
 const AdminTopBar = props => {
   const logout = () => {
     api.logout().then(done => {
@@ -12,6 +13,11 @@ const AdminTopBar = props => {
     <nav className="topBar">
       <div className="leftnav">
         <p>Admin Panel</p>
+        <div className="mobile-nav">
+          <button onClick={props.showMenu}>
+            <i className="fas fa-bars"></i>
+          </button>
+        </div>
       </div>
       <div className="rightnav">
         <div>

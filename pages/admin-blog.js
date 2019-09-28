@@ -37,6 +37,7 @@ const NewBlog = props => {
   const [category, setCategory] = useState();
   const [toastText, setToastText] = useState("");
   const [toastClass, setToastClass] = useState("hide");
+  const [menuClass, setMenuClass] = useState("hide");
 
   useEffect(() => {
     let url = window.location.href.split("/");
@@ -199,10 +200,17 @@ const NewBlog = props => {
       setToastText("");
     }, 7000);
   };
+  const showMenu = () => {
+    if (menuClass === "hide") {
+      setMenuClass("show");
+    } else {
+      setMenuClass("hide");
+    }
+  };
   return (
     <Layout>
-      <AdminTopBar />
-      <AdminNav active="blogs"></AdminNav>
+      <AdminTopBar showMenu={showMenu} />
+      <AdminNav active="blogs" className={menuClass}></AdminNav>
       <ContainerFluid className="admin new-blog">
         <Container>
           <Columns className="is-centered">

@@ -16,6 +16,7 @@ const Admin = props => {
   const [numberOfImages, setNumberOfImages] = useState(0);
   const [numberOfUnreadComments, setNumberOfUnreadComments] = useState(0);
   const [unreadComments, setUnreadComments] = useState([]);
+  const [menuClass, setMenuClass] = useState("hide");
   useEffect(() => {
     getNumberOfBlogs();
 
@@ -63,10 +64,18 @@ const Admin = props => {
 
     getNumberOfUnreadComments();
   };
+
+  const showMenu = () => {
+    if (menuClass === "hide") {
+      setMenuClass("show");
+    } else {
+      setMenuClass("hide");
+    }
+  };
   return (
     <Layout>
-      <AdminTopBar />
-      <AdminNav active="dashboard" />
+      <AdminTopBar showMenu={showMenu} />
+      <AdminNav active="dashboard" className={menuClass} />
       <ContainerFluid className="admin">
         <Container>
           <Columns>

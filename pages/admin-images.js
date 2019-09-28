@@ -12,6 +12,8 @@ import Container from "../Components/FormatComponents/Container";
 const Images = props => {
   const [images, setImages] = useState([]);
   const [url, setUrl] = useState("");
+
+  const [menuClass, setMenuClass] = useState("hide");
   useEffect(() => {
     loadImages();
     let splitUrl = window.location.href.split("/");
@@ -48,11 +50,17 @@ const Images = props => {
     document.execCommand("copy");
     document.body.removeChild(tempDiv);
   };
-
+  const showMenu = () => {
+    if (menuClass === "hide") {
+      setMenuClass("show");
+    } else {
+      setMenuClass("hide");
+    }
+  };
   return (
     <Layout>
-      <AdminTopBar />
-      <AdminNav active="images" />
+      <AdminTopBar showMenu={showMenu} />
+      <AdminNav active="images" className={menuClass} />
       <ContainerFluid className="admin">
         <Container>
           <Columns className="blogs-header-bar">

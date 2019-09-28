@@ -14,6 +14,7 @@ import Column from "../Components/FormatComponents/Column";
 import AdminTopBar from "../Components/AdminTopBar/AdminTopBar";
 const Images = props => {
   const [images, setImages] = useState([]);
+  const [menuClass, setMenuClass] = useState("hide");
 
   useEffect(() => {
     loadFreebies();
@@ -48,10 +49,18 @@ const Images = props => {
       loadFreebies();
     });
   };
+
+  const showMenu = () => {
+    if (menuClass === "hide") {
+      setMenuClass("show");
+    } else {
+      setMenuClass("hide");
+    }
+  };
   return (
     <Layout>
-      <AdminTopBar />
-      <AdminNav active="freebies" />
+      <AdminTopBar showMenu={showMenu} />
+      <AdminNav active="freebies" className={menuClass} />
       <ContainerFluid className="admin">
         <Container>
           <Columns className="blogs-header-bar">
