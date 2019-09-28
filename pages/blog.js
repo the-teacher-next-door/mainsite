@@ -127,7 +127,10 @@ const BlogPage = props => {
           <div className="container blog-text">
             <div className="columns is-centered ">
               <div className="column is-8">
-                <span dangerouslySetInnerHTML={{ __html: props.blogs.blog }} />
+                <span
+                  className="wrapper-span"
+                  dangerouslySetInnerHTML={{ __html: props.blogs.blog }}
+                />
                 <div className="shareMenu">
                   <ShareMenu title={props.blogs.title} />
                 </div>

@@ -70,6 +70,14 @@
 				}
 			}
 		}
+
+		.blog-text {
+			.wrapper-span {
+				display: flex;
+				flex-direction: column;
+
+			}
+		}
 	}
 
 	ul li {
