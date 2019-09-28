@@ -27,10 +27,9 @@ const Images = props => {
 
   const deleteFreebie = e => {
     let data = {
-      path: e.target.dataset.path
+      path: e.target.dataset.data
     };
     api.deleteFreebies(data).then(done => {
-      console.log(done);
       api.loadFreebies().then(data => {
         setImages(data.data);
       });
@@ -92,7 +91,7 @@ const Images = props => {
 
                           <PBtn
                             type="button"
-                            data-path={image.path}
+                            data={image.path}
                             onClick={deleteFreebie}
                           >
                             <i class="far fa-trash-alt"></i>
@@ -123,7 +122,7 @@ const Images = props => {
                           />
                           <PBtn
                             type="button"
-                            data-path={image.path}
+                            data={image.path}
                             onClick={deleteFreebie}
                           >
                             <i class="far fa-trash-alt"></i>
