@@ -80,7 +80,7 @@ nextApp
       fileFilter: function(req, file, cb) {
         checkZipType(file, cb);
       }
-    }).array("myImage");
+    }).single("myFile");
     // Check File Type
     function checkFileType(file, cb) {
       // Allowed ext

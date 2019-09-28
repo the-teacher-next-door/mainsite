@@ -6,11 +6,9 @@ const Upload = props => {
   const [text, setText] = useState("");
   const submit = e => {
     e.preventDefault();
-    console.log(file);
     const fd = new FormData();
-    fd.append("myImage", file, file.name);
+    fd.append("myFile", file, file.name);
     api.freebiesUpload(fd).then(done => {
-      console.log(done);
       if (done.data.msg === "File Uploaded") {
         setFile("");
         setText("File Uploaded");
@@ -24,10 +22,13 @@ const Upload = props => {
     setFile(e.target.files[0]);
   };
   return (
-    <form enctype="multipart/form-data" onSubmit={submit}>
+    <form encType="multipart/form-data" onSubmit={submit}>
       <p>{text}</p>
-      <input type="file" name="myImage" onChange={change} id="file-input" />
-      <button type="submit">Submit</button>
+      <input type="file" name="myFile" onChange={change} id="file-input" />
+      <button type="submit">
+        {" "}
+        <i className="fas fa-upload"></i>
+      </button>
     </form>
   );
 };

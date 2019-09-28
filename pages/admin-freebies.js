@@ -9,6 +9,8 @@ import Link from "next/link";
 import Temp from "../images/tempImg.png";
 import ContainerFluid from "../Components/FormatComponents/ContainerFluid";
 import Container from "../Components/FormatComponents/Container";
+import Columns from "../Components/FormatComponents/Columns";
+import Column from "../Components/FormatComponents/Column";
 import AdminTopBar from "../Components/AdminTopBar/AdminTopBar";
 const Images = props => {
   const [images, setImages] = useState([]);
@@ -19,9 +21,7 @@ const Images = props => {
 
   const loadFreebies = () => {
     api.loadFreebies().then(data => {
-      console.log("run");
       setImages(data.data);
-      console.log(data.data);
     });
   };
 
@@ -54,87 +54,82 @@ const Images = props => {
       <AdminNav active="freebies" />
       <ContainerFluid className="admin">
         <Container>
-          <FreebiesUpload loadImages={loadFreebies} />
-          <div className="container">
-            <div className="row-contained">
-              <div className="col-xl-12">
-                <div className="blogs">
-                  <div className="blogs-header-bar">
-                    <h2>Freebies</h2>
-                    <span className="ml-auto"></span>
-                  </div>
-                </div>
+          <Columns className="blogs-header-bar">
+            <Column className="is-6 left">
+              <h1>Freebies</h1>
+            </Column>
+            <Column className="is-6 right">
+              <FreebiesUpload loadImages={loadFreebies} />
+            </Column>
+          </Columns>
 
-                <div className="columns is-multiline">
-                  {images.map((image, index) => {
-                    return image.img === "" ? (
-                      <div className="column is-3">
-                        <form
-                          data-path={image.path}
-                          data-id={image._id}
-                          onSubmit={saveFreebie}
-                        >
-                          <div className="image">
-                            <img src={Temp} alt="" />
-                            <p>{image.originalname}</p>
-                          </div>
-                          <Input
-                            defaultValue={image.img}
-                            placeholder="Freebie Name"
-                            name="name"
-                          />
-                          <Input
-                            defaultValue={image.img}
-                            placeholder="Image URL"
-                            name="img"
-                          />
+          <div className="columns is-multiline">
+            {images.map((image, index) => {
+              return image.img === "" ? (
+                <div className="column is-3">
+                  <form
+                    data-path={image.path}
+                    data-id={image._id}
+                    onSubmit={saveFreebie}
+                  >
+                    <div className="image">
+                      <img src={Temp} alt="" />
+                      <p>{image.originalname}</p>
+                    </div>
+                    <Input
+                      defaultValue={image.img}
+                      placeholder="Freebie Name"
+                      name="name"
+                    />
+                    <Input
+                      defaultValue={image.img}
+                      placeholder="Image URL"
+                      name="img"
+                    />
 
-                          <PBtn
-                            type="button"
-                            data={image.path}
-                            onClick={deleteFreebie}
-                          >
-                            <i class="far fa-trash-alt"></i>
-                          </PBtn>
-                          <PBtn type="submit">Save</PBtn>
-                        </form>
-                      </div>
-                    ) : (
-                      <div className="column is-3">
-                        <form
-                          data-path={image.path}
-                          data-id={image._id}
-                          onSubmit={saveFreebie}
-                        >
-                          <div className="image">
-                            <img src={image.img} alt="" />
-                            <p>{image.originalname}</p>
-                          </div>
-                          <Input
-                            defaultValue={image.originalname}
-                            placeholder="Freebie Name"
-                            name="name"
-                          />
-                          <Input
-                            defaultValue={image.img}
-                            placeholder="Image URL"
-                            name="img"
-                          />
-                          <PBtn
-                            type="button"
-                            data={image.path}
-                            onClick={deleteFreebie}
-                          >
-                            <i class="far fa-trash-alt"></i>
-                          </PBtn>
-                          <PBtn type="submit">Save</PBtn>
-                        </form>
-                      </div>
-                    );
-                  })}
+                    <PBtn
+                      type="button"
+                      data={image.path}
+                      onClick={deleteFreebie}
+                    >
+                      <i class="far fa-trash-alt"></i>
+                    </PBtn>
+                    <PBtn type="submit">Save</PBtn>
+                  </form>
                 </div>
-              </div>
-            </div>
+              ) : (
+                <div className="column is-3">
+                  <form
+                    data-path={image.path}
+                    data-id={image._id}
+                    onSubmit={saveFreebie}
+                  >
+                    <div className="image">
+                      <img src={image.img} alt="" />
+                      <p>{image.originalname}</p>
+                    </div>
+                    <Input
+                      defaultValue={image.originalname}
+                      placeholder="Freebie Name"
+                      name="name"
+                    />
+                    <Input
+                      defaultValue={image.img}
+                      placeholder="Image URL"
+                      name="img"
+                    />
+                    <PBtn
+                      type="button"
+                      data={image.path}
+                      onClick={deleteFreebie}
+                    >
+                      <i class="far fa-trash-alt"></i>
+                    </PBtn>
+                    <PBtn type="submit">Save</PBtn>
+                  </form>
+                </div>
+              );
+            })}
           </div>
         </Container>
       </ContainerFluid>

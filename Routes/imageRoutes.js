@@ -8,4 +8,6 @@ const imageController = require("../Controllers/imageController");
 
 // router.route("/image/store").post(imageController.store);
 router.route("/images").get(imageController.loadall);
+
+//delete route is on server.js
 module.exports = router;

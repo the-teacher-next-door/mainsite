@@ -21,20 +21,16 @@ const Images = props => {
 
   const loadImages = () => {
     api.loadImages().then(data => {
-      console.log("run");
       setImages(data.data);
-      console.log(data.data);
     });
   };
 
   const deleteSubmit = e => {
     e.preventDefault();
-    console.log(e.target);
     let data = {
       path: e.target.dataset.path
     };
     api.deleteImage(data).then(done => {
-      console.log(done);
       api.loadImages().then(data => {
         setImages(data.data);
       });

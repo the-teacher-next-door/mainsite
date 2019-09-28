@@ -9,5 +9,6 @@ router.route("/book/loadall").get(bookController.loadall);
 
 router.route("/book/save").put(bookController.save);
 router.route("/book/new").post(bookController.new);
+router.route("/book/delete").put(bookController.delete);
 
 module.exports = router;

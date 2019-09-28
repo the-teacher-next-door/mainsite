@@ -38,6 +38,15 @@ module.exports = {
         res.send({ err: "duplicate title" });
       });
   },
+  delete: (req, res) => {
+    db.books
+      .findOneAndRemove({
+        _id: req.body.id
+      })
+      .then(done => {
+        res.send(done);
+      });
+  },
   loadall: (req, res) => {
     db.books.find({}).then(done => {
       res.send(done);

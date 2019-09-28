@@ -130,6 +130,9 @@ export default {
   loadBooks: () => {
     return axios.get(`/api/book/loadall`);
   },
+  deleteBook: data => {
+    return axios.put("api/book/delete", data);
+  },
   newBook: () => {
     return axios.post(`/api/book/new`);
   },
