@@ -89,16 +89,14 @@ const Images = props => {
                             placeholder="Image URL"
                             name="img"
                           />
-                          <Link href={image.path}>
-                            <a>Download</a>
-                          </Link>
-                          <button
+
+                          <PBtn
                             type="button"
                             data-path={image.path}
                             onClick={deleteFreebie}
                           >
                             <i class="far fa-trash-alt"></i>
-                          </button>
+                          </PBtn>
                           <PBtn type="submit">Save</PBtn>
                         </form>
                       </div>
@@ -123,16 +121,13 @@ const Images = props => {
                             placeholder="Image URL"
                             name="img"
                           />
-                          <Link href={image.path}>
-                            <a>Download</a>
-                          </Link>
-                          <button
+                          <PBtn
                             type="button"
                             data-path={image.path}
                             onClick={deleteFreebie}
                           >
                             <i class="far fa-trash-alt"></i>
-                          </button>
+                          </PBtn>
                           <PBtn type="submit">Save</PBtn>
                         </form>
                       </div>
