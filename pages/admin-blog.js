@@ -51,20 +51,20 @@ const NewBlog = props => {
       setCategory(blog.data.category);
       console.log(blog);
 
-      let changingImgUrl =
-        "https://www.the-teacher-next-door.com/public/uploads/" +
-        blog.data.img.split("/")[5];
+      // let changingImgUrl =
+      //   "https://www.the-teacher-next-door.com/public/uploads/" +
+      //   blog.data.img.split("/")[5];
 
-      setTimeout(() => {
-        replaceImages(
-          blog.data.blog,
-          blog.data._id,
-          changingImgUrl,
-          blog.data.category,
-          blog.data.live,
-          blog.data.title
-        );
-      }, 3000);
+      // setTimeout(() => {
+      //   replaceImages(
+      //     blog.data.blog,
+      //     blog.data._id,
+      //     changingImgUrl,
+      //     blog.data.category,
+      //     blog.data.live,
+      //     blog.data.title
+      //   );
+      // }, 3000);
 
       const blocksFromHTML = htmlToDraft(blog.data.blog);
       const { contentBlocks, entityMap } = blocksFromHTML;
@@ -83,7 +83,7 @@ const NewBlog = props => {
     });
 
     return () => {};
-  }, [replaceImages]);
+  }, []);
 
   const onEditorStateChange = editorState => {
     setEditorState(editorState);
@@ -139,63 +139,63 @@ const NewBlog = props => {
     }
   };
 
-  //replace all images with correct format
-  const replaceImages = async (blog, id, imgX, category, live, titleX) => {
-    let allImages = await api.loadImages();
-    let fakeEle = document.createElement("div");
+  // //replace all images with correct format
+  // const replaceImages = async (blog, id, imgX, category, live, titleX) => {
+  //   let allImages = await api.loadImages();
+  //   let fakeEle = document.createElement("div");
 
-    fakeEle.innerHTML = blog;
+  //   fakeEle.innerHTML = blog;
 
-    let fakeImages = fakeEle.getElementsByTagName("img");
-    for (let i = 0; i < fakeImages.length; i++) {
-      if (!fakeImages[i].src.includes("data:")) {
-        let img = fakeImages[i];
-        let imageName;
-        //all the images on the page
-        console.log(img.src.split("/").length);
-        if (img.src.split("/").length === 5) {
-          imageName = img.src.split("/")[4];
-          allImages.data.forEach(currentImage => {
-            if (currentImage.filename === imageName) {
-              console.log(currentImage.filename);
-              img.src =
-                "https://the-teacher-next-door.com/public/uploads/" +
-                currentImage.filename;
-            }
-          });
-        } else if (img.src.split("/").length === 6) {
-          imageName = img.src.split("/")[5];
-          console.log(imageName);
-          allImages.data.forEach(currentImage => {
-            console.log(currentImage.originalname);
-            if (currentImage.filename === imageName) {
-              console.log(currentImage.filename);
-              img.src =
-                "https://the-teacher-next-door.com/public/uploads/" +
-                currentImage.filename;
-            }
-          });
-        }
-      }
+  //   let fakeImages = fakeEle.getElementsByTagName("img");
+  //   for (let i = 0; i < fakeImages.length; i++) {
+  //     if (!fakeImages[i].src.includes("data:")) {
+  //       let img = fakeImages[i];
+  //       let imageName;
+  //       //all the images on the page
+  //       console.log(img.src.split("/").length);
+  //       if (img.src.split("/").length === 5) {
+  //         imageName = img.src.split("/")[4];
+  //         allImages.data.forEach(currentImage => {
+  //           if (currentImage.filename === imageName) {
+  //             console.log(currentImage.filename);
+  //             img.src =
+  //               "https://the-teacher-next-door.com/public/uploads/" +
+  //               currentImage.filename;
+  //           }
+  //         });
+  //       } else if (img.src.split("/").length === 6) {
+  //         imageName = img.src.split("/")[5];
+  //         console.log(imageName);
+  //         allImages.data.forEach(currentImage => {
+  //           console.log(currentImage.originalname);
+  //           if (currentImage.filename === imageName) {
+  //             console.log(currentImage.filename);
+  //             img.src =
+  //               "https://the-teacher-next-door.com/public/uploads/" +
+  //               currentImage.filename;
+  //           }
+  //         });
+  //       }
+  //     }
 
-      console.log("inner " + fakeEle.innerHTML);
+  //     console.log("inner " + fakeEle.innerHTML);
 
-      let data = {
-        username: props.username,
-        blog: fakeEle.innerHTML,
-        title: titleX,
-        id: id,
-        img: imgX,
-        category: category,
-        live: live
-      };
+  //     let data = {
+  //       username: props.username,
+  //       blog: fakeEle.innerHTML,
+  //       title: titleX,
+  //       id: id,
+  //       img: imgX,
+  //       category: category,
+  //       live: live
+  //     };
 
-      console.log(data);
+  //     console.log(data);
 
-      const res = await api.saveBlog(data);
-      console.log(res);
-    }
-  };
+  //     const res = await api.saveBlog(data);
+  //     console.log(res);
+  //   }
+  // };
 
   const save = async () => {
     if (titleInputVal !== "") {
