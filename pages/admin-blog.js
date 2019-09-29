@@ -152,7 +152,7 @@ const NewBlog = props => {
         if (img.src.split("/").length === 5) {
           imageName = img.src.split("/")[4];
           allImages.data.forEach(currentImage => {
-            if (currentImage.originalname === imageName) {
+            if (currentImage.filename === imageName) {
               console.log(currentImage.filename);
               img.src =
                 "https://the-teacher-next-door.com/public/uploads/" +
