@@ -2,6 +2,8 @@
 
 .blogs {
   overflow: hidden;
+  min-height: 100vh;
+  height: 100%;
 
   .card {
 
@@ -14,6 +16,11 @@
 
   .blog-container {
     margin-bottom: 50px;
+  }
+
+  .empty {
+    min-height: 100vh;
+    height: 100%;
   }
 }
 

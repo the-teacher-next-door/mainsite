@@ -19,7 +19,7 @@ const Blogs = props => {
     return (
       <Layout>
         <div className="blogs">
-         <Header/>
+          <Header />
           <MiniConvert />
           <div className="container blog-container">
             <div className="reading">
@@ -221,6 +221,13 @@ const Blogs = props => {
                 <h2>Search Results</h2>
               </div>
               {props.blogs.map((blog, index) => {
+                if (blog.length === 0) {
+                  return (
+                    <div className="empty">
+                      <h2>Nothing matches that search</h2>;
+                    </div>
+                  );
+                }
                 if (blog.live) {
                   return (
                     <div className="column is-3" key={index}>
