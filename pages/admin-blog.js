@@ -161,6 +161,7 @@ const NewBlog = props => {
           });
         } else if (img.src.split("/").length === 6) {
           imageName = img.src.split("/")[5];
+          console.log(imageName);
           allImages.data.forEach(currentImage => {
             if (currentImage.originalname === imageName) {
               console.log(currentImage.filename);
