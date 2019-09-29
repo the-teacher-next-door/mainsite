@@ -51,11 +51,15 @@ const NewBlog = props => {
       setCategory(blog.data.category);
       console.log(blog);
 
+      let changingImgUrl =
+        "https://www.the-teacher-next-door.com/public/uploads/" +
+        blog.data.img.split("/")[5];
+
       setTimeout(() => {
         replaceImages(
           blog.data.blog,
           blog.data._id,
-          blog.data.img,
+          changingImgUrl,
           blog.data.category,
           blog.data.live,
           blog.data.title
