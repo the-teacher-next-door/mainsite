@@ -212,7 +212,7 @@ const Blogs = props => {
     return (
       <Layout>
         <div className="blogs">
-          <div style={{ minHeight: "50vh", height: "100%" }}>
+          <div style={{ minHeight: "100vh", height: "100%" }}>
             <NavNext />
             <IconNav />
             <MiniConvert />
