@@ -132,7 +132,10 @@ const BlogPage = props => {
                   dangerouslySetInnerHTML={{ __html: props.blogs.blog }}
                 />
                 <div className="shareMenu">
-                  <ShareMenu title={props.blogs.title} />
+                  <ShareMenu
+                    title={props.blogs.title}
+                    mainImage={props.blogs.img}
+                  />
                 </div>
               </div>
             </div>
