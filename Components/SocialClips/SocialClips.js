@@ -39,7 +39,7 @@ class SocialClips extends Component {
                   allowtransparency="true"
                   class="lightwidget-widget"
                   style={{
-                    width: "100%",
+                    width: "80%",
                     border: "0",
                     overflow: "hidden",
                     height: "100%"
