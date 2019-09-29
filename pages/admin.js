@@ -107,6 +107,7 @@ const Admin = props => {
         <Container>
           <Column className="is-12">
             {unreadComments.map(comments => {
+              console.log(comments.blogId);
               let today = new Date(parseInt(comments.date));
               var dd = today.getDate();
 
