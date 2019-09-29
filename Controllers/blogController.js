@@ -116,7 +116,7 @@ module.exports = {
     let query = req.params.search.replace(/\+/g, " ");
 
     query = query.replace(/-/g, " ");
-    query = query.replace(/[0-9]/g, "");
+    query = query.replace(/\d+/g, "");
     function escapeRegex(text) {
       return text.replace(/[-[\]{}()*+?.,\\^$|#\s]/g, "\\$&");
     }
