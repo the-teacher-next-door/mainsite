@@ -54,7 +54,7 @@ const ShareMenu = props => {
             }}
             onClick={() => {
               window.open(
-                `http://pinterest.com/pin/create/button/?url=${url}&media=https://bookriot.com/wp-content/uploads/2018/11/best-thanksgiving-books-for-kids.jpg&media=${props.mainImage}&description=${props.title}`,
+                `http://pinterest.com/pin/create/button/?url=${url}&media=${props.mainImage}&description=${props.title}`,
                 "pinterestShare",
                 "width=750,height=350"
               );
