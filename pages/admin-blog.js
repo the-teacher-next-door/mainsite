@@ -143,7 +143,6 @@ const NewBlog = props => {
     fakeEle.innerHTML = blog;
 
     let fakeImages = fakeEle.getElementsByTagName("img");
-    console.log(fakeImages);
     for (let i = 0; i < fakeImages.length; i++) {
       if (!fakeImages[i].src.includes("data:")) {
         let img = fakeImages[i];
@@ -153,6 +152,7 @@ const NewBlog = props => {
           imageName = img.src.split("/")[4];
           allImages.data.forEach(currentImage => {
             if (currentImage.originalname === imageName) {
+              console.log(currentImage.filename);
               img.src =
                 "https://the-teacher-next-door.com/public/uploads/" +
                 currentImage.filename;
@@ -162,6 +162,7 @@ const NewBlog = props => {
           imageName = img.src.split("/")[5];
           allImages.data.forEach(currentImage => {
             if (currentImage.originalname === imageName) {
+              console.log(currentImage.filename);
               img.src =
                 "https://the-teacher-next-door.com/public/uploads/" +
                 currentImage.filename;
