@@ -164,8 +164,8 @@ const NewBlog = props => {
           console.log(imageName);
           allImages.data.forEach(currentImage => {
             console.log(currentImage.originalname);
-            if (currentImage.originalname === imageName) {
-              console.log(currentImage.originalname);
+            if (currentImage.filename === imageName) {
+              console.log(currentImage.filename);
               img.src =
                 "https://the-teacher-next-door.com/public/uploads/" +
                 currentImage.filename;
