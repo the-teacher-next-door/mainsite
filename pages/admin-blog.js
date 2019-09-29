@@ -170,7 +170,7 @@ const NewBlog = props => {
         }
       }
 
-      console.log(fakeEle.innerHTML);
+      console.log("inner " + fakeEle.innerHTML);
 
       let data = {
         username: props.username,
