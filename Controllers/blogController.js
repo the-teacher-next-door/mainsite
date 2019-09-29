@@ -45,6 +45,7 @@ module.exports = {
         username: req.body.username,
         blog: "<p>New Blog</p>",
         title: req.body.title,
+        cleanTitle: req.body.title,
         live: false,
         views: 0,
         category: "Reading"

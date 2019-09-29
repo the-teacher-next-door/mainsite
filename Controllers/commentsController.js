@@ -105,8 +105,8 @@ module.exports = {
       });
   },
   delete: (req, res) => {
-    console.log(req.params.id);
-    db.blogs
+    console.log("deleting");
+    db.comments
       .deleteOne({
         _id: req.params.id
       })

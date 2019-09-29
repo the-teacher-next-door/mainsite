@@ -37,6 +37,7 @@ const Admin = props => {
   };
 
   const getNumberOfUnreadComments = async () => {
+    setUnreadComments([]);
     const comments = await api.loadUnread();
 
     setNumberOfUnreadComments(comments.data.length);
@@ -44,6 +45,7 @@ const Admin = props => {
     comments.data.forEach(comment => {
       api.loadBlogAdmin(comment.blogId).then(blog => {
         let commentObj = {
+          id: comment._id,
           blogTitle: blog.data.title,
           name: comment.name,
           date: comment.date,
@@ -60,7 +62,6 @@ const Admin = props => {
   const deleteComment = async e => {
     console.log(e.target.dataset.data);
     const deleted = await api.deleteComments(e.target.dataset.data);
-    console.log(deleted);
 
     getNumberOfUnreadComments();
   };
@@ -107,7 +108,7 @@ const Admin = props => {
         <Container>
           <Column className="is-12">
             {unreadComments.map(comments => {
-              console.log(comments.blogId);
+              console.log(comments.id);
               let today = new Date(parseInt(comments.date));
               var dd = today.getDate();
 
@@ -128,7 +129,7 @@ const Admin = props => {
                   <p>{comments.comment}</p>
                   <p>{today}</p>
                   <p>{comments.blogTitle}</p>
-                  <PBtn data={comments.blogId} onClick={deleteComment}>
+                  <PBtn data={comments.id} onClick={deleteComment}>
                     Delete Comment
                   </PBtn>
                 </div>

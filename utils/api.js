@@ -119,7 +119,7 @@ export default {
     return axios.get(`/api/comments/loadAll/`);
   },
   deleteComments: data => {
-    return axios.put(`/api/comments/delete`, data);
+    return axios.delete(`/api/comments/delete/${data}`);
   },
   loadUnread: () => {
     return axios.get(`/api/comments/loadUnread/`);
