@@ -221,7 +221,7 @@ const Blogs = props => {
                 <h2>Search Results</h2>
               </div>
               {props.blogs.map((blog, index) => {
-                if (blog.length === 0) {
+                if (props.blogs.length === 0) {
                   return (
                     <div className="empty">
                       <h2>Nothing matches that search</h2>;
