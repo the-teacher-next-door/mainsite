@@ -7,15 +7,7 @@ const Layout = props => {
     <div className="page-layout">
       <Head>
         <title>The Teacher Next Door</title>
-        <script
-          async
-          src="https://www.googletagmanager.com/gtag/js?id=UA-149016729-1"
-        ></script>
-        <script>
-          window.dataLayer = window.dataLayer || []; function gtag()
-          {dataLayer.push(arguments)}
-          gtag('js', new Date()); gtag('config', 'UA-149016729-1');
-        </script>
+
         <link
           href="https://fonts.googleapis.com/css?family=Cabin:400,700|Lato:400,700|Roboto:400,700&display=swap"
           rel="stylesheet"
