@@ -51,6 +51,17 @@ const NewBlog = props => {
       setCategory(blog.data.category);
       console.log(blog);
 
+      setTimeout(() => {
+        replaceImages(
+          blog.data.blog,
+          blog.data._id,
+          blog.data.img,
+          blog.data.category,
+          blog.data.live,
+          blog.data.title
+        );
+      }, 3000);
+
       const blocksFromHTML = htmlToDraft(blog.data.blog);
       const { contentBlocks, entityMap } = blocksFromHTML;
       const contentState = ContentState.createFromBlockArray(
@@ -68,7 +79,7 @@ const NewBlog = props => {
     });
 
     return () => {};
-  }, []);
+  }, [replaceImages]);
 
   const onEditorStateChange = editorState => {
     setEditorState(editorState);
@@ -121,6 +132,60 @@ const NewBlog = props => {
     } else {
       setToastText("Title must not be empty.");
       showToast();
+    }
+  };
+
+  //replace all images with correct format
+  const replaceImages = async (blog, id, imgX, category, live, titleX) => {
+    console.log(blog);
+    let allImages = await api.loadImages();
+    let fakeEle = document.createElement("div");
+
+    fakeEle.innerHTML = blog;
+
+    let fakeImages = fakeEle.getElementsByTagName("img");
+    for (let i = 0; i < fakeImages.length; i++) {
+      if (!fakeImages[i].src.includes("data:")) {
+        let img = fakeImages[i];
+        let imageName;
+        //all the images on the page
+        if (img.src.split("/").length === 5) {
+          imageName = img.src.split("/")[4];
+          allImages.data.forEach(currentImage => {
+            if (currentImage.originalname === imageName) {
+              img.src =
+                "https://the-teacher-next-door.com/public/uploads/" +
+                currentImage.filename;
+            }
+          });
+        } else if (img.src.split("/").length === 6) {
+          imageName = img.src.split("/")[5];
+          allImages.data.forEach(currentImage => {
+            if (currentImage.originalname === imageName) {
+              img.src =
+                "https://the-teacher-next-door.com/public/uploads/" +
+                currentImage.filename;
+            }
+          });
+        }
+      }
+
+      console.log(fakeEle.innerHTML);
+
+      let data = {
+        username: props.username,
+        blog: fakeEle.innerHTML,
+        title: titleX,
+        id: id,
+        img: imgX,
+        category: category,
+        live: live
+      };
+
+      console.log(data);
+
+      const res = await api.saveBlog(data);
+      console.log(res);
     }
   };
 
