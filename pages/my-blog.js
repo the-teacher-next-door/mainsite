@@ -220,28 +220,27 @@ const Blogs = props => {
               <div className="column is-12">
                 <h2>Search Results</h2>
               </div>
-              {props.blogs.map((blog, index) => {
-                if (props.blogs.length === 0) {
-                  return (
-                    <div className="empty">
-                      <h2>Nothing matches that search</h2>;
-                    </div>
-                  );
-                }
-                if (blog.live) {
-                  return (
-                    <div className="column is-3" key={index}>
-                      <Card
-                        title={blog.title}
-                        cleanTitle={blog.cleanTitle}
-                        img={blog.img}
-                        description={blog.description}
-                        category={blog.category.split(",")[0]}
-                      />
-                    </div>
-                  );
-                }
-              })}
+              {props.blogs.length > 0 ? (
+                props.blogs.map((blog, index) => {
+                  if (blog.live) {
+                    return (
+                      <div className="column is-3" key={index}>
+                        <Card
+                          title={blog.title}
+                          cleanTitle={blog.cleanTitle}
+                          img={blog.img}
+                          description={blog.description}
+                          category={blog.category.split(",")[0]}
+                        />
+                      </div>
+                    );
+                  }
+                })
+              ) : (
+                <div className="empty">
+                  <h2>Nothing matches that search</h2>;
+                </div>
+              )}
             </div>
           </div>
           <Footer />

@@ -113,12 +113,19 @@ module.exports = {
   },
 
   search: (req, res) => {
-    const query = req.params.search.replace(/\+/g, " ");
+    let query = req.params.search.replace(/\+/g, " ");
+
+    query = query.replace("-", " ");
+    function escapeRegex(text) {
+      return text.replace(/[-[\]{}()*+?.,\\^$|#\s]/g, "\\$&");
+    }
+
+    const regex = new RegExp(escapeRegex(query), "gi");
     db.blogs
       .find({
         $or: [
-          { title: { $regex: query, $options: "i" } },
-          { category: { $regex: query, $options: "i" } }
+          { title: { $regex: regex, $options: "i" } },
+          { category: { $regex: regex, $options: "i" } }
         ]
       })
       .then(blogs => {
