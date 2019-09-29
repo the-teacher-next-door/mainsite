@@ -148,6 +148,7 @@ const NewBlog = props => {
         let img = fakeImages[i];
         let imageName;
         //all the images on the page
+        console.log(img.src.split("/").length);
         if (img.src.split("/").length === 5) {
           imageName = img.src.split("/")[4];
           allImages.data.forEach(currentImage => {
