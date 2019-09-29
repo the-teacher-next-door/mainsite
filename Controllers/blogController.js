@@ -117,6 +117,7 @@ module.exports = {
 
     query = query.replace(/-/g, " ");
     query = query.replace(/\d+/g, "");
+    query = query.trim();
     function escapeRegex(text) {
       return text.replace(/[-[\]{}()*+?.,\\^$|#\s]/g, "\\$&");
     }
