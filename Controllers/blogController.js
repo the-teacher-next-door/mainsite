@@ -11,7 +11,8 @@ module.exports = {
   },
   save: (req, res) => {
     console.log(req.body.description);
-    const cleanTitle = req.body.title.toLowerCase().replace(/ /g, "-");
+    const getRidOFSemiColon = req.body.title.toLowerCase().replace(":", "");
+    const cleanTitle = getRidOFSemiColon.replace(/ /g, "-");
     db.blogs
       .updateOne(
         { _id: req.body.id },
