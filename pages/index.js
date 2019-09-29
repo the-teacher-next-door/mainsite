@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import Jumbotron from "../Components/Jumbotron/Jumbotron";
 import Link from "next/link";
 import dynamic from "next/dynamic";
-import Slider from "../images/freebies-slider.png";
+import Slider from "../images/freebies-sliders.png";
 import ConvertKit from "../Components/ConvertKit";
 import CollectionSlider from "../Components/CollectionSlider";
 import BlogSlider from "../Components/BlogSlider";
