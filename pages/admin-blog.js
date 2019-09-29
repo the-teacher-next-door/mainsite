@@ -163,6 +163,7 @@ const NewBlog = props => {
           imageName = img.src.split("/")[5];
           console.log(imageName);
           allImages.data.forEach(currentImage => {
+            console.log(currentImage.originalname);
             if (currentImage.originalname === imageName) {
               console.log(currentImage.filename);
               img.src =
