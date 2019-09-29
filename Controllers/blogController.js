@@ -122,6 +122,8 @@ module.exports = {
     }
 
     const regex = new RegExp(escapeRegex(query), "gi");
+
+    console.log(regex);
     db.blogs
       .find({
         $or: [
