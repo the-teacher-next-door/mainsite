@@ -238,7 +238,7 @@ const Blogs = props => {
                 })
               ) : (
                 <div className="empty">
-                  <h2>Nothing matches that search</h2>;
+                  <h2>Nothing matches that search</h2>
                 </div>
               )}
             </div>

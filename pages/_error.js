@@ -8,6 +8,10 @@ function Error({ statusCode }) {
       window.location.href =
         "https://the-teacher-next-door.com/my-blog/" +
         window.location.href.split("/")[6];
+    } else if (window.location.href.split("/").length === 6) {
+      window.location.href =
+        "https://the-teacher-next-door.com/my-blog/" +
+        window.location.href.split("/")[5];
     } else {
       window.location.href = "https://the-teacher-next-door.com/my-blog";
     }
