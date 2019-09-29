@@ -137,13 +137,13 @@ const NewBlog = props => {
 
   //replace all images with correct format
   const replaceImages = async (blog, id, imgX, category, live, titleX) => {
-    console.log(blog);
     let allImages = await api.loadImages();
     let fakeEle = document.createElement("div");
 
     fakeEle.innerHTML = blog;
 
     let fakeImages = fakeEle.getElementsByTagName("img");
+    console.log(fakeImages);
     for (let i = 0; i < fakeImages.length; i++) {
       if (!fakeImages[i].src.includes("data:")) {
         let img = fakeImages[i];
