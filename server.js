@@ -434,7 +434,7 @@ nextApp
       // send mail with defined transport object
       let info = await transporter.sendMail({
         from: '"Teacher Next Door Contact Form" <bobbyboyd.a@yahoo.com>', // sender address
-        to: "bboyd2008@gmail.com", // list of receivers
+        to: "theteachernextdoor01@gmail.com", // list of receivers
         subject: "The Teacher Next Door Contact Form", // Subject line
         text: "Hello world?", // plain text body
         html: email_format // html body
