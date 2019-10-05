@@ -20,30 +20,57 @@ module.exports = {
     const regex = escapeRegex(x);
 
     console.log(regex);
-    db.blogs
-      .updateOne(
-        { _id: req.body.id },
-        {
-          $set: {
-            username: req.body.username,
-            blog: req.body.blog,
-            title: req.body.title,
-            cleanTitle: regex,
-            img: req.body.img,
-            live: req.body.live,
-            category: req.body.category,
-            description: req.body.description
+    if (req.body.setCleanManual) {
+      db.blogs
+        .updateOne(
+          { _id: req.body.id },
+          {
+            $set: {
+              username: req.body.username,
+              blog: req.body.blog,
+              title: req.body.title,
+              cleanTitle: req.body.cleanTitle,
+              img: req.body.img,
+              live: req.body.live,
+              category: req.body.category,
+              description: req.body.description
+            }
           }
-        }
-      )
-      .then(done => {
-        console.log(done);
-        res.send(done);
-      })
-      .catch(err => {
-        console.log("err: " + err);
-        res.send({ err });
-      });
+        )
+        .then(done => {
+          console.log(done);
+          res.send(done);
+        })
+        .catch(err => {
+          console.log("err: " + err);
+          res.send({ err });
+        });
+    } else {
+      db.blogs
+        .updateOne(
+          { _id: req.body.id },
+          {
+            $set: {
+              username: req.body.username,
+              blog: req.body.blog,
+              title: req.body.title,
+              cleanTitle: regex,
+              img: req.body.img,
+              live: req.body.live,
+              category: req.body.category,
+              description: req.body.description
+            }
+          }
+        )
+        .then(done => {
+          console.log(done);
+          res.send(done);
+        })
+        .catch(err => {
+          console.log("err: " + err);
+          res.send({ err });
+        });
+    }
   },
   new: (req, res) => {
     console.log(req.body);

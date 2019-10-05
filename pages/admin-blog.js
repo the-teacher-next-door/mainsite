@@ -32,6 +32,8 @@ const NewBlog = props => {
   const [titleInputVal, setTitleInputVal] = useState("");
   const [id, setId] = useState("");
   const [imageurl, setImageurl] = useState("");
+  const [cleanTitle, setCleanTitle] = useState("");
+
   const [live, setLive] = useState(false);
   const [checked, setChecked] = useState(false);
   const [category, setCategory] = useState();
@@ -47,6 +49,7 @@ const NewBlog = props => {
       setTitleInputVal(blog.data.title);
       setId(blog.data._id);
       setImageurl(blog.data.img);
+      setCleanTitle(blog.data.cleanTitle);
       setLive(blog.data.live);
       setCategory(blog.data.category);
       console.log(blog);
@@ -201,15 +204,32 @@ const NewBlog = props => {
     if (titleInputVal !== "") {
       if (category !== "category") {
         console.log("save");
-        let data = {
-          username: props.username,
-          blog: draftToHtml(convertToRaw(editorState.getCurrentContent())),
-          title: titleInputVal,
-          id: id,
-          img: imageurl,
-          category: category,
-          live: live
-        };
+        let data;
+        if (cleanTitle === "") {
+          data = {
+            username: props.username,
+            blog: draftToHtml(convertToRaw(editorState.getCurrentContent())),
+            title: titleInputVal,
+            id: id,
+            cleanTitle: titleInputVal,
+            img: imageurl,
+            category: category,
+            live: live,
+            setCleanManual: false
+          };
+        } else {
+          data = {
+            username: props.username,
+            blog: draftToHtml(convertToRaw(editorState.getCurrentContent())),
+            title: titleInputVal,
+            id: id,
+            cleanTitle,
+            img: imageurl,
+            category: category,
+            live: live,
+            setCleanManual: true
+          };
+        }
 
         console.log(data);
         const res = await api.saveBlog(data);
@@ -252,6 +272,10 @@ const NewBlog = props => {
 
     if (event.target.name === "category") {
       setCategory(event.target.value);
+    }
+
+    if (event.target.name === "blogUrl") {
+      setCleanTitle(event.target.value);
     }
   };
 
@@ -300,6 +324,14 @@ const NewBlog = props => {
                       className="img-input"
                       value={imageurl}
                       name="imageurl"
+                      onChange={handleChange}
+                    />
+                    Blog Custom Url:
+                    <Input
+                      placeholder="Blog Custom URL"
+                      className="img-input"
+                      value={cleanTitle}
+                      name="blogUrl"
                       onChange={handleChange}
                     />
                     <select
