@@ -12,7 +12,14 @@ module.exports = {
   save: (req, res) => {
     console.log(req.body.description);
     const getRidOFSemiColon = req.body.title.toLowerCase().replace(":", "");
-    const cleanTitle = getRidOFSemiColon.replace(/ /g, "-");
+    const x = getRidOFSemiColon.replace(/ /g, "-");
+    function escapeRegex(text) {
+      return text.replace(/[[\]{}()*+?.,\\^$|#\s]/g, "");
+    }
+
+    const regex = escapeRegex(x);
+
+    console.log(regex);
     db.blogs
       .updateOne(
         { _id: req.body.id },
@@ -21,7 +28,7 @@ module.exports = {
             username: req.body.username,
             blog: req.body.blog,
             title: req.body.title,
-            cleanTitle,
+            cleanTitle: regex,
             img: req.body.img,
             live: req.body.live,
             category: req.body.category,

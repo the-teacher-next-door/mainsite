@@ -33,11 +33,35 @@ const BlogPage = props => {
   useEffect(() => {
     api.loadBlogs().then(blog => {
       setBlogs(blog.data);
+      // setTimeout(() => {
+      //   if (document.getElementById("blogText")) {
+      //     addPinItButtonToImages();
+      //   }
+      // }, 4000);
     });
   }, []);
+
+  const addPinItButtonToImages = () => {
+    let parent = document.getElementById("blogText");
+    let el = parent.querySelectorAll("img");
+    let pinB = document.createElement("a");
+
+    pinB.href = "pinterest.com";
+    pinB.className = "small-pin";
+    pinB.innerHTML = '<i class="fab fa-pinterest-square"></i>';
+    console.log(parent);
+
+    for (let i = 0; i < el.length; i++) {
+      let div = document.createElement("div");
+      div.appendChild(el[i]);
+      div.appendChild(pinB);
+      el[0].parentNode.insertBefore(div, el[0]);
+    }
+  };
   return (
     <Layout>
       <Head>
+        <title>props.blogs.title</title>
         <meta property="og:type" content="blog" />
         <meta property="og:title" content={props.blogs.title} />
         <meta property="og:description" content={props.blogs.description} />
@@ -128,6 +152,7 @@ const BlogPage = props => {
             <div className="columns is-centered ">
               <div className="column is-8">
                 <span
+                  id="blogText"
                   className="wrapper-span"
                   dangerouslySetInnerHTML={{ __html: props.blogs.blog }}
                 />
