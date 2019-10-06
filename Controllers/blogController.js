@@ -165,7 +165,7 @@ module.exports = {
         $or: [
           { title: { $regex: req.params.search, $options: "i" } },
           { category: { $regex: regex, $options: "i" } },
-          { cleanTitle: { $regex: query, $options: "i" } }
+          { cleanTitle: { $regex: regex, $options: "i" } }
         ]
       })
       .then(blogs => {
