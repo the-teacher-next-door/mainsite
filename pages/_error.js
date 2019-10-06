@@ -4,14 +4,13 @@ function Error({ statusCode }) {
   useEffect(() => {
     if (window.location.href.split("/").length === 7) {
       let param = window.location.href[6].replace(/[0-9]/g, "");
+      console.log(param);
       window.location.href =
         "https://the-teacher-next-door.com/my-blog/reading/" + param;
     } else if (window.location.href.split("/").length === 6) {
       let param = window.location.href[5].replace(/[0-9]/g, "");
       window.location.href =
         "https://the-teacher-next-door.com/my-blog/reading/" + param;
-    } else {
-      window.location.href = "https://the-teacher-next-door.com/my-blog";
     }
   }, []);
   return (
