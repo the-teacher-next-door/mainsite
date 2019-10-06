@@ -267,7 +267,7 @@ Blogs.getInitialProps = async function({ req, query }) {
     };
 
     const removeNumbers = query.q.replace(/\d+/g, "");
-    const removeDash = query.q.replace(/-/g, " ");
+    const removeDash = removeNumbers.replace(/-/g, " ");
     let filtered = fuzzysort.go(removeDash, blogs, options);
     filtered.forEach(item => {
       convertSearchToArray.push(item.obj);
