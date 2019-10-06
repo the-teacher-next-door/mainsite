@@ -14,6 +14,7 @@ import Ideas from "../images/Light.png";
 import Link from "next/link";
 import PBtn from "../Components/PBtn";
 import Header from "../Components/Header";
+const fuzzysort = require("fuzzysort");
 const Blogs = props => {
   if (props.rBlogs !== undefined) {
     return (
@@ -254,10 +255,17 @@ const Blogs = props => {
 Blogs.getInitialProps = async function({ req, query }) {
   if (Object.keys(query).length > 0) {
     const baseUrl = req ? `${req.protocol}://${req.get("Host")}` : "";
-    const response = await fetch(baseUrl + "/api/blog/search/" + query.q);
+    const response = await fetch(baseUrl + "/api/blog/loadall/");
+    const convertSearchToArray = [];
 
     const blogs = await response.json();
-    return { blogs: blogs };
+    console.log(query);
+    let filtered = fuzzysort.go(query.q, blogs, { key: "title" });
+    filtered.forEach(item => {
+      convertSearchToArray.push(item.obj);
+    });
+    console.log(filtered.obj);
+    return { blogs: convertSearchToArray };
   } else {
     const baseUrl = req ? `${req.protocol}://${req.get("Host")}` : "";
     // const response = await fetch(baseUrl + "/api/blog/loadall");
