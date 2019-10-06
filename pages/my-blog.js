@@ -259,8 +259,13 @@ Blogs.getInitialProps = async function({ req, query }) {
     const convertSearchToArray = [];
 
     const blogs = await response.json();
-    console.log(query);
-    let filtered = fuzzysort.go(query.q, blogs, { key: "title" });
+    const options = {
+      key: "title",
+      limit: 100, // don't return more results than you need!
+      allowTypo: true, // if you don't care about allowing typos
+      threshold: 1000 // don't return bad results
+    };
+    let filtered = fuzzysort.go(query.q, blogs, options);
     filtered.forEach(item => {
       convertSearchToArray.push(item.obj);
     });
