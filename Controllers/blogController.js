@@ -164,7 +164,8 @@ module.exports = {
       .find({
         $or: [
           { title: { $regex: regex, $options: "i" } },
-          { category: { $regex: regex, $options: "i" } }
+          { category: { $regex: regex, $options: "i" } },
+          { cleanTitle: { $regex: regex, $options: "i" } }
         ]
       })
       .then(blogs => {
