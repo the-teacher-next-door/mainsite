@@ -263,7 +263,7 @@ Blogs.getInitialProps = async function({ req, query }) {
       key: "title",
       limit: 100, // don't return more results than you need!
       allowTypo: true, // if you don't care about allowing typos
-      threshold: 1000 // don't return bad results
+      threshold: -1000 // don't return bad results
     };
     let filtered = fuzzysort.go(query.q, blogs, options);
     filtered.forEach(item => {
