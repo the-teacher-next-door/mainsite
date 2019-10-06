@@ -162,12 +162,11 @@ module.exports = {
     console.log(regex);
     db.blogs
       .find({
-        $text: { $search: req.params.search }
-        // $or: [
-        //   { title: { $search: req.params.search, $options: "i" } },
-        //   { category: { $regex: regex, $options: "i" } },
-        //   { cleanTitle: { $regex: query, $options: "i" } }
-        // ]
+        $or: [
+          { title: { $regex: req.params.search, $options: "i" } },
+          { category: { $regex: regex, $options: "i" } },
+          { cleanTitle: { $regex: query, $options: "i" } }
+        ]
       })
       .then(blogs => {
         res.send(blogs);
