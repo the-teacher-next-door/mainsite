@@ -265,7 +265,9 @@ Blogs.getInitialProps = async function({ req, query }) {
       allowTypo: true, // if you don't care about allowing typos
       threshold: -1000 // don't return bad results
     };
-    let filtered = fuzzysort.go(query.q, blogs, options);
+
+    const removeNumbers = query.q.replace(/\d+/g, "");
+    let filtered = fuzzysort.go(removeNumbers, blogs, options);
     filtered.forEach(item => {
       convertSearchToArray.push(item.obj);
     });
