@@ -10,7 +10,7 @@ function Error({ statusCode }) {
       } else if (window.location.href.split("/").length === 6) {
         let param = window.location.href.split("/")[5];
         window.location.href =
-          "https://the-teacher-next-door.com/my-blog/reading" + param;
+          "https://the-teacher-next-door.com/my-blog/" + param;
       }
     } else {
       if (window.location.href.split("/").length === 7) {
