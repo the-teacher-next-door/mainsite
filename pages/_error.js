@@ -19,7 +19,7 @@ function Error({ statusCode }) {
         param = param.split("-");
         param.splice(0, 1);
         console.log(param);
-        param.join("-");
+        param = param.join("-");
         window.location.href =
           "https://the-teacher-next-door.com/my-blog/reading/" + param;
       } else if (window.location.href.split("/").length === 6) {
@@ -38,7 +38,6 @@ function Error({ statusCode }) {
     </p>
   );
 }
-
 Error.getInitialProps = ({ res, err }) => {
   const statusCode = res ? res.statusCode : err ? err.statusCode : null;
   return { statusCode };
