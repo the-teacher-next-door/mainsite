@@ -16,6 +16,10 @@ function Error({ statusCode }) {
     } else {
       if (window.location.href.split("/").length === 7) {
         let param = window.location.href.split("/")[6];
+        param = param
+          .split("-")
+          .splice(0, 1)
+          .join("-");
 
         window.location.href =
           "https://the-teacher-next-door.com/my-blog/reading/" + param;
