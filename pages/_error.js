@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 
 function Error({ statusCode }) {
   useEffect(() => {
+    console.log(statusCode);
     if (statusCode == 500) {
       if (window.location.href.split("/").length === 7) {
         let param = window.location.href.split("/")[6];
