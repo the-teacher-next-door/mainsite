@@ -18,7 +18,7 @@ function Error({ statusCode }) {
         let param = window.location.href.split("/")[6];
         param = param
           .split("-")
-          .splice(0, 1)
+          .shift()
           .join("-");
 
         window.location.href =
