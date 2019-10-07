@@ -16,11 +16,9 @@ function Error({ statusCode }) {
     } else {
       if (window.location.href.split("/").length === 7) {
         let param = window.location.href.split("/")[6];
-        param = param
-          .split("-")
-          .shift()
-          .join("-");
-
+        param = param.split("-");
+        param = param.shift();
+        param = param.join("-");
         window.location.href =
           "https://the-teacher-next-door.com/my-blog/reading/" + param;
       } else if (window.location.href.split("/").length === 6) {
