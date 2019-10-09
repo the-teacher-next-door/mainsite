@@ -93,9 +93,18 @@ module.exports = {
       });
   },
   loadall: (req, res) => {
-    db.blogs.find({}).then(done => {
-      res.send(done);
-    });
+    db.blogs
+      .find({})
+      .sort("-date")
+      .exec(function(err, docs) {
+        res.send(docs);
+      });
+    // db.blogs
+    //   .find({})
+    //   .sort("-date")
+    //   .execFind(done => {
+    //     res.send(done);
+    //   });
   },
   updateViews: (req, res) => {
     db.blogs
