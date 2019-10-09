@@ -142,16 +142,18 @@ module.exports = {
     const query = req.params.category.replace(/\+/g, " ");
     db.blogs
       .find({ category: { $regex: query, $options: "i" } })
+      .sort("-date")
       .limit(4)
-      .then(blogs => {
+      .exec(function(err, blogs) {
         res.send(blogs);
       });
   },
   loadEight: (req, res) => {
     db.blogs
       .find({})
+      .sort("-date")
       .limit(8)
-      .then(blogs => {
+      .exec(function(err, blogs) {
         res.send(blogs);
       });
   },
