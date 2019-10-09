@@ -179,7 +179,8 @@ module.exports = {
           { cleanTitle: { $regex: regex, $options: "i" } }
         ]
       })
-      .then(blogs => {
+      .sort("-date")
+      .exec(function(err, blogs) {
         res.send(blogs);
       });
   },
