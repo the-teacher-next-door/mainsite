@@ -187,7 +187,8 @@ module.exports = {
     const query = req.params.search.replace(/\+/g, " ");
     db.blogs
       .find({ category: { $regex: query, $options: "i" } })
-      .then(blogs => {
+      .sort("-date")
+      .exec(function(err, blogs) {
         res.send(blogs);
       });
   },
