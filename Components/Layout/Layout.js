@@ -1,8 +1,13 @@
 import React from "react";
 import Head from "next/head";
-
+import ReactGA from 'react-ga'
 import "../../scss/style.scss";
 const Layout = props => {
+	initializeReactGA();
+	function initializeReactGA() {
+		ReactGA.initialize('UA-123791717-1');
+		ReactGA.pageview('/homepage')
+	}
   return (
     <div className="page-layout">
       <Head>
@@ -31,7 +36,12 @@ const Layout = props => {
           name="keywords"
           content="Common Core, reading, Common Core standards English Language Arts, ELA, reading strategies, teaching ideas, teaching strategies, reading comprehension, theme, main idea, inferences, characters, close reading, figurative language, teachers pay teachers, test prep, classroom organization, classroom management, writing, persuasive writing, paragraph writing, compare and contrast, cause and effect, informational text structures, task cards, mentor texts, third grade, fourth grade, fifth grade, elementary education, primary education teacher blog"
         />
+
+	  <meta name="google-site-verification" content="NmHStBDYSJqBl-vjYGF8hXs8NcSPEW0GuVC-NRZm7dI" />
+
+
       </Head>
+	
       {props.children}
       {/* <style jsx global>{`
         
