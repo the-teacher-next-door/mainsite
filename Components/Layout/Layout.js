@@ -20,7 +20,7 @@ const Layout = props => {
         />
         <meta
           name="description"
-          content="Creative Ideas and Quality Common Core Aligned Teaching Materials From My Classroom To Yours"
+          content="Creative ideas for teachers, and quality upper grade resources from my classroom to yours."
         />
         <meta name="author" content="Jennifer Larson" />
         <meta
