@@ -1,13 +1,7 @@
 import React from "react";
 import Head from "next/head";
-import ReactGA from 'react-ga'
 import "../../scss/style.scss";
 const Layout = props => {
-	initializeReactGA();
-	function initializeReactGA() {
-		ReactGA.initialize('UA-123791717-1');
-		ReactGA.pageview('/homepage')
-	}
   return (
     <div className="page-layout">
       <Head>
