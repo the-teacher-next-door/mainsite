@@ -18,7 +18,6 @@ const Writing = props => {
 
   useEffect(() => {
     let url = window.location.href.split("/");
-    console.log(url[3]);
     api.search(url[3]).then(data => {
       setBlogs(data.data);
     });

@@ -72,7 +72,6 @@ function Meet(props) {
   useEffect(() => {
     fadeIn();
     api.loadBooks().then(books => {
-      console.log(books.data);
       setBooks(books.data);
     });
   }, []);

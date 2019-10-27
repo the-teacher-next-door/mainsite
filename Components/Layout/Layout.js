@@ -19,7 +19,7 @@ const Layout = props => {
         />
         <meta
           name="description"
-          content="Creative ideas for teachers, and quality upper grade resources from my classroom to yours."
+          content="Creative ideas for teachers and quality upper grade resources from my classroom to yours."
         />
         <meta name="author" content="Jennifer Larson" />
         <meta

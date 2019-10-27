@@ -49,7 +49,6 @@ const BlogPage = props => {
     pinB.href = "pinterest.com";
     pinB.className = "small-pin";
     pinB.innerHTML = '<i class="fab fa-pinterest-square"></i>';
-    console.log(parent);
 
     for (let i = 0; i < el.length; i++) {
       let div = document.createElement("div");

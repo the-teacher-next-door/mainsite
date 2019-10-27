@@ -18,7 +18,6 @@ const Blogs = props => {
 
   useEffect(() => {
     let url = window.location.href.split("/");
-    console.log(url[3]);
     api.search(url[3]).then(data => {
       setBlogs(data.data);
     });
@@ -51,11 +50,11 @@ const Blogs = props => {
               <div className="container white-bg has-text-centered">
                 <div className="columns is-multiline is-centered">
                   <div className="column is-4 has-text-centered">
-                    <Link href="https://www.teacherspayteachers.com/Product/Reading-Games-Fiction-and-Nonfiction-Bundle-Reading-Centers-for-3rd-Grade-3797001">
+                    <Link href="https://www.teacherspayteachers.com/Product/4th-Grade-Digital-Reading-Bundle-Fiction-for-Google-Slides-4926686">
                       <a>
                         <img
-                          src={R1}
-                          alt="Reading Games: Fiction and Nonfiction Bundle"
+                          src="https://ecdn.teacherspayteachers.com/thumbitem/4th-Grade-Digital-Reading-Bundle-Fiction-for-Google-Slides-Bundle-Bundle-4926686-1570572238/original-4926686-1.jpg"
+                          alt="4th Grade Digital Reading Bundle: Fiction for Google Slides"
                         />
                       </a>
                     </Link>

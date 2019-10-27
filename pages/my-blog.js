@@ -269,12 +269,10 @@ Blogs.getInitialProps = async function({ req, query }) {
     const removeNumbers = query.q.replace(/\d+/g, "");
 
     const removeDash = removeNumbers.replace(/-/g, " ");
-    console.log(removeDash.trim());
     let filtered = fuzzysort.go(removeDash.trim(), blogs, options);
     filtered.forEach(item => {
       convertSearchToArray.push(item.obj);
     });
-    console.log(filtered.obj);
     return { blogs: convertSearchToArray };
   } else {
     const baseUrl = req ? `${req.protocol}://${req.get("Host")}` : "";

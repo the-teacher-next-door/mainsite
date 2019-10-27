@@ -23,7 +23,6 @@ const AdminSlider = () => {
       img: ""
     };
     const res = await api.newSliderImage(data);
-    console.log(`slider: ${res}`);
     loadImages();
   };
 
@@ -35,7 +34,6 @@ const AdminSlider = () => {
 
   const saveSlider = e => {
     e.preventDefault();
-    console.log(e.target.dataset["id"]);
     const data = new FormData(e.target);
     let newSlide = {
       _id: e.target.dataset["id"],
