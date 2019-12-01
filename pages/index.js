@@ -52,7 +52,8 @@ Home.getInitialProps = async function({ req, query }) {
   const linkRepsonse = await fetch(baseUrl + "/api/slider/loadAll");
 
   const blogs = await blogResponse.json();
+  const sortedBlogs = blogs.sort((a, b) => new Date(b.date) - new Date(a.date));
   const storeLinks = await linkRepsonse.json();
-  return { blogs: blogs, items: storeLinks };
+  return { blogs: sortedBlogs, items: storeLinks };
 };
 export default Home;
