@@ -40,6 +40,7 @@ const NewBlog = props => {
   const [toastText, setToastText] = useState("");
   const [toastClass, setToastClass] = useState("hide");
   const [menuClass, setMenuClass] = useState("hide");
+  const [date, setDate] = useState("");
 
   useEffect(() => {
     let url = window.location.href.split("/");
@@ -52,6 +53,7 @@ const NewBlog = props => {
       setCleanTitle(blog.data.cleanTitle);
       setLive(blog.data.live);
       setCategory(blog.data.category);
+      setDate(blog.data.date);
       console.log(blog);
 
       // let changingImgUrl =
@@ -331,6 +333,15 @@ const NewBlog = props => {
                       placeholder="Blog Custom URL"
                       className="img-input"
                       value={cleanTitle}
+                      name="blogUrl"
+                      onChange={handleChange}
+                    />
+
+                    Blog Date:
+                    <Input
+                      placeholder="Blog Date"
+                      className="img-input"
+                      value={date}
                       name="blogUrl"
                       onChange={handleChange}
                     />
