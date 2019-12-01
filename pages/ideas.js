@@ -19,7 +19,10 @@ const Blogs = props => {
   useEffect(() => {
     let url = window.location.href.split("/");
     api.search(url[3]).then(data => {
-      setBlogs(data.data);
+      const sortedBlogs = data.data.sort(
+        (a, b) => new Date(b.date) - new Date(a.date)
+      );
+      setBlogs(sortedBlogs);
     });
   }, []);
 

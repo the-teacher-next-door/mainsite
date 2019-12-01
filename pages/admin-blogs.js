@@ -21,7 +21,10 @@ const Admin = props => {
 
   const loadBlogs = () => {
     api.loadBlogs().then(data => {
-      setBlogs(data.data);
+      const sortedBlogs = data.data.sort(
+        (a, b) => new Date(b.date) - new Date(a.date)
+      );
+      setBlogs(sortedBlogs);
     });
   };
 
@@ -48,14 +51,6 @@ const Admin = props => {
       }
     });
   };
-
-  useEffect(() => {
-    const sortedBlogs = blogs.sort(
-      (a, b) => new Date(b.date) - new Date(a.date)
-    );
-    console.log(sortedBlogs);
-    setBlogs(sortedBlogs);
-  }, [blogs]);
 
   const showToast = () => {
     setToastClass("showToast");

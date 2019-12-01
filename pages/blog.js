@@ -32,7 +32,10 @@ const BlogPage = props => {
 
   useEffect(() => {
     api.loadBlogs().then(blog => {
-      setBlogs(blog.data);
+      const sortedBlogs = blog.data.sort(
+        (a, b) => new Date(b.date) - new Date(a.date)
+      );
+      setBlogs(sortedBlogs);
       // setTimeout(() => {
       //   if (document.getElementById("blogText")) {
       //     addPinItButtonToImages();

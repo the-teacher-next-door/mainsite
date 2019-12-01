@@ -19,17 +19,13 @@ const Writing = props => {
   useEffect(() => {
     let url = window.location.href.split("/");
     api.search(url[3]).then(data => {
-      setBlogs(data.data);
+      const sortedBlogs = data.data.sort(
+        (a, b) => new Date(b.date) - new Date(a.date)
+      );
+      setBlogs(sortedBlogs);
     });
   }, []);
 
-  useEffect(() => {
-    const sortedBlogs = blogs.sort(
-      (a, b) => new Date(b.date) - new Date(a.date)
-    );
-    console.log(sortedBlogs);
-    setBlogs(sortedBlogs);
-  }, [blogs]);
   return (
     <Layout>
       <div className="categoryPages">
