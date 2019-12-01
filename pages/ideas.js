@@ -22,6 +22,14 @@ const Blogs = props => {
       setBlogs(data.data);
     });
   }, []);
+
+  useEffect(() => {
+    const sortedBlogs = blogs.sort(
+      (a, b) => new Date(b.date) - new Date(a.date)
+    );
+    console.log(sortedBlogs);
+    setBlogs(sortedBlogs);
+  }, [blogs]);
   return (
     <Layout>
       <div className="categoryPages">

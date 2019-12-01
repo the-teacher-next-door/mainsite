@@ -41,6 +41,14 @@ const BlogPage = props => {
     });
   }, []);
 
+  useEffect(() => {
+    const sortedBlogs = blogs.sort(
+      (a, b) => new Date(b.date) - new Date(a.date)
+    );
+    console.log(sortedBlogs);
+    setBlogs(sortedBlogs);
+  }, [blogs]);
+
   const addPinItButtonToImages = () => {
     let parent = document.getElementById("blogText");
     let el = parent.querySelectorAll("img");
