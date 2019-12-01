@@ -336,15 +336,6 @@ const NewBlog = props => {
                       name="blogUrl"
                       onChange={handleChange}
                     />
-
-                    Blog Date:
-                    <Input
-                      placeholder="Blog Date"
-                      className="img-input"
-                      value={date}
-                      name="blogUrl"
-                      onChange={handleChange}
-                    />
                     <select
                       id="categorySelect"
                       name="tags"

@@ -49,6 +49,11 @@ const Admin = props => {
     });
   };
 
+  useEffect(() => {
+    const sortedBlogs = blogs.sort((a, b) => b.date - a.date);
+    console.log(sortedBlogs);
+  }, [blogs]);
+
   const showToast = () => {
     setToastClass("showToast");
     setTimeout(() => {
@@ -66,6 +71,7 @@ const Admin = props => {
       setMenuClass("hide");
     }
   };
+
   return (
     <Layout>
       <AdminTopBar showMenu={showMenu} />
