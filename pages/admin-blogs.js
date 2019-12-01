@@ -50,7 +50,9 @@ const Admin = props => {
   };
 
   useEffect(() => {
-    const sortedBlogs = blogs.sort((a, b) => b.date - a.date);
+    const sortedBlogs = blogs.sort(
+      (a, b) => new Date(b.date) - new Date(a.date)
+    );
     console.log(sortedBlogs);
   }, [blogs]);
 
