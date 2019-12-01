@@ -289,12 +289,7 @@ Blogs.getInitialProps = async function({ req, query }) {
     const mBlogs = await math.json();
     const hBlogs = await holidays.json();
     const iBlogs = await ideas.json();
-    const sortedR = rBlogs.sort((a, b) => new Date(b.date) - new Date(a.date));
-    const sortedw = wBlogs.sort((a, b) => new Date(b.date) - new Date(a.date));
-    const sortedm = mBlogs.sort((a, b) => new Date(b.date) - new Date(a.date));
-    const sortedh = hBlogs.sort((a, b) => new Date(b.date) - new Date(a.date));
-    const sortedi = iBlogs.sort((a, b) => new Date(b.date) - new Date(a.date));
-    return { sortedR, sortedw, sortedm, sortedh, sortedi };
+    return { rBlogs, wBlogs, mBlogs, hBlogs, iBlogs };
   }
 };
 export default Blogs;
