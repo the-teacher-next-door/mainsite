@@ -253,6 +253,7 @@ const Blogs = props => {
   }
 };
 Blogs.getInitialProps = async function({ req, query }) {
+  console.log(Object.keys(query));
   if (Object.keys(query).length > 0) {
     const baseUrl = req ? `${req.protocol}://${req.get("Host")}` : "";
     const response = await fetch(baseUrl + "/api/blog/loadall/");

@@ -14,12 +14,11 @@ module.exports = {
     const getRidOFSemiColon = req.body.title.toLowerCase().replace(":", "");
     const x = getRidOFSemiColon.replace(/ /g, "-");
     function escapeRegex(text) {
-      return text.replace(/[[\]{}()*+?.,\\^$|#\s]/g, "");
+      return text.replace(/[[\]{}()*+?.,\\^$|#!\s]/g, "");
     }
 
     const regex = escapeRegex(x);
 
-    console.log(regex);
     if (req.body.setCleanManual) {
       db.blogs
         .updateOne(

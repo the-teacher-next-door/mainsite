@@ -231,6 +231,7 @@ nextApp
 
     //for older blog routes
     server.get("/my-blog/reading/:slug", (req, res) => {
+      //ignore everything after ?
       return nextApp.render(req, res, "/blog", { q: req.params.slug });
     });
 
@@ -239,10 +240,8 @@ nextApp
     });
 
     server.get("/my-blog/math/:slug", (req, res) => {
-      console.log(req.params.slug);
       let string = req.params.slug;
 
-      console.log(`new ${string}`);
       return nextApp.render(req, res, "/blog", { q: req.params.slug });
     });
 
