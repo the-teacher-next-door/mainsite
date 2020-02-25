@@ -35,7 +35,7 @@ class SocialClips extends Component {
                 <h2>Instagram</h2>
                 <iframe
                   src="//lightwidget.com/widgets/f1774a3b24a655c084ebfe1ac596c67d.html"
-                  scrolling="no"
+                  scrolling="yes"
                   allowtransparency="true"
                   class="lightwidget-widget"
                   style={{
