@@ -50,7 +50,7 @@
     "fuzzysort": "^1.1.4",
     "html-to-draftjs": "^1.4.0",
     "install": "^0.13.0",
-    "lodash": "^4.17.15",
+    "lodash": "^4.17.19",
     "megadraft": "^0.6.4",
     "mongoose": "^5.5.8",
     "mongoose-fuzzy-searching": "^1.1.8",
