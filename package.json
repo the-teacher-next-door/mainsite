@@ -68,7 +68,7 @@
     "pure-react-carousel": "^1.19.4",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
-    "react-draft-wysiwyg": "^1.13.2",
+    "react-draft-wysiwyg": "^1.14.6",
     "react-facebook": "^8.0.4",
     "react-ga": "^2.7.0",
     "react-glide": "^3.2.0",
